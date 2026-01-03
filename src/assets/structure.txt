@@ -1,0 +1,28 @@
+src/
+├── assets/          # الصور (Logos, Icons) والملفات الثابتة.
+├── components/      # المكونات العامة (Shared/UI) اللي كتحتاجها فاع كاع الموقع.
+│   ├── ui/          # Buttons, Inputs, Cards (الأشياء البسيطة).
+│   └── layout/      # Navbar, Sidebar, Footer.
+├── config/          # إعدادات Firebase والـ API keys.
+├──data/
+    └── semestre1/
+        ├── bio-cell/                # مجلد موديول البيولوجيا الخلوية [cite: 9]
+        │   ├── index.js             # الموزع الرئيسي للموديول
+        │   ├── introduction.js      # فقرة التعريف والعلماء [cite: 46]
+        │   ├── proc-euc.js          # فقرة Procaryote vs Eucaryote [cite: 70, 110]
+        │   ├── membrane.js          # فقرة الغشاء السيتوبلازمي [cite: 17]
+        │   └── proteines.js         # فقرة الكيمياء الحيوية: البروتينات 
+        ├── geologie/                # مجلد الجيولوجيا 
+        │   ├── index.js
+        │   └── tectonique.js
+        └── index.js                 # الموزع العام لكل الداتا فالموقع           # ملفات الـ JSON ديال الدروس (بحال اللي صاوبنا).
+├── features/        # قلب المشروع! كل ميزة كبيرة عندها مجلد ديالها.
+│   ├── lessons/     # كاع المكونات والـ Logic الخاص بالدروس.
+│   ├── auth/        # تسجيل الدخول والبروفايل.
+│   └── quiz/        # الـ Logic ديال الكويزات.
+├── hooks/           # الـ Custom Hooks (مثلاً useAuth, useLesson).
+├── pages/           # المكونات اللي كتمثل "صفحة كاملة" (Home, LessonPage).
+├── services/        # ملفات التواصل مع Firebase (Firestore functions).
+├── utils/           # دوال مساعدة (Formatters, Helpers).
+├── App.jsx          # الموجه الرئيسي (Routing).
+└── main.jsx         # نقطة الانطلاق.
