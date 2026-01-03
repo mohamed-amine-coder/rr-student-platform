@@ -64,18 +64,18 @@ const Footer = () => {
         </div>
 
         {/* 4. تواصل مع المطور */}
-        <div className="bg-slate-50 p-6 rounded-[2rem] border border-slate-100">
+        <div className="bg-yellow-400 p-6 rounded-[2rem] border border-slate-100">
           <h4 className="font-black text-slate-900 mb-4 text-xs uppercase tracking-widest text-center">Design & Dev</h4>
           <div className="text-center space-y-4">
             <p className="text-slate-600 text-sm font-bold">
                تم تطوير المنصة برمجيا بواسطة  {FOOTER_DATA.developer.name + " - " + FOOTER_DATA.developer.role}
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-3">
               {FOOTER_DATA.developer.links.map((link, i) => (
                 <a 
                   key={i} 
                   href={link.href} 
-                  className="p-4 bg-white rounded-2xl text-slate-400 hover:text-slate-900 hover:shadow-xl hover:-translate-y-1 transition-all"
+                  className="p-2 bg-white rounded-2xl text-slate-400 hover:text-slate-900 hover:shadow-xl hover:-translate-y-1 transition-all"
                 >
                   {link.label === "LinkedIn" && <Linkedin size={20} />}
                   {link.label === "GitHub" && <Github size={20} />}
