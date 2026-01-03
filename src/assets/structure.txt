@@ -6,7 +6,7 @@ src/
 ├── config/          # إعدادات Firebase والـ API keys.
 ├──data/
     └── semestre1/
-        ├── bio-cell/                # مجلد موديول البيولوجيا الخلوية [cite: 9]
+        ├── biologie-cellulaire/                # مجلد موديول البيولوجيا الخلوية [cite: 9]
         │   ├── index.js             # الموزع الرئيسي للموديول
         │   ├── introduction.js      # فقرة التعريف والعلماء [cite: 46]
         │   ├── proc-euc.js          # فقرة Procaryote vs Eucaryote [cite: 70, 110]

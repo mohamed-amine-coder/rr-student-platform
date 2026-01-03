@@ -7,11 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Tajawal', 'sans-serif'],
+        // هنا سمينا الخط 'tajawal' و عطيناه البدائل إيلا ما شار جاش
+        'tajawal': ['Tajawal', 'sans-serif'],
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 }
