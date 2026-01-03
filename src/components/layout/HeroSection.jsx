@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Sparkles, ChevronLeft, GraduationCap, CheckCircle2 } from 'lucide-react';
 import Logo from '../../../public/logo.jpg'; // تأكد من السمية والمسار
+import ModulePage from '../../pages/ModulePage';
 
 const HeroSection = () => {
   return (
@@ -33,9 +35,11 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button className="bg-yellow-400 text-slate-900 px-8 py-4 rounded-2xl font-black shadow-lg shadow-yellow-200 hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
-              بدا أول درس فابور <ChevronLeft size={20}/>
-            </button>
+            <Link to="/module/bio-cell"> {/* هنا حددنا الموديل د البيولوجيا الخلوية */}
+              <button className="bg-yellow-400 text-slate-900 px-8 py-4 rounded-2xl font-black shadow-lg shadow-yellow-200 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 w-full md:w-auto">
+                بدا أول درس فابور <ChevronLeft size={20}/>
+              </button>
+            </Link>
             <button className="bg-white border border-slate-200 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition-all text-slate-600">
               شوف المنهجية
             </button>

@@ -1,54 +1,46 @@
-import React from 'react';
-import { BookOpen, HelpCircle, ChevronLeft } from 'lucide-react';
+// 1. هنا فين كان المشكل، خاص نزيدو Layers
+import { BookOpen, HelpCircle, ChevronLeft, Sparkles, Layers } from 'lucide-react'; 
 import { Link } from 'react-router-dom';
 
-const CourseCard = ({ id, title, lessons, quizzes, price, tag }) => {
+const CourseCard = ({ id, title, price, chapters }) => {
+  const lessonsCount = chapters?.length || 0;
+  const freeChapters = chapters?.filter(ch => ch.isFree).length || 0;
+
   return (
-    <div className="group bg-white border border-slate-100 p-5 rounded-[2.5rem] hover:shadow-2xl hover:shadow-slate-200 transition-all duration-500 flex flex-col h-full">
-      
-      {/* 1. Image Placeholder (البلاصة فين غاتجي تصويرة المادة) */}
-      <div className="aspect-video bg-slate-50 rounded-[2rem] mb-6 relative overflow-hidden group-hover:bg-yellow-50 transition-colors flex items-center justify-center">
-        {tag && (
-          <span className="absolute top-4 right-4 bg-yellow-400 text-slate-900 text-[10px] font-black px-3 py-1 rounded-full shadow-sm z-10">
-            {tag}
-          </span>
-        )}
-        <div className="text-slate-200 group-hover:text-yellow-200 transition-colors">
-          <BookOpen size={64} />
-        </div>
+    <Link 
+      to={`/module/${id}`} 
+      className="group flex items-center bg-white border border-slate-100 p-4 rounded-3xl hover:border-yellow-400 hover:shadow-xl hover:shadow-yellow-500/5 transition-all duration-300"
+    >
+      {/* Icon Section */}
+      <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-yellow-400 transition-colors">
+        <BookOpen size={24} className="text-slate-300 group-hover:text-slate-900" />
       </div>
 
-      {/* 2. Content */}
-      <div className="flex-1 px-2">
-        <h4 className="font-black text-xl mb-3 text-slate-900 group-hover:text-yellow-600 transition-colors">
+      {/* Info Section */}
+      <div className="flex-1 px-4 overflow-hidden text-right">
+        <h3 className="font-black text-slate-900 text-base truncate group-hover:text-yellow-600 transition-colors">
           {title}
-        </h4>
-        
-        <div className="flex items-center gap-4 mb-8">
-          <div className="flex items-center gap-1.5 text-slate-400 text-xs font-bold">
-            <BookOpen size={14} /> {lessons} دروس
-          </div>
-          <div className="flex items-center gap-1.5 text-slate-400 text-xs font-bold">
-            <HelpCircle size={14} /> {quizzes} QCM
-          </div>
+        </h3>
+        <div className="flex items-center gap-3 mt-1 justify-start md:justify-end flex-row-reverse">
+          <span className="text-[10px] font-bold text-slate-400 flex items-center gap-1">
+             فصول {lessonsCount} <Layers size={12} /> 
+          </span>
+          {freeChapters > 0 && (
+            <span className="text-[9px] font-black text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-100">
+              {freeChapters} فصول فابور ✅
+            </span>
+          )}
         </div>
       </div>
 
-      {/* 3. Footer & Action */}
-      <div className="flex items-center justify-between bg-slate-50 p-4 rounded-3xl group-hover:bg-slate-900 transition-all duration-300">
-        <span className="font-black text-slate-900 group-hover:text-white text-lg">
-          {price} <small className="text-[10px] opacity-60">DH</small>
-        </span>
-        
-        {/* هاد الرابط هو اللي كيدي لـ LessonViewer */}
-        <Link 
-          to={`/lesson/${id}`}
-          className="bg-white text-slate-900 p-2 rounded-2xl shadow-sm group-hover:bg-yellow-400 transition-colors"
-        >
-          <ChevronLeft size={20} />
-        </Link>
+      {/* Price & Action */}
+      <div className="text-left pl-2 border-r border-slate-50 flex flex-col items-end">
+        <span className="text-sm font-black text-slate-900">{price} DH</span>
+        <div className="mt-1 p-1.5 bg-slate-50 rounded-lg group-hover:bg-slate-900 group-hover:text-white transition-all">
+          <ChevronLeft size={16} />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
