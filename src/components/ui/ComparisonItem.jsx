@@ -5,7 +5,7 @@ const ComparisonItem = ({ text, type }) => {
   const isProblem = type === 'problem';
   
   return (
-    <li className={`flex items-center gap-3 text-sm font-medium ${isProblem ? 'text-slate-400' : 'text-slate-100'}`}>
+    <li className={`flex items-center gap-3 text-sm font-medium ${isProblem ? 'text-black-400' : 'text-slate-100'}`}>
       {isProblem ? (
         <XCircle size={18} className="shrink-0 text-slate-300" />
       ) : (

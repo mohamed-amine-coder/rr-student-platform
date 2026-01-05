@@ -1,7 +1,7 @@
 export const NAV_LINKS = [
-  { label: "علاش حنا؟", href: "#comparison" },
-  { label: "المواد", href: "#courses" },
-  { label: "الأثمنة", href: "#pricing" },
+  { label: "علاش حنا؟", href: "/#comparison" }, // زدنا / قبل #
+  { label: "المواد", href: "/#courses" },
+  { label: "الأثمنة", href: "/#pricing" },
 ];
 
 export const PROBLEMS = [
@@ -24,49 +24,85 @@ export const COURSES = [
     id: "bio-cell",
     title: "Biologie Cellulaire",
     description: "استكشاف الخلية: من الغشاء السيتوبلازمي حتى للنواة.",
-    price: 29,
+    price: 29, // ثمن رمزي
     chapters: [
-      { 
-        id: "intro-cell", 
-        title: "Chapitre 1: Introduction & Méthodes", 
+      {
+        id: "introduction-générale-biologie-cellulaire",
+        title: "مقدمة عامة في شعبة البيولوجيا و نصائح للنجاح",
+        isFree: true, // ✅ خليناها فابور كـ مدخل
+        quickInfo: " البيولوجيا الخلوية: شنو و علاش؟"
+      },
+      {
+        id: "introduction-biologie-cellulaire",
+        title: "Introduction à la biologie cellulaire",
+        isFree: true, // ✅ خليناها فابور كـ مدخل
+        quickInfo: "البدية د الخلية"
+      },
+      {
+        id: "constituants-chimiques",
+        title: "Constituants chimiques de la cellule",
         isFree: true, 
-        quickInfo: "المجهر الضوئي vs الإلكتروني" // معلومة سريعة
+        quickInfo: "المكونات د الخلية (الماء، الأملاح...)"
       },
-      { 
-        id: "membrane-bio", 
-        title: "Chapitre 2: La Membrane Plasmique", 
-        isFree: false, 
-        quickInfo: "بنية الفسيفساء السائلة"
+      {
+        id: "microscopie-techniques",
+        title: "La microscopie et techniques",
+        isFree: false, // 🔒 هادي تقنية، نخليوها بالخلاص
+        quickInfo: "كيفاش كنشوفو الخلية"
       },
-      { 
-        id: "interactions-cell", 
-        title: "Chapitre 3: Interactions Cellulaires", 
-        isFree: false, 
-        quickInfo: "كيفاش الخلايا كيتواصلو"
+      {
+        id: "membrane-plasmique",
+        title: "Membrane plasmique",
+        isFree: true, // 🔥🔥 رديناها فابور (هادا هو الطعم الحقيقي)
+        quickInfo: "الغلاف د الخلية (الفسيفساء السائلة)"
       },
-      { 
-        id: "cytosquelette", 
-        title: "Chapitre 4: Le Cytosquelette", 
-        isFree: false, 
-        quickInfo: "العظام ديال الخلية (Microtubules)"
+      {
+        id: "cytosquelette",
+        title: "Cytosquelette",
+        isFree: false,
+        quickInfo: "العضم د الخلية"
       },
-      { 
-        id: "endomembranaire", 
-        title: "Chapitre 5: Système Endomembranaire", 
-        isFree: false, 
-        quickInfo: "Reticulum & Golgi"
+      {
+        id: "systeme-endomembranaire",
+        title: "Système endomembranaire",
+        isFree: false,
+        quickInfo: "لوزين د البروتين"
       },
-      { 
-        id: "organites-energie", 
-        title: "Chapitre 6: Mitochondrie & Plaste", 
-        isFree: false, 
-        quickInfo: "لوزينات د الطاقة (ATP)"
+      {
+        id: "ribosomes-synthese-proteique",
+        title: "Ribosomes et synthèse protéique",
+        isFree: false,
+        quickInfo: "صناعة د البروتينات"
       },
-      { 
-        id: "noyau-cell", 
-        title: "Chapitre 7: Le Noyau & Information", 
-        isFree: false, 
-        quickInfo: "الكروماتين و ADN"
+      {
+        id: "peroxysomes",
+        title: "Peroxysomes",
+        isFree: false,
+        quickInfo: "تصفية د السموم"
+      },
+      {
+        id: "noyau-division-cellulaire",
+        title: "Noyau et division cellulaire",
+        isFree: false,
+        quickInfo: "الخزنة ديال ADN"
+      },
+      {
+        id: "mitochondries-energie",
+        title: "Mitochondries et énergie",
+        isFree: false,
+        quickInfo: "لوزين د الطاقة (ATP)"
+      },
+      {
+        id: "chloroplastes-photosynthese",
+        title: "Chloroplastes et photosynthèse",
+        isFree: false,
+        quickInfo: "الماكلة بالضو"
+      },
+      {
+        id: "communication-cellulaire",
+        title: "Communication cellulaire",
+        isFree: false,
+        quickInfo: "الهضرة بين الخلايا"
       }
     ]
   },
@@ -81,7 +117,7 @@ export const COURSES = [
       { 
         id: "gametogenese", 
         title: "Partie 1: Gamétogenèse", 
-        isFree: true, 
+        isFree: false, 
         quickInfo: "Spermatogenèse & Ovogenèse"
       },
       { 
@@ -121,7 +157,7 @@ export const COURSES = [
       { 
         id: "cosmologie", 
         title: "Chapitre 1: Cosmologie & Terre", 
-        isFree: true, 
+        isFree: false, 
         quickInfo: "النظام الشمسي وتكوين الأرض"
       },
       { 
@@ -161,7 +197,7 @@ export const COURSES = [
       { 
         id: "fonctions", 
         title: "Chapitre 1: Analyse & Fonctions", 
-        isFree: true, 
+        isFree: false, 
         quickInfo: "Ln, Exp & Limites"
       },
       { 
@@ -195,7 +231,7 @@ export const COURSES = [
       { 
         id: "atomistique", 
         title: "Partie 1: Atomistique", 
-        isFree: true, 
+        isFree: false, 
         quickInfo: "الذرة، الإلكترونات، والجدول الدوري"
       },
       { 
@@ -229,7 +265,7 @@ export const COURSES = [
       { 
         id: "optique-geo", 
         title: "Partie 1: Optique Géométrique", 
-        isFree: true, 
+        isFree: false, 
         quickInfo: "العدسات والمرايا (Lentilles)"
       },
       { 
@@ -259,9 +295,9 @@ export const PRICING_DATA = {
   },
   group: {
     title: "عرض الرفاق (Besties)",
-    price: 99, // للواحد
+    price: 129, // للواحد
     info: "إيلا جيتي نتا و 2 من صحابك",
-    features: ["نفس مميزات الفردي", "حساب مستقل لكل واحد", "توفير 50 DH للواحد"]
+    features: ["نفس مميزات الفردي", "حساب مستقل لكل واحد", "توفير 20 DH للواحد"]
   }
 };
 

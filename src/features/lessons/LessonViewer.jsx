@@ -1,445 +1,247 @@
-// // import React from 'react';
-// // import { useParams } from 'react-router-dom';
-// // import { ALL_LESSONS } from '../../data/lessonsIndex';
 
-// // // Import Components
-// // import BlockIntro from './components/BlockIntro';
-// // import BlockConcept from './components/BlockConcept';
-// // import BlockTrap from './components/BlockTrap';
-// // import BlockImage from './components/BlockImage'; // New
-// // import BlockQuiz from './components/BlockQuiz';   // New
-
-// // const LessonViewer = () => {
-// //   const { id } = useParams();
-// //   const lesson = ALL_LESSONS[id];
-
-// //   if (!lesson) {
-// //     return (
-// //       <div className="p-10 text-center font-tajawal">
-// //         <h1 className="text-2xl font-black text-red-500">هاد الدرس مازال ما واجدش!</h1>
-// //       </div>
-// //     );
-// //   }
-
-// //   return (
-// //     <div className="max-w-3xl mx-auto px-6 py-10 space-y-6 font-tajawal">
-      
-// //       {/* Header */}
-// //       <header className="mb-8 text-center md:text-right">
-// //         <span className="inline-block py-1 px-3 rounded-full bg-yellow-100 text-yellow-700 text-xs font-black mb-3">
-// //           MODULE 1
-// //         </span>
-// //         <h1 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-// //           {lesson.title}
-// //         </h1>
-// //       </header>
-
-// //       {/* Blocks Rendering Engine */}
-// //       {lesson.blocks.map((block, index) => {
-// //         switch (block.type) {
-          
-// //           case 'introduction':
-// //             return <BlockIntro key={index} text={block.content.text} />;
-          
-// //           case 'concept':
-// //             return (
-// //               <BlockConcept 
-// //                 key={index} 
-// //                 title_fr={block.content.title_fr}
-// //                 explanation={block.content.explanation}
-// //                 keywords={block.content.keywords}
-// //               />
-// //             );
-
-// //           case 'analogy':
-// //             return (
-// //               <div key={index} className="bg-yellow-50 p-6 rounded-[2rem] border-r-4 border-yellow-400 font-bold italic text-yellow-900 shadow-sm my-6">
-// //                 💡 فكرة للتبسيط: {block.content}
-// //               </div>
-// //             );
-
-// //           case 'exam_trap':
-// //              // تأكد بلي block.content.text حيت فالداتا درنا content: { text: "..." }
-// //             return <BlockTrap key={index} text={block.content.text} />;
-
-// //           // +++ NEW: IMAGE BLOCK +++
-// //           case 'image':
-// //             return (
-// //               <BlockImage 
-// //                 key={index} 
-// //                 src={block.content.src} 
-// //                 caption={block.content.caption} 
-// //               />
-// //             );
-
-// //           // +++ NEW: QUIZ BLOCK +++
-// //           case 'quiz':
-// //             return (
-// //               <BlockQuiz 
-// //                 key={index}
-// //                 question={block.content.question}
-// //                 options={block.content.options}
-// //                 correctIndex={block.content.correctIndex}
-// //                 explanation={block.content.explanation}
-// //               />
-// //             );
-          
-// //           default:
-// //             return <div key={index} className="text-slate-300 italic text-center text-sm py-4">نوع غير معروف: {block.type}</div>;
-// //         }
-// //       })}
-      
-// //       {/* Footer of the lesson */}
-// //       <div className="mt-12 pt-8 border-t border-slate-100 text-center">
-// //         <button className="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:scale-105 transition-transform">
-// //           الدرس الموالي 👈
-// //         </button>
-// //       </div>
-
-// //     </div>
-// //   );
-// // };
-
-// // export default LessonViewer;
-
-// import React, { useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { ALL_LESSONS } from '../../data/lessonsIndex';
-// import { ChevronRight, ChevronLeft, RotateCcw } from 'lucide-react';
-
-// // Import Components
-// import BlockIntro from './components/BlockIntro';
-// import BlockConcept from './components/BlockConcept';
-// import BlockTrap from './components/BlockTrap';
-// import BlockImage from './components/BlockImage';
-// import BlockQuiz from './components/BlockQuiz';
-
-// const LessonViewer = () => {
-//   const { id } = useParams();
-//   const lesson = ALL_LESSONS[id];
-  
-//   // 1. هنا كنعرفو حنا فـ أي صفحة (كتبدا من 0)
-//   const [currentIndex, setCurrentIndex] = useState(0);
-
-//   if (!lesson) {
-//     return <div className="p-10 text-center font-bold text-red-500">الدرس ما واجدش!</div>;
-//   }
-
-//   // عدد الصفحات الكلي
-//   const totalBlocks = lesson.blocks.length;
-//   // البلوك الحالي اللي خاصو يبان
-//   const currentBlock = lesson.blocks[currentIndex];
-
-//   // دالة باش نمشيو للقدام
-//   const handleNext = () => {
-//     if (currentIndex < totalBlocks - 1) {
-//       setCurrentIndex(currentIndex + 1);
-//       window.scrollTo(0, 0); // كنطلعو الفوق فاش كتقلب الصفحة
-//     }
-//   };
-
-//   // دالة باش نرجعو للوراء
-//   const handlePrev = () => {
-//     if (currentIndex > 0) {
-//       setCurrentIndex(currentIndex - 1);
-//       window.scrollTo(0, 0);
-//     }
-//   };
-
-//   return (
-//     <div className="max-w-2xl mx-auto px-6 py-8 font-tajawal min-h-screen flex flex-col">
-      
-//       {/* --- Header & Progress Bar --- */}
-//       <div className="mb-8">
-//         <h1 className="text-xl font-black text-slate-900 text-center mb-4">
-//           {lesson.title}
-//         </h1>
-        
-//         {/* شريط التقدم (Progress Bar) */}
-//         <div className="w-full bg-slate-100 rounded-full h-2.5 mb-2 dir-ltr">
-//           <div 
-//             className="bg-yellow-400 h-2.5 rounded-full transition-all duration-500" 
-//             style={{ width: `${((currentIndex + 1) / totalBlocks) * 100}%` }}
-//           ></div>
-//         </div>
-//         <div className="flex justify-between text-xs font-bold text-slate-400 px-1">
-//           <span>شريحة {currentIndex + 1} من {totalBlocks}</span>
-//           <span>{Math.round(((currentIndex + 1) / totalBlocks) * 100)}%</span>
-//         </div>
-//       </div>
-
-//       {/* --- المحتوى المتغير (The Slide) --- */}
-//       <div className="flex-grow flex flex-col justify-center animate-in fade-in slide-in-from-bottom-4 duration-500 key={currentIndex}">
-//         {(() => {
-//           switch (currentBlock.type) {
-//             case 'introduction':
-//               return <BlockIntro text={currentBlock.content.text} />;
-//             case 'concept':
-//               return (
-//                 <BlockConcept 
-//                   title_fr={currentBlock.content.title_fr}
-//                   explanation={currentBlock.content.explanation}
-//                   keywords={currentBlock.content.keywords}
-//                 />
-//               );
-//             case 'analogy':
-//               return (
-//                 <div className="bg-yellow-50 p-8 rounded-[2rem] border-r-8 border-yellow-400 font-bold text-xl italic text-yellow-900 shadow-sm leading-relaxed">
-//                   💡 {currentBlock.content}
-//                 </div>
-//               );
-//             case 'exam_trap':
-//               return <BlockTrap text={currentBlock.content.text} />;
-//             case 'image':
-//               return <BlockImage src={currentBlock.content.src} caption={currentBlock.content.caption} />;
-//             case 'quiz':
-//               return (
-//                 <BlockQuiz 
-//                   question={currentBlock.content.question}
-//                   options={currentBlock.content.options}
-//                   correctIndex={currentBlock.content.correctIndex}
-//                   explanation={currentBlock.content.explanation}
-//                 />
-//               );
-//             default:
-//               return <div>نوع غير معروف</div>;
-//           }
-//         })()}
-//       </div>
-
-//       {/* --- أزرار التحكم (Navigation Buttons) --- */}
-//       <div className="mt-8 flex items-center justify-between gap-4">
-        
-//         {/* زر الرجوع (كيبان غير إيلا ما كناش فالصفحة الأولى) */}
-//         <button 
-//           onClick={handlePrev}
-//           disabled={currentIndex === 0}
-//           className={`flex-1 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all ${
-//             currentIndex === 0 
-//               ? 'opacity-0 pointer-events-none' 
-//               : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
-//           }`}
-//         >
-//           <ChevronRight size={20} /> السابق
-//         </button>
-
-//         {/* زر التقدم (أو إنهاء الدرس) */}
-//         {currentIndex === totalBlocks - 1 ? (
-//           <button 
-//             className="flex-1 py-4 rounded-2xl font-black bg-green-500 text-white shadow-lg shadow-green-200 hover:scale-105 transition-transform flex items-center justify-center gap-2"
-//             onClick={() => alert('مبروك! ساليتي الدرس 🥳')}
-//           >
-//             <RotateCcw size={20} /> ساليت الدرس
-//           </button>
-//         ) : (
-//           <button 
-//             onClick={handleNext}
-//             className="flex-1 py-4 rounded-2xl font-black bg-slate-900 text-white shadow-lg hover:scale-105 transition-transform flex items-center justify-center gap-2"
-//           >
-//             التالي <ChevronLeft size={20} />
-//           </button>
-//         )}
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default LessonViewer;
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ALL_LESSONS } from '../../data/lessonsIndex';
-import { ChevronRight, ChevronLeft, RotateCcw, Home, Sparkles } from 'lucide-react';
+import { ChevronRight, ChevronLeft, RotateCcw, X, Sparkles } from 'lucide-react';
 
 // Import Components
 import BlockIntro from './components/BlockIntro';
 import BlockConcept from './components/BlockConcept';
 import BlockTrap from './components/BlockTrap';
+import BlockAdvice from './components/BlockAdvice';
 import BlockImage from './components/BlockImage';
+import BlockComparison from './components/BlockComparison';
 import BlockQuiz from './components/BlockQuiz';
+import BlockChecklist from './components/BlockChecklist';
 
 const LessonViewer = () => {
   const { id } = useParams();
   const lesson = ALL_LESSONS[id];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState('next'); // باش نعرفو اتجاه الانيميشن
 
-  // Scroll to top smooth فاش كتبدل الشريحة
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentIndex]);
-
-  if (!lesson) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 font-tajawal">
-        <h1 className="text-3xl font-black text-slate-900 mb-2">الدرس مفقود 🛑</h1>
-        <p className="text-slate-500 mb-6">تأكد من الرابط ولا ارجع للصفحة الرئيسية</p>
-        <Link to="/" className="px-6 py-3 bg-yellow-400 text-slate-900 rounded-xl font-bold hover:scale-105 transition-transform">
-          الرجوع للرئيسية
-        </Link>
-      </div>
-    );
-  }
+  if (!lesson) return <div className="h-screen flex items-center justify-center font-bold text-slate-500">الدرس غير موجود</div>;
 
   const totalBlocks = lesson.blocks.length;
   const currentBlock = lesson.blocks[currentIndex];
   const progress = ((currentIndex + 1) / totalBlocks) * 100;
 
   const handleNext = () => {
-    if (currentIndex < totalBlocks - 1) {
-      setDirection('next');
-      setCurrentIndex(prev => prev + 1);
-    }
+    if (currentIndex < totalBlocks - 1) setCurrentIndex(prev => prev + 1);
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setDirection('prev');
-      setCurrentIndex(prev => prev - 1);
-    }
+    if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] font-tajawal overflow-hidden relative">
+    // PARENT: شاد الشاشة كاملة (h-screen) ومقسم عموديا (flex-col)
+    <div className="h-screen w-full bg-[#F0F4F8] font-tajawal flex flex-col overflow-hidden relative selection:bg-yellow-200">
       
-      {/* --- الخلفية الجمالية (Ambient Background) --- */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* Background Decor */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/40 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-yellow-100/40 rounded-full blur-[80px] pointer-events-none" />
 
-      <div className="max-w-3xl mx-auto px-4 py-6 md:py-10 relative z-10 flex flex-col min-h-screen">
+      {/* --- 1. HEADER (Fixed Height) --- */}
+      {/* shrink-0: كيعني ممنوع يصغار واخا المحتوى يكثر */}
+      <div className="h-16 px-4 md:px-6 flex items-center justify-between shrink-0 z-20 bg-white/60 backdrop-blur-md border-b border-white/50">
+        <Link to="/" className="text-slate-400 hover:text-slate-800 transition-colors p-1">
+          <X size={24} />
+        </Link>
         
-        {/* --- HEADER: Navigation & Progress --- */}
-        <header className="mb-8 md:mb-12">
-          {/* Top Bar */}
-          <div className="flex items-center justify-between mb-6">
-            <Link to="/" className="p-3 bg-white border border-slate-100 rounded-2xl text-slate-400 hover:text-slate-900 hover:shadow-lg transition-all">
-              <Home size={20} />
-            </Link>
-            <div className="bg-white/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white shadow-sm">
-              <span className="text-[10px] font-black tracking-widest text-slate-400 uppercase">
-                MODULE 1 • {lesson.id.toUpperCase()}
-              </span>
+        {/* Progress Bar */}
+        <div className="flex-1 max-w-lg mx-4 flex flex-col justify-center">
+            <div className="flex justify-between text-[10px] font-black text-slate-500 px-1 uppercase tracking-wider mb-1">
+                <span className="truncate max-w-[150px]">{lesson.title}</span>
+                <span>{currentIndex + 1} / {totalBlocks}</span>
             </div>
-            <div className="w-10"></div> {/* Spacer for balance */}
-          </div>
-
-          {/* Title & Progress */}
-          <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-black text-slate-900 mb-6 leading-tight drop-shadow-sm">
-              {lesson.title}
-            </h1>
-            
-            <div className="relative h-2 w-full bg-slate-200/60 rounded-full overflow-hidden">
-              <div 
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full transition-all duration-700 ease-out shadow-[0_0_10px_rgba(250,204,21,0.5)]"
-                style={{ width: `${progress}%` }}
-              ></div>
+            <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
+                <div 
+                    className="h-full bg-yellow-400 rounded-full transition-all duration-300 ease-out"
+                    style={{ width: `${progress}%` }}
+                />
             </div>
-            <div className="flex justify-between mt-2 text-[10px] font-bold text-slate-400 px-1">
-              <span>البداية</span>
-              <span>{Math.round(progress)}% مكتمل</span>
-            </div>
-          </div>
-        </header>
-
-        {/* --- MAIN CARD (The Stage) --- */}
-        <main className="flex-grow perspective-1000">
-          <div 
-            key={currentIndex}
-            className={`
-              bg-white/80 backdrop-blur-xl border border-white/50 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] 
-              rounded-[2.5rem] p-6 md:p-10 min-h-[400px] flex flex-col justify-center relative overflow-hidden
-              animate-in fade-in duration-500 fill-mode-forwards
-              ${direction === 'next' ? 'slide-in-from-bottom-8' : 'slide-in-from-top-8'}
-            `}
-          >
-            {/* Decoration Element */}
-            <div className="absolute top-0 right-0 p-6 opacity-5">
-              <Sparkles size={100} />
-            </div>
-
-            {/* Content Switcher */}
-            <div className="relative z-10">
-              {(() => {
-                switch (currentBlock.type) {
-                  case 'introduction':
-                    return <BlockIntro text={currentBlock.content.text} />;
-                  case 'concept':
-                    return (
-                      <BlockConcept 
-                        title_fr={currentBlock.content.title_fr}
-                        explanation={currentBlock.content.explanation}
-                        keywords={currentBlock.content.keywords}
-                      />
-                    );
-                  case 'analogy':
-                    return (
-                      <div className="bg-gradient-to-br from-yellow-50 to-white p-8 rounded-[2rem] border-2 border-yellow-100 shadow-sm relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-2 h-full bg-yellow-400"></div>
-                        <h4 className="font-black text-yellow-500 text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
-                          <Sparkles size={16} /> تبسيط ذكي
-                        </h4>
-                        <p className="font-bold text-xl md:text-2xl italic text-slate-800 leading-relaxed">
-                          "{currentBlock.content}"
-                        </p>
-                      </div>
-                    );
-                  case 'exam_trap':
-                    return <BlockTrap text={currentBlock.content.text} />;
-                  case 'image':
-                    return <BlockImage src={currentBlock.content.src} caption={currentBlock.content.caption} />;
-                  case 'quiz':
-                    return (
-                      <BlockQuiz 
-                        question={currentBlock.content.question}
-                        options={currentBlock.content.options}
-                        correctIndex={currentBlock.content.correctIndex}
-                        explanation={currentBlock.content.explanation}
-                      />
-                    );
-                  default:
-                    return <div className="text-center text-slate-300">جاري تحميل المحتوى...</div>;
-                }
-              })()}
-            </div>
-          </div>
-        </main>
-
-        {/* --- CONTROLS (The Dashboard) --- */}
-        <footer className="mt-8 grid grid-cols-2 gap-4">
-          <button 
-            onClick={handlePrev}
-            disabled={currentIndex === 0}
-            className={`
-              group flex items-center justify-center gap-3 py-4 rounded-2xl font-bold text-slate-600 bg-white border border-slate-200 shadow-sm transition-all
-              ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-50 hover:border-slate-300 hover:shadow-md active:scale-95'}
-            `}
-          >
-            <ChevronRight size={20} className="group-hover:-translate-x-1 transition-transform" />
-            السابق
-          </button>
-
-          {currentIndex === totalBlocks - 1 ? (
-            <button 
-              className="group flex items-center justify-center gap-3 py-4 rounded-2xl font-black text-slate-900 bg-gradient-to-r from-yellow-400 to-yellow-500 shadow-lg shadow-yellow-200 transition-all hover:scale-[1.02] hover:shadow-xl active:scale-95"
-              onClick={() => alert('🎉 مبروك! راك ناضي. ساليتي الدرس.')}
-            >
-              <RotateCcw size={20} className="group-hover:rotate-180 transition-transform duration-500" />
-              إنهاء الدرس
-            </button>
-          ) : (
-            <button 
-              onClick={handleNext}
-              className="group flex items-center justify-center gap-3 py-4 rounded-2xl font-black text-white bg-slate-900 shadow-lg shadow-slate-200 transition-all hover:bg-slate-800 hover:scale-[1.02] active:scale-95"
-            >
-              التالي
-              <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-            </button>
-          )}
-        </footer>
-
+        </div>
+        <div className="w-6"></div>
       </div>
+
+      {/* --- 2. SCROLLABLE MIDDLE AREA --- */}
+      {/* flex-1: خود المساحة اللي بقات كاملة */}
+      {/* overflow-y-auto: إيلا الكويز طويل، سكرولي هنا لداخل فقط */}
+      <div className="flex-1 overflow-y-auto flex flex-col items-center justify-center p-4 relative z-10 custom-scrollbar">
+        
+        <div className="w-full max-w-3xl my-auto"> {/* my-auto: باش يجي فالوسط عموديا إيلا كان قصير */}
+            <div 
+                key={currentIndex} 
+                className="animate-in fade-in zoom-in-95 duration-300 ease-out flex flex-col items-center text-center"
+            >
+                {(() => {
+                    switch (currentBlock.type) {
+                    
+                    case 'introduction':
+                        return (
+                            <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+                                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-black mb-4">بداية</span>
+                                <BlockIntro text={currentBlock.content.text} />
+                            </div>
+                        );
+
+                    case 'concept':
+                        return (
+                            <div className="w-full">
+                                <BlockConcept 
+                                    title_fr={currentBlock.content.title_fr}
+                                    explanation={currentBlock.content.explanation}
+                                    keywords={currentBlock.content.keywords}
+                                />
+                            </div>
+                        );
+
+                    case 'analogy':
+                        return (
+                            <div className="relative bg-amber-50 p-6 md:p-8 rounded-3xl border border-amber-100 shadow-sm max-w-2xl mx-auto transition-all hover:shadow-md hover:border-amber-200 overflow-hidden group">
+                            
+                            {/* --- الزوايا (Corners) --- */}
+                            
+                            {/* RR Branding - Top Left */}
+                            <div className="absolute top-4 left-5 text-amber-900/10 font-black text-xs tracking-tighter select-none">
+                                RR
+                            </div>
+
+                            {/* Confused Emoji - Top Right */}
+                            <div className="absolute top-4 right-4 text-2xl opacity-50 rotate-12 group-hover:rotate-0 group-hover:scale-110 group-hover:opacity-100 transition-all duration-300 cursor-help" title="كيفاش؟">
+                                😉
+                            </div>
+
+                            {/* --- المحتوى --- */}
+                            <div className="flex flex-col items-center text-center mt-2">
+                                
+                                {/* الأيقونة والعنوان الصغير */}
+                                <div className="flex items-center gap-2 mb-3 text-amber-600/80">
+                                <Sparkles size={16} className="text-amber-500" />
+                                <span className="font-bold text-[10px] uppercase tracking-widest">
+                                    تبسيط للفهم
+                                </span>
+                                <Sparkles size={16} className="text-amber-500" />
+                                </div>
+
+                                {/* النص الرئيسي (كيوت وصغير) */}
+                                <p className="font-bold text-lg md:text-xl text-slate-800 leading-relaxed px-4">
+                                "{currentBlock.content}"
+                                </p>
+                                
+                                {/* زخرفة صغيرة لتحت */}
+                                <div className="mt-5 flex justify-center gap-1.5 opacity-40">
+                                <div className="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
+                                <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+                                <div className="w-1.5 h-1.5 rounded-full bg-amber-600"></div>
+                                </div>
+                            </div>
+                            </div>
+                        );
+
+                    case 'exam_trap':
+                        return <BlockTrap text={currentBlock.content.text} />;
+
+                    case 'advice':
+                        return (
+                            <BlockAdvice 
+                                text={currentBlock.content.text} 
+                                title={currentBlock.content.title} // اختياري
+                            />
+                        );
+                    
+                    case 'comparison':
+                        return (
+                            <BlockComparison 
+                            leftTitle={currentBlock.content.leftTitle}
+                            rightTitle={currentBlock.content.rightTitle}
+                            leftItems={currentBlock.content.leftItems}
+                            rightItems={currentBlock.content.rightItems}
+                            />
+                        );
+                        
+                    case 'checklist':
+                        return (
+                            <BlockChecklist 
+                            title={currentBlock.content.title}
+                            items={currentBlock.content.items}
+                            />
+                        );
+
+                    case 'image':
+                        return (
+                            <div className="w-full flex flex-col items-center">
+                                {/* نقصت الارتفاع الأقصى للصورة باش ما تعمرش الشاشة */}
+                                <div className="max-h-[45vh] overflow-hidden rounded-2xl shadow-md border-4 border-white bg-white">
+                                    <img 
+                                        src={currentBlock.content.src} 
+                                        alt="Illustration" 
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+                                <p className="mt-3 text-slate-500 font-bold text-sm bg-white/60 px-3 py-1 rounded-lg backdrop-blur-sm">
+                                    {currentBlock.content.caption}
+                                </p>
+                            </div>
+                        );
+
+                    case 'quiz':
+                        return (
+                            <div className="w-full max-w-2xl text-right dir-rtl"> 
+                                {/* Quiz Block */}
+                                <BlockQuiz 
+                                    question={currentBlock.content.question}
+                                    options={currentBlock.content.options}
+                                    correctIndex={currentBlock.content.correctIndex}
+                                    explanation={currentBlock.content.explanation}
+                                />
+                            </div>
+                        );
+
+                    default:
+                        return <div>Loading...</div>;
+                    }
+                })()}
+            </div>
+        </div>
+      </div>
+
+      {/* --- 3. FIXED FOOTER (Always Visible) --- */}
+      {/* shrink-0: باش ما يتفعصش إيلا الكويز طويل */}
+      <div className="h-20 px-4 md:px-6 flex items-center justify-center shrink-0 z-30 bg-white border-t border-slate-100 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)]">
+        <div className="w-full max-w-2xl grid grid-cols-2 gap-4">
+            <button 
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className={`
+                    py-3 rounded-xl font-bold text-base border-2 border-slate-100 text-slate-500 bg-slate-50 transition-all flex items-center justify-center gap-2
+                    ${currentIndex === 0 
+                        ? 'opacity-0 pointer-events-none' 
+                        : 'hover:bg-slate-100 hover:border-slate-200 active:scale-95'}
+                `}
+            >
+                <ChevronRight size={20} />
+                <span>سابق</span>
+            </button>
+
+            {currentIndex === totalBlocks - 1 ? (
+                 <button 
+                    className="py-3 rounded-xl font-black text-base bg-green-500 text-white shadow-lg shadow-green-100 hover:bg-green-600 active:scale-95 transition-all flex items-center justify-center gap-2"
+                    onClick={() => alert('🎉 ساليتي الدرس!')}
+                >
+                    <RotateCcw size={20} /> <span>إنهاء</span>
+                </button>
+            ) : (
+                <button 
+                    onClick={handleNext}
+                    className="py-3 rounded-xl font-black text-base bg-slate-900 text-white shadow-lg shadow-slate-200 hover:bg-slate-800 active:scale-95 transition-all flex items-center justify-center gap-2"
+                >
+                    <span>التالي</span> <ChevronLeft size={20} />
+                </button>
+            )}
+        </div>
+      </div>
+
     </div>
   );
 };

@@ -1,17 +1,17 @@
 import React from 'react';
-import { Zap, Heart, Github, Linkedin, Instagram, ExternalLink, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { Zap, Heart, Github, Linkedin, Instagram, ExternalLink, ShieldCheck, ArrowUpRight, CalendarClock, Users, Info } from 'lucide-react';
 import { FOOTER_DATA } from './landingData';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="relative bg-white border-t border-slate-100 pt-20 pb-10 px-6 overflow-hidden">
-      {/* لمسة فنية: خلفية باهتة جداً */}
+      {/* Aesthetic Background Effect */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent"></div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         
-        {/* 1. البراند والوضعية */}
+        {/* 1. Brand and Description */}
         <div className="space-y-6">
           <div className="flex items-center gap-2 group cursor-pointer">
             <div className="bg-slate-900 p-2 rounded-xl group-hover:bg-yellow-400 transition-colors duration-500">
@@ -19,16 +19,33 @@ const Footer = () => {
             </div>
             <span className="text-xl font-black tracking-tighter text-slate-900">RR STUDENT</span>
           </div>
-          <p className="text-slate-500 text-sm leading-relaxed font-medium">
-            أول منصة مغربية لتعلم البيولوجيا بالداريجة. كنحولو التعقيد لبساطة باش تنجح فـ قرايتك.
-          </p>
-          <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold border border-green-100">
-            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-            System Status: Online
+
+          <div className="space-y-4">
+            <p className="text-slate-500 text-sm leading-relaxed font-medium">
+              أول منصة مغربية لتبسيط دروس شعبة البيولوجيا بالداريجة.
+            </p>
+
+            {/* Structured Info Points */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                <CalendarClock size={16} className="text-blue-500 shrink-0" />
+                <span>التسجيل يفتح <span className="font-bold text-slate-900">4 مرات</span> فقط في السنة.</span>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+                <Users size={16} className="text-green-500 shrink-0" />
+                <span> لا نتجاوز <span className="font-bold text-slate-900">850 طالب</span> في كل دفعة من جميع كليات العلوم المغربية.</span>
+              </div>
+
+              <div className="bg-yellow-50 border border-yellow-100 p-2.5 rounded-xl flex items-start gap-2 text-[11px] text-yellow-800 font-bold mt-2 leading-tight">
+                <Info size={14} className="text-yellow-600 shrink-0 mt-0.5" />
+                <span>لسنا معهد دعم، بل منصة "تعلم ذاتي" (Self-Learning Platform).</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* 2. روابط سريعة (Navigation) */}
+        {/* 2. Quick Links */}
         <div>
           <h4 className="font-black text-slate-900 mb-6 text-xs uppercase tracking-[0.2em]">تصفح المنصة</h4>
           <ul className="space-y-4">
@@ -43,7 +60,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* 3. الفريق البيداغوجي (الحيلة) */}
+        {/* 3. Scientific Review */}
         <div>
           <h4 className="font-black text-slate-900 mb-6 text-xs uppercase tracking-[0.2em]">المراجعة العلمية</h4>
           <ul className="space-y-5">
@@ -63,12 +80,14 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* 4. تواصل مع المطور */}
-        <div className="bg-yellow-400 p-6 rounded-[2rem] border border-slate-100">
+        {/* 4. Developer Contact */}
+        <div className="bg-yellow-400 p-6 rounded-[2rem] border border-slate-100 self-start">
           <h4 className="font-black text-slate-900 mb-4 text-xs uppercase tracking-widest text-center">Design & Dev</h4>
           <div className="text-center space-y-4">
-            <p className="text-slate-600 text-sm font-bold">
-               تم تطوير المنصة برمجيا بواسطة  {FOOTER_DATA.developer.name + " - " + FOOTER_DATA.developer.role}
+            <p className="text-slate-900 text-sm font-bold leading-tight">
+               تم تطوير المنصة برمجيا بواسطة<br/>
+               <span className="block mt-1 text-slate-800 opacity-80">{FOOTER_DATA.developer.name}</span>
+               <span className="text-[10px] uppercase opacity-60 block">{FOOTER_DATA.developer.role}</span>
             </p>
             <div className="flex justify-center gap-3">
               {FOOTER_DATA.developer.links.map((link, i) => (
@@ -87,16 +106,6 @@ const Footer = () => {
           </div>
         </div>
 
-      </div>
-
-      {/* شريط الحقوق */}
-      <div className="max-w-6xl mx-auto pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-300">
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em]">
-          © 2026 RR STUDENT — LIMITED EDITION
-        </p>
-        <p className="flex items-center gap-1.5 text-[10px] font-black italic">
-          BUILT FOR BIOLOGISTS <Heart size={12} className="text-red-400 fill-red-400" /> BY A BIOLOGIST
-        </p>
       </div>
     </footer>
   );

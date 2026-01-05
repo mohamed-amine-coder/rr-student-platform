@@ -37,7 +37,7 @@ const CourseCard = ({ id, title, price, chapters }) => {
       <div className="text-left pl-2 border-r border-slate-50 flex flex-col items-end">
         <span className="text-sm font-black text-slate-900">{price} DH</span>
         <div className="mt-1 p-1.5 bg-slate-50 rounded-lg group-hover:bg-slate-900 group-hover:text-white transition-all">
-          <ChevronLeft size={16} />
+          <ChevronLeft size={16}/>
         </div>
       </div>
     </Link>

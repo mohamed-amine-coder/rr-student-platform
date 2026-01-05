@@ -38,8 +38,8 @@ const CoursesSection = () => {
 
         {/* Footer صغير */}
         <div className="mt-12 text-center">
-           <p className="text-[10px] font-bold text-slate-300 uppercase tracking-[0.3em]">
-             جميع الدروس مراجعة من طرف مختصين بـ FSSM
+           <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">
+             جميع الدروس مراجعة من طرف مختصين بـ SVTU
            </p>
         </div>
 

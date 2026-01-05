@@ -20,11 +20,11 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"> {/* Gap صغير */}
           
           {/* 1. كارت الاشتراك الفردي (Compact) */}
-          <div className="bg-slate-50 border border-slate-100 p-6 rounded-3xl hover:border-slate-200 transition-all flex flex-col justify-between">
+          <div className="bg-slate-500 border border-slate-100 p-6 rounded-3xl hover:border-slate-200 transition-all flex flex-col justify-between">
              <div>
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-slate-400 font-black text-[10px] uppercase tracking-widest block mb-1">Personal Pass</span>
+                    <span className="text-slate-200 font-black text-[10px] uppercase tracking-widest block mb-1">Personal Pass</span>
                     <h3 className="text-xl font-black text-slate-900">{PRICING_DATA.solo.title}</h3>
                   </div>
                   <div className="text-right">
@@ -35,7 +35,7 @@ const PricingSection = () => {
 
                 <div className="space-y-3 mb-6">
                   {PRICING_DATA.solo.features.map((feat, i) => (
-                    <div key={i} className="flex items-center gap-2 text-slate-600 font-bold text-xs">
+                    <div key={i} className="flex items-center gap-2 text-slate-200 font-bold text-xs">
                       <CheckCircle2 size={14} className="text-slate-300" /> {feat}
                     </div>
                   ))}

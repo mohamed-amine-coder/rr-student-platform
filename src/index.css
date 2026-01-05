@@ -8,3 +8,13 @@
 body {
   font-family: 'Tajawal', sans-serif;
 }
+
+/* إخفاء السكرول بار مع الحفاظ على الوظيفية */
+.custom-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.custom-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
