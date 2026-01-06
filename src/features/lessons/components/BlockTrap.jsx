@@ -3,18 +3,15 @@ import { AlertTriangle } from 'lucide-react';
 
 const BlockTrap = ({ text }) => {
   return (
-    <div className="my-6 bg-red-50 border-2 border-dashed border-red-200 p-5 rounded-3xl flex items-start gap-4 animate-in fade-in zoom-in duration-500">
-      <div className="bg-red-500 text-white p-2 rounded-xl shrink-0 animate-pulse">
-        <AlertTriangle size={20} />
+    <div className="bg-white border-2 border-rose-400 border-b-[6px] rounded-3xl p-6 md:p-8 mb-6">
+      <div className="flex items-center gap-3 mb-4">
+        <AlertTriangle className="text-rose-500" size={24} />
+        <h3 className="font-black text-rose-500 text-sm uppercase tracking-widest">رد بالك!</h3>
       </div>
-      <div>
-        <h4 className="font-black text-red-600 text-sm mb-1 uppercase tracking-tighter">رد بالـك فـ الامتحان!</h4>
-        <p className="text-red-900/80 font-bold text-sm leading-relaxed">
-          {text}
-        </p>
-      </div>
+      <p className="text-slate-700 font-bold text-lg leading-relaxed">
+        {text}
+      </p>
     </div>
   );
 };
-
 export default BlockTrap;

@@ -1,66 +1,56 @@
 import React, { useState } from 'react';
-import { HelpCircle, CheckCircle2, XCircle } from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
 
 const BlockQuiz = ({ question, options, correctIndex, explanation }) => {
   const [selected, setSelected] = useState(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle, correct, wrong
 
-  const handleSelect = (index) => {
-    if (!isSubmitted) setSelected(index);
+  const handleCheck = () => {
+    if (selected === null) return;
+    setStatus(selected === correctIndex ? 'correct' : 'wrong');
   };
-
-  const handleSubmit = () => {
-    if (selected !== null) setIsSubmitted(true);
-  };
-
-  const isCorrect = selected === correctIndex;
 
   return (
-    <div className="my-8 bg-slate-900 text-white p-6 rounded-[2rem] shadow-xl border-4 border-slate-800">
-      <div className="flex items-center gap-3 mb-6">
-        <HelpCircle className="text-yellow-400" />
-        <h3 className="font-bold text-lg">{question}</h3>
-      </div>
-
+    <div className="bg-white border-2 border-slate-200 border-b-[6px] rounded-3xl p-6 md:p-8 mb-6">
+      <h3 className="font-black text-slate-700 text-xl mb-6 leading-tight">
+        {question}
+      </h3>
+      
       <div className="space-y-3">
-        {options.map((option, index) => (
-          <div
-            key={index}
-            onClick={() => handleSelect(index)}
-            className={`p-4 rounded-xl cursor-pointer font-medium transition-all border-2 ${
-              selected === index
-                ? 'bg-yellow-400 text-slate-900 border-yellow-400'
-                : 'bg-slate-800 border-slate-700 hover:bg-slate-700'
-            }`}
-          >
-            {option}
-          </div>
-        ))}
+        {options.map((option, index) => {
+          let style = "border-slate-200 hover:bg-slate-50";
+          if (selected === index) style = "border-blue-400 bg-blue-50 text-blue-600 border-b-4";
+          if (status !== 'idle' && index === correctIndex) style = "border-green-500 bg-green-100 text-green-700";
+          if (status === 'wrong' && selected === index) style = "border-red-500 bg-red-100 text-red-700";
+
+          return (
+            <div
+              key={index}
+              onClick={() => status === 'idle' && setSelected(index)}
+              className={`p-4 rounded-2xl border-2 font-bold text-lg cursor-pointer transition-all ${style}`}
+            >
+              {option}
+            </div>
+          );
+        })}
       </div>
 
-      {!isSubmitted ? (
-        <button
-          onClick={handleSubmit}
-          disabled={selected === null}
-          className={`mt-6 w-full py-3 rounded-xl font-black transition-all ${
-            selected === null 
-              ? 'bg-slate-700 text-slate-500 cursor-not-allowed' 
-              : 'bg-green-500 hover:bg-green-400 text-white shadow-lg shadow-green-900/20'
-          }`}
+      {status === 'idle' && (
+        <button 
+          onClick={handleCheck}
+          className="w-full mt-6 py-3 bg-slate-900 text-white rounded-xl font-black border-b-4 border-slate-700 active:border-b-0 active:translate-y-[4px] transition-all"
         >
-          تحقق من الجواب
+          تحقق
         </button>
-      ) : (
-        <div className={`mt-6 p-4 rounded-xl flex items-start gap-3 ${isCorrect ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
-          {isCorrect ? <CheckCircle2 className="shrink-0" /> : <XCircle className="shrink-0" />}
-          <div>
-            <p className="font-bold mb-1">{isCorrect ? "صحيح! تبارك الله عليك" : "خطأ، حاول مرة أخرى"}</p>
-            <p className="text-sm text-slate-300">{explanation}</p>
-          </div>
+      )}
+
+      {status !== 'idle' && (
+        <div className={`mt-6 p-4 rounded-2xl font-bold ${status === 'correct' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+          {status === 'correct' ? "✅ برافو عليك!" : "❌ ماشي مشكل، حاول تفهم:"}
+          <p className="text-sm font-medium mt-1 opacity-90">{explanation}</p>
         </div>
       )}
     </div>
   );
 };
-
 export default BlockQuiz;

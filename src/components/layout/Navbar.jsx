@@ -19,17 +19,33 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links - <a> كتخدم حسن مع /# */}
-        <div className="hidden md:flex gap-8 text-sm font-bold text-slate-500">
-          {NAV_LINKS.map((link, i) => (
-            <a 
-              key={i} 
-              href={link.href} // هنا كياخد /#pricing من الداتا
-              className="hover:text-slate-900 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
+<div className="hidden md:flex items-center gap-3">
+  {NAV_LINKS.map((link, i) => (
+    <a 
+      key={i} 
+      href={link.href}
+      className="
+        /* 1. الشكل الأساسي */
+        relative overflow-hidden group px-6 py-2.5 rounded-xl
+        bg-yellow-100 border border-yellow-200
+        text-slate-900 text-sm font-black
+        
+        /* 2. الظل والأنيميشن الخفيفة */
+        shadow-[0_4px_0_rgb(234,179,8)] 
+        active:shadow-none active:translate-y-[4px]
+        transition-all duration-200
+      "
+    >
+      {/* 3. النص (درناه فـ span باش يجي فوق الوميض) */}
+      <span className="relative z-10">
+        {link.label}
+      </span>
+
+      {/* 4. الوميض السحري (The Flash Effect) ⚡ */}
+      <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/50 to-transparent z-0"></div>
+    </a>
+  ))}
+</div>
 
         {/* Actions */}
         <div className="flex items-center gap-4">
@@ -38,7 +54,7 @@ const Navbar = () => {
             to="/login" 
             className="hidden md:block bg-slate-900 text-white px-5 py-2 rounded-xl font-bold text-sm hover:scale-105 transition-all"
           >
-            دخول
+            التسجيل مغلق
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -72,7 +88,7 @@ const Navbar = () => {
             className="block w-full text-center bg-slate-900 text-white py-3 rounded-xl font-bold text-sm shadow-lg shadow-slate-200"
             onClick={() => setIsOpen(false)}
           >
-            دخول
+            التسجيل مغلق
           </Link>
         </div>
       )}
