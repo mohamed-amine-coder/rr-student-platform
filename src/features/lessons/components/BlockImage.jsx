@@ -36,7 +36,7 @@ const BlockImage = ({ src, caption }) => {
           alt={caption} 
           // منع النقر بالزر الأيمن (Right Click)
           onContextMenu={(e) => e.preventDefault()} 
-          className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-700 cursor-default"
+          className="w-full h-auto object-contain md:h-80 hover:scale-105 transition-transform duration-700 cursor-default"
         />
 
         {/* 2. العلامة المائية (Watermark) */}

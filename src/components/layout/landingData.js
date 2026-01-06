@@ -27,7 +27,7 @@ export const COURSES = [
     id: "bio-cell",
     title: "Biologie Cellulaire",
     description: "استكشاف الخلية: من الغشاء السيتوبلازمي حتى للنواة.",
-    price: 29, // ثمن رمزي
+    price: 19, // ثمن رمزي
     chapters: [
       {
         id: "introduction-générale-biologie-cellulaire",
@@ -44,7 +44,7 @@ export const COURSES = [
       {
         id: "constituants-chimiques",
         title: "Constituants chimiques de la cellule",
-        isFree: true, 
+        isFree: false, 
         quickInfo: "المكونات د الخلية (الماء، الأملاح...)"
       },
       {
@@ -115,12 +115,12 @@ export const COURSES = [
     id: "embryo-histo",
     title: "Embryologie & Histologie",
     description: "كيفاش كيتكون الجنين (Embryo) وشنو هي الأنسجة (Tissus) اللي فينا.",
-    price: 29,
+    price: 39,
     chapters: [
       {
         id: "introduction-générale-biologie-cellulaire",
         title: "مقدمة في شعبة البيولوجيا - نصائح للنجاح",
-        isFree: true, // ✅ خليناها فابور كـ مدخل
+        isFree: false, // ✅ خليناها فابور كـ مدخل
         quickInfo: " البيولوجيا الخلوية: شنو و علاش؟"
       },
       { 
@@ -161,7 +161,7 @@ export const COURSES = [
     id: "geologie",
     title: "Géologie Générale",
     description: "فهم كوكب الأرض: من الانفجار العظيم (Big Bang) حتى للبراكين.",
-    price: 29,
+    price: 39,
     chapters: [
       { 
         id: "cosmologie", 
@@ -201,7 +201,7 @@ export const COURSES = [
     id: "math-s1",
     title: "Mathématiques (S1)",
     description: "الماط اللي غاتحتاجو فـ البيولوجيا (Statistiques & Analyse).",
-    price: 29,
+    price: 39,
     chapters: [
       { 
         id: "fonctions", 
@@ -235,7 +235,7 @@ export const COURSES = [
     id: "chimie-s1",
     title: "Chimie Générale",
     description: "بنية المادة (Atomistique) والتفاعلات الحرارية (Thermochimie).",
-    price: 29,
+    price: 39,
     chapters: [
       { 
         id: "atomistique", 
@@ -269,7 +269,7 @@ export const COURSES = [
     id: "physique-s1",
     title: "Physique I (Optique & Thermo)",
     description: "الفيزياء الأساسية للبيولوجيست.",
-    price: 29,
+    price: 39,
     chapters: [
       { 
         id: "optique-geo", 

@@ -19,7 +19,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links - <a> كتخدم حسن مع /# */}
-<div className="hidden md:flex items-center gap-3">
+<div className="hidden md:flex items-center gap-3 cursor-pointer">
   {NAV_LINKS.map((link, i) => (
     <a 
       key={i} 
