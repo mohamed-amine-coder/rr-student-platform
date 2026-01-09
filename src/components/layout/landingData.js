@@ -3,9 +3,7 @@
 //   { label: "المواد", href: "/#courses" },
 //   { label: "الأثمنة", href: "/#pricing" },
 // ];
-export const NAV_LINKS = [
-  { label: "التسجيل يفتح 4 مرات فقط في السنة، لا نتجاوز 850 طالب في كل دفعة من جميع كليات العلوم المغربية." },
-];
+
 
 export const PROBLEMS = [
   "فرنسية أكاديمية معقدة فـ كاع الموديلات",
@@ -44,7 +42,7 @@ export const COURSES = [
       {
         id: "constituants-chimiques",
         title: "Constituants chimiques de la cellule",
-        isFree: false, 
+        isFree: true, 
         quickInfo: "المكونات د الخلية (الماء، الأملاح...)"
       },
       {

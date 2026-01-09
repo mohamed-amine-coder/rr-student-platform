@@ -5,6 +5,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
+import JoinWaitlist from './pages/JoinWaitlist';
 import LessonViewer from './features/lessons/LessonViewer';
 import ModulePage from './pages/ModulePage';
 import ScrollToTop from './components/ScrollToTop';
@@ -19,6 +20,8 @@ function App() {
         <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="*" element={<Home />} />
+            <Route path="join-waitlist" element={<JoinWaitlist />} />
             <Route path="/lesson/:id" element={<LessonViewer />} />
             <Route path="/module/:moduleId" element={<ModulePage />} />
           </Routes>

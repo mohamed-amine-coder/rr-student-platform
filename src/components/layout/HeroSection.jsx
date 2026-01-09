@@ -64,7 +64,8 @@ const HeroSection = () => {
                 {/* الـ Badge اللي كيتحرك يبقى ديما الفوق */}
                 <div className="absolute top-8 left-8 bg-white p-3 rounded-2xl shadow-lg flex items-center gap-2 animate-bounce z-20">
                     <div className="bg-green-100 p-1 rounded-full"><CheckCircle2 size={16} className="text-green-600"/></div>
-                    <span className="text-xs font-bold text-slate-900 underline decoration-yellow-400">Validé les exames</span>
+                    {/* <span className="text-xs font-bold text-slate-900 underline decoration-yellow-400">Validé les exames</span> */}
+                    <span className="text-xs font-bold text-slate-900 underline decoration-yellow-400">Beta-version: 2025/2026</span>
                 </div>
             </div>
         </div>
