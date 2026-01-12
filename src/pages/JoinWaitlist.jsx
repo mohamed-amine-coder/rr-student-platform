@@ -74,8 +74,8 @@ const JoinWaitlist = () => {
         <div className="md:w-1/2 bg-slate-50 p-6 md:p-12 border-b md:border-b-0 md:border-r border-slate-100">
             <div className="mb-6">
                 <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">المرحلة 1 من 2</span>
-                <h2 className="text-2xl md:text-3xl font-black text-slate-900">شنو هو الهدف ديالك؟ 🎯</h2>
-                <p className="text-slate-500 mt-2 text-sm">اختار العرض اللي كيناسبك باش نوجدو ليك بلاصتك.</p>
+                <h2 className="text-2xl md:text-3xl font-black text-slate-900">فاش بغيتي تشترك ملي يتفتح التسجيل ؟ 🎯</h2>
+                <p className="text-slate-800 mt-3 text-sm font-bold">اختار العرض اللي كيناسبك باش نوجدو ليك بلاصتك.</p>
             </div>
 
             <div className="space-y-3">
@@ -84,7 +84,7 @@ const JoinWaitlist = () => {
                     key={option.id}
                     type="button"
                     onClick={() => setFormData({...formData, interest: option.id})}
-                    className={`w-full relative flex items-center p-4 rounded-2xl border-2 transition-all duration-300 group ${
+                    className={`w-full relative flex items-center p-4 rounded-2xl border-2 transition-all duration-300 group cursor-pointer ${
                       formData.interest === option.id 
                         ? 'border-slate-900 bg-white shadow-lg scale-[1.02] z-10' 
                         : 'border-slate-200 bg-slate-100/50 hover:border-slate-300 hover:bg-white text-slate-400'
@@ -126,8 +126,8 @@ const JoinWaitlist = () => {
             
             <div className="mb-8">
                 <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">المرحلة 2 من 2</span>
-                <h2 className="text-2xl md:text-3xl font-black text-slate-900">تأكيد التسجيل 🚀</h2>
-                <p className="text-slate-500 mt-2 text-sm">عمر المعلومات ديالك باش نعلموك فاش نحلوا.</p>
+                <h2 className="text-2xl md:text-3xl font-black text-slate-900">تقديم طلب التسجيل القبلي 🚀</h2>
+                <p className="text-slate-500 mt-2 font-bold text-sm">عمر المعلومات ديالك باش نعلموك فاش نفتحو التسجيل.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -140,7 +140,7 @@ const JoinWaitlist = () => {
                         name="fullName"
                         required
                         placeholder="الاسم الكامل ديالك"
-                        className="w-full pr-12 pl-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-slate-900 focus:bg-white focus:ring-4 focus:ring-slate-100 transition-all outline-none text-right font-bold text-slate-900"
+                        className="w-full pr-12 pl-4 py-4 bg-slate-50 border-2 border-yellow-600 rounded-2xl focus:border-slate-900 focus:bg-white focus:ring-4 focus:ring-slate-100 transition-all outline-none text-right font-bold text-slate-900"
                         value={formData.fullName}
                         onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                         />
@@ -154,7 +154,7 @@ const JoinWaitlist = () => {
                         name="phone"
                         required
                         placeholder="06 XX XX XX XX"
-                        className="w-full pr-12 pl-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-slate-900 focus:bg-white focus:ring-4 focus:ring-slate-100 transition-all outline-none text-right font-bold text-slate-900 dir-rtl"
+                        className="w-full pr-12 pl-4 py-4 bg-slate-50 border-2 border-yellow-600 rounded-2xl focus:border-slate-900 focus:bg-white focus:ring-4 focus:ring-slate-100 transition-all outline-none text-right font-bold text-slate-900 dir-rtl"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
                         />

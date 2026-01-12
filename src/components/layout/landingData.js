@@ -21,89 +21,196 @@ export const SOLUTIONS = [
 
 export const COURSES = [
   // --- MODULE 1: BIOLOGIE CELLULAIRE (أهم موديل) ---
+
   {
     id: "bio-cell",
     title: "Biologie Cellulaire",
     description: "استكشاف الخلية: من الغشاء السيتوبلازمي حتى للنواة.",
-    price: 19, // ثمن رمزي
+    price: 39, // كنقترح 39 درهم للموديل (ثمن طاكوس) حسن من 19 درهم حيت القيمة طالعة
     chapters: [
+      // =======================================================
+      //  🟢 الدروس المجانية (The Hook) - خليناها كما هي
+      // =======================================================
       {
         id: "introduction-générale-biologie-cellulaire",
-        title: "مقدمة في شعبة البيولوجيا - نصائح للنجاح",
-        isFree: true, // ✅ خليناها فابور كـ مدخل
-        quickInfo: " البيولوجيا الخلوية: شنو و علاش؟"
+        title: "مقدمة في شعبة البيولوجيا - نصائح، أفاق و تجربة الجامعة",
+        isFree: true,
+        quickInfo: "أشنو كتعرف على هاد الشعبة؟"
+      },
+
+      // =======================================================
+      //  🔒 الدروس المدفوعة (The Full Value) - المنهج الجديد
+      // =======================================================
+      
+      // --- Module 1 : Introduction & Organisation ---
+      {
+        id: "1-1-theorie-cellulaire",
+        title: "1.1 La Théorie Cellulaire",
+        isFree: true,
+        quickInfo: "Schleiden, Schwann & Virchow"
       },
       {
-        id: "introduction-biologie-cellulaire",
-        title: "Introduction à la biologie cellulaire",
-        isFree: true, // ✅ خليناها فابور كـ مدخل
-        quickInfo: "البدية د الخلية"
-      },
-      {
-        id: "constituants-chimiques",
-        title: "Constituants chimiques de la cellule",
-        isFree: true, 
-        quickInfo: "المكونات د الخلية (الماء، الأملاح...)"
-      },
-      {
-        id: "microscopie-techniques",
-        title: "La microscopie et techniques",
-        isFree: false, // 🔒 هادي تقنية، نخليوها بالخلاص
-        quickInfo: "كيفاش كنشوفو الخلية"
-      },
-      {
-        id: "membrane-plasmique",
-        title: "Membrane plasmique",
-        isFree: false, // 🔥🔥 رديناها فابور (هادا هو الطعم الحقيقي)
-        quickInfo: "الغلاف د الخلية (الفسيفساء السائلة)"
-      },
-      {
-        id: "cytosquelette",
-        title: "Cytosquelette",
+        id: "1-2-definition-cellule",
+        title: "1.2 Définition de la Cellule",
         isFree: false,
-        quickInfo: "العضم د الخلية"
+        quickInfo: "Métabolisme & Reproduction"
       },
       {
-        id: "systeme-endomembranaire",
-        title: "Système endomembranaire",
+        id: "1-3-organisation-generale",
+        title: "1.3 Organisation Générale",
         isFree: false,
-        quickInfo: "لوزين د البروتين"
+        quickInfo: "Procaryote vs Eucaryote & Virus"
+      },
+
+      // --- Module 2 : Les Molécules (La Chimie de la vie) ---
+      {
+        id: "2-1-proteines",
+        title: "2.1 Les Protéines",
+        isFree: false,
+        quickInfo: "Acides aminés & Structure 3D"
       },
       {
-        id: "ribosomes-synthese-proteique",
-        title: "Ribosomes et synthèse protéique",
+        id: "2-2-lipides",
+        title: "2.2 Les Lipides",
         isFree: false,
-        quickInfo: "صناعة د البروتينات"
+        quickInfo: "Acides gras & Phospholipides"
       },
       {
-        id: "peroxysomes",
-        title: "Peroxysomes",
+        id: "2-3-glucides",
+        title: "2.3 Les Glucides",
         isFree: false,
-        quickInfo: "تصفية د السموم"
+        quickInfo: "Oses, Amidon & Glycogène"
       },
       {
-        id: "noyau-division-cellulaire",
-        title: "Noyau et division cellulaire",
+        id: "2-4-acides-nucleiques",
+        title: "2.4 Les Acides Nucléiques",
         isFree: false,
-        quickInfo: "الخزنة ديال ADN"
+        quickInfo: "ADN vs ARN & Nucléotides"
+      },
+
+      // --- Module 3 : Techniques d'étude ---
+      {
+        id: "3-1-microscopie",
+        title: "3.1 La Microscopie",
+        isFree: false,
+        quickInfo: "Optique (MO) vs Électronique (MET/MEB)"
       },
       {
-        id: "mitochondries-energie",
-        title: "Mitochondries et énergie",
+        id: "3-2-imagerie-preparation",
+        title: "3.2 Imagerie & Préparation",
         isFree: false,
-        quickInfo: "لوزين د الطاقة (ATP)"
+        quickInfo: "Coloration & Montage"
       },
       {
-        id: "chloroplastes-photosynthese",
-        title: "Chloroplastes et photosynthèse",
+        id: "3-3-analyse-biochimique",
+        title: "3.3 Analyse Biochimique",
         isFree: false,
-        quickInfo: "الماكلة بالضو"
+        quickInfo: "Centrifugation & Pulse-Chasse"
+      },
+
+      // --- Module 4 : La Membrane Plasmique ---
+      {
+        id: "4-1-ultrastructure",
+        title: "4.1 Ultrastructure Membranaire",
+        isFree: false,
+        quickInfo: "Mosaïque fluide & Glycocalyx"
       },
       {
-        id: "communication-cellulaire",
-        title: "Communication cellulaire",
+        id: "4-2-proprietes-membrane",
+        title: "4.2 Propriétés de la Membrane",
         isFree: false,
-        quickInfo: "الهضرة بين الخلايا"
+        quickInfo: "Fluidité & Asymétrie"
+      },
+      {
+        id: "4-3-fonctions-membrane",
+        title: "4.3 Fonctions de la Membrane",
+        isFree: false,
+        quickInfo: "Transport (Osmose) & Endocytose"
+      },
+
+      // --- Module 5 : Organites & Fonctionnement ---
+      {
+        id: "5-1-cytosquelette",
+        title: "5.1 Le Cytosquelette",
+        isFree: false,
+        quickInfo: "Microtubules & Microfilaments"
+      },
+      {
+        id: "5-2-systeme-endomembranaire",
+        title: "5.2 Système Endomembranaire",
+        isFree: false,
+        quickInfo: "Réticulum & Golgi (Le Tri)"
+      },
+      {
+        id: "5-3-digestion-cellulaire",
+        title: "5.3 Digestion Cellulaire",
+        isFree: false,
+        quickInfo: "Lysosomes & Peroxysomes"
+      },
+      {
+        id: "5-4-noyau-synthese",
+        title: "5.4 Noyau & Synthèse Protéines",
+        isFree: false,
+        quickInfo: "Transcription & Traduction"
+      },
+      {
+        id: "5-5-energie-mito-chloro",
+        title: "5.5 Énergie (Mito & Chloro)",
+        isFree: false,
+        quickInfo: "Respiration (ATP) & Photosynthèse"
+      },
+
+      // --- Module 6 : Communication Cellulaire ---
+      {
+        id: "6-1-principes-base",
+        title: "6.1 Principes de Communication",
+        isFree: false,
+        quickInfo: "Échanges & Régulation"
+      },
+      {
+        id: "6-2-jonctions-cellulaires",
+        title: "6.2 Jonctions Cellulaires",
+        isFree: false,
+        quickInfo: "Desmosomes & Gap Junctions"
+      },
+      {
+        id: "6-3-messagers-chimiques",
+        title: "6.3 Messagers Chimiques",
+        isFree: false,
+        quickInfo: "Hormones & Récepteurs"
+      },
+      // =======================================================
+      //  🎁 BONUS: PACK EXAMS (امتحانات مصححة) - القيمة الحقيقية
+      // =======================================================
+      {
+        id: "exam-normal-2024",
+        title: "Correction Examen Normal 2024",
+        isFree: false,
+        quickInfo: "تصحيح مفصل + شرح القوالب"
+      },
+      {
+        id: "exam-rattrapage-2023",
+        title: "Correction Rattrapage 2023",
+        isFree: false,
+        quickInfo: "أصعب الأسئلة وكيفاش تجاوب عليها"
+      },
+      {
+        id: "exam-blanc-rr",
+        title: "Examen Blanc RR Student",
+        isFree: false,
+        quickInfo: "تست (Test) واش نتا واجد ولا لا؟"
+      },
+      {
+        id: "qcm-pieges-frequents",
+        title: "Top 50 QCM Pièges (الفخاخ)",
+        isFree: false,
+        quickInfo: "الأسئلة اللي كيطيحو فيها 90% د الطلبة"
+      },
+      {
+        id: "exam-synthese-finale",
+        title: "Grand Récapitulatif S1 (المراجعة النهائية)",
+        isFree: false,
+        quickInfo: "الزبدة ديال الموديل فشرح واحد"
       }
     ]
   },
@@ -115,42 +222,12 @@ export const COURSES = [
     description: "كيفاش كيتكون الجنين (Embryo) وشنو هي الأنسجة (Tissus) اللي فينا.",
     price: 39,
     chapters: [
-      {
-        id: "introduction-générale-biologie-cellulaire",
-        title: "مقدمة في شعبة البيولوجيا - نصائح للنجاح",
-        isFree: false, // ✅ خليناها فابور كـ مدخل
-        quickInfo: " البيولوجيا الخلوية: شنو و علاش؟"
-      },
       { 
         id: "gametogenese", 
-        title: "Partie 1: Gamétogenèse", 
+        title: "دروس خاصة بالمشتركين", 
         isFree: false, 
-        quickInfo: "Spermatogenèse & Ovogenèse"
+        quickInfo: "الدروس"
       },
-      { 
-        id: "fecondation", 
-        title: "Partie 2: La Fécondation", 
-        isFree: false, 
-        quickInfo: "اللقاء بين البويضة والحيوان المنوي"
-      },
-      { 
-        id: "semaines-dev", 
-        title: "Partie 3: Développement Embryonnaire", 
-        isFree: false, 
-        quickInfo: "من الأسبوع 1 حتى لـ 4"
-      },
-      { 
-        id: "tissus-epitheliaux", 
-        title: "Histologie: Tissus Épithéliaux", 
-        isFree: false, 
-        quickInfo: "الجلد والأغشية"
-      },
-      { 
-        id: "tissus-conjonctifs", 
-        title: "Histologie: Tissus Conjonctifs", 
-        isFree: false, 
-        quickInfo: "الدم، العظم، والغضروف"
-      }
     ]
   },
 
@@ -162,35 +239,11 @@ export const COURSES = [
     price: 39,
     chapters: [
       { 
-        id: "cosmologie", 
-        title: "Chapitre 1: Cosmologie & Terre", 
+        id: "gametogenese", 
+        title: "دروس خاصة بالمشتركين", 
         isFree: false, 
-        quickInfo: "النظام الشمسي وتكوين الأرض"
+        quickInfo: "الدروس"
       },
-      { 
-        id: "structure-globe", 
-        title: "Chapitre 2: Structure du Globe", 
-        isFree: false, 
-        quickInfo: "القشرة، الرداء، والنواة"
-      },
-      { 
-        id: "tectonique", 
-        title: "Chapitre 3: Tectonique des Plaques", 
-        isFree: false, 
-        quickInfo: "زحزحة القارات (Wegener)"
-      },
-      { 
-        id: "magmatisme", 
-        title: "Chapitre 4: Magmatisme & Roches", 
-        isFree: false, 
-        quickInfo: "البراكين والصخور الصهارية"
-      },
-      { 
-        id: "sedimentologie", 
-        title: "Chapitre 5: Sédimentologie", 
-        isFree: false, 
-        quickInfo: "دورة الصخور الرسوبية"
-      }
     ]
   },
 
@@ -202,29 +255,11 @@ export const COURSES = [
     price: 39,
     chapters: [
       { 
-        id: "fonctions", 
-        title: "Chapitre 1: Analyse & Fonctions", 
+        id: "gametogenese", 
+        title: "دروس خاصة بالمشتركين", 
         isFree: false, 
-        quickInfo: "Ln, Exp & Limites"
+        quickInfo: "الدروس"
       },
-      { 
-        id: "calcul-integral", 
-        title: "Chapitre 2: Calcul Intégral", 
-        isFree: false, 
-        quickInfo: "Les Primitives & Surface"
-      },
-      { 
-        id: "equa-diff", 
-        title: "Chapitre 3: Équations Différentielles", 
-        isFree: false, 
-        quickInfo: "معادلات من الدرجة 1 و 2"
-      },
-      { 
-        id: "stat-desc", 
-        title: "Chapitre 4: Statistique Descriptive", 
-        isFree: false, 
-        quickInfo: "Moyenne, Mode, Médiane"
-      }
     ]
   },
 
@@ -236,29 +271,11 @@ export const COURSES = [
     price: 39,
     chapters: [
       { 
-        id: "atomistique", 
-        title: "Partie 1: Atomistique", 
+        id: "gametogenese", 
+        title: "دروس خاصة بالمشتركين", 
         isFree: false, 
-        quickInfo: "الذرة، الإلكترونات، والجدول الدوري"
+        quickInfo: "الدروس"
       },
-      { 
-        id: "liaisons", 
-        title: "Partie 2: Liaisons Chimiques", 
-        isFree: false, 
-        quickInfo: "Lewis, VSEPR & Orbitales"
-      },
-      { 
-        id: "thermo-1", 
-        title: "Thermochimie: 1er Principe", 
-        isFree: false, 
-        quickInfo: "Enthalpie (H) & Chaleur (Q)"
-      },
-      { 
-        id: "equilibres", 
-        title: "Partie 4: Équilibres Chimiques", 
-        isFree: false, 
-        quickInfo: "Loi d'action de masse (Kc)"
-      }
     ]
   },
 
@@ -270,23 +287,11 @@ export const COURSES = [
     price: 39,
     chapters: [
       { 
-        id: "optique-geo", 
-        title: "Partie 1: Optique Géométrique", 
+        id: "gametogenese", 
+        title: "دروس خاصة بالمشتركين", 
         isFree: false, 
-        quickInfo: "العدسات والمرايا (Lentilles)"
+        quickInfo: "الدروس"
       },
-      { 
-        id: "microscope", 
-        title: "Partie 2: L'Oeil & Microscope", 
-        isFree: false, 
-        quickInfo: "كيفاش كنشوفو الأشياء الصغيرة"
-      },
-      { 
-        id: "thermo-phys", 
-        title: "Partie 3: Thermodynamique", 
-        isFree: false, 
-        quickInfo: "الغازات المثالية (Gaz Parfaits)"
-      }
     ]
   },
 ];
@@ -310,25 +315,25 @@ export const PRICING_DATA = {
 
 export const FOOTER_DATA = {
   developer: {
-    name: "rr-coder",
-    role: "Full-stack Developer",
+    name: "rr-studio-dev",
+    // role: "Full-stack Developer",
     status: "Available for projects",
     links: [
-      { label: "LinkedIn", href: "#" },
-      { label: "GitHub", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "Portfolio", href: "#" }
+      // { label: "LinkedIn", href: "#" },
+      // { label: "GitHub", href: "#" },
+      // { label: "Instagram", href: "#" },
+      // { label: "Portfolio", href: "#" }
     ]
   },
   contributors: [
-    { name: "Mr.Ahmed Salami", role: "Spécialiste Bio-Cellulaire", verified: true },
-    { name: "Mme. Sarah Alami", role: "Consultante Pédagogique", verified: true },
-    { name: "Youssef Benani", role: "Correcteur de Contenu", verified: false }
+    { name: "Mr.Ahmed Salami", role: "Spécialiste Bio & Géo", verified: true },
+    { name: "Mme. Sara Bounhar", role: "Consultante Pédagogique", verified: true },
+    { name: "Youssef El Azouzi", role: "Correcteur de Contenu", verified: false }
   ],
   quickLinks: [
     { label: "الرئيسية", href: "/" },
-    { label: "المواد الدراسية", href: "#courses" },
-    { label: "الأسئلة الشائعة", href: "#faq" },
-    { label: "سياسة الخصوصية", href: "#privacy" }
+    { label: "المواد الدراسية", href: "/#courses" },
+    // { label: "الأسئلة الشائعة", href: "#faq" },
+    // { label: "سياسة الخصوصية", href: "#privacy" }
   ]
 };

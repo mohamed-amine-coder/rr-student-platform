@@ -41,10 +41,10 @@ const PricingSection = () => {
                   ))}
                 </div>
              </div>
-
+{/* 
              <button className="w-full py-3 bg-white border border-slate-200 text-slate-900 rounded-xl font-black text-sm hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all flex items-center justify-center gap-2">
                اشترك بوحدك <ArrowRight size={16} />
-             </button>
+             </button> */}
           </div>
 
           {/* 2. كارت عرض الرفاق (Compact & Highlighted) */}
@@ -79,9 +79,9 @@ const PricingSection = () => {
                 </div>
              </div>
 
-             <button className="w-full py-3 bg-yellow-400 text-slate-900 rounded-xl font-black text-sm hover:translate-y-[-2px] transition-transform shadow-lg shadow-yellow-400/20 flex items-center justify-center gap-2 relative z-10">
+             {/* <button className="w-full py-3 bg-yellow-400 text-slate-900 rounded-xl font-black text-sm hover:translate-y-[-2px] transition-transform shadow-lg shadow-yellow-400/20 flex items-center justify-center gap-2 relative z-10">
                <Zap size={16} fill="currentColor" /> جيب صحابك واستافد
-             </button>
+             </button> */}
           </div>
 
         </div>
