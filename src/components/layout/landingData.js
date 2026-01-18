@@ -28,7 +28,7 @@ export const COURSES = [
     originalPrice: 199,
     
     // 👇 تم استبدال القائمة الطويلة بالمتغير المستورد
-    chapters: BIO_CELL_CHAPTERS 
+    chapters: BIO_CELL_CHAPTERS ,
   },
 
   // --- MODULE 2: EMBRYOLOGIE & HISTOLOGIE ---
@@ -114,7 +114,7 @@ export const COURSES = [
   {
     id: "biologie animale",
     title: "Biologie animale (test)",
-    description: "الفيزياء الأساسية للبيولوجيست.",
+    description: "تجربة فقط",
     price: 39,
     chapters: BIO_ANIMALE_CHAPTERS,
   },

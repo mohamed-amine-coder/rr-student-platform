@@ -57,4 +57,4 @@ Generate ONLY the JSON code.
 Detailed Source Text: [s1 biologie maroc]
 INPUT DATA: Title:
 
-2.2.1. Lipides simples : Glycérides, Stérides, Cérides
+1.1.1. L’Architecture Cellulaire et Cytosquelette

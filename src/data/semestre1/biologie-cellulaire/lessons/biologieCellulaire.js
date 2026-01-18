@@ -11,84 +11,84 @@ export const BIO_CELL_CHAPTERS = [
       quickInfo: "أشنو كتعرف على هاد الشعبة؟"
     },
     {
-        id: "1-1-1",
+        id: "M1-1-1-1",
         title: "1.1.1. Unité de structure et de fonction (Schleiden & Schwann)",
         isFree: true, 
         type: 'lesson',
         quickInfo: "بداية النظرية الخلوية"
     },
     {
-        id: "1-1-2",
+        id: "M1-1-1-2",
         title: "1.1.2. Origine à partir d'une cellule préexistante (Virchow)",
         isFree: true,
         type: 'lesson',
         quickInfo: "الخلية تأتي من خلية"
     },
     {
-        id: "1-1-3",
+        id: "M1-1-1-3",
         title: "1.1.3. Réfutation de la génération spontanée",
         isFree: true,
         type: 'lesson',
         quickInfo: "باستور ضد التولد التلقائي"
     },
     {
-        id: "1-2-1",
+        id: "M1-1-2-1",
         title: "1.2.1. Système hautement organisé de molécules",
         isFree: true,
         type: 'lesson',
         quickInfo: "الماء والأملاح المعدنية"
     },
     {
-        id: "1-2-2",
+        id: "M1-1-2-2",
         title: "1.2.2. Le Métabolisme : utilisation de matière et d'énergie",
         isFree: true,
         type: 'lesson',
         quickInfo: "كيفاش الخلية كتاكل وتنتج"
     },
     {
-        id: "1-2-3",
+        id: "M1-1-2-3",
         title: "1.2.3. Capacités de développement, reproduction et adaptation",
         isFree: true,
         type: 'lesson',
         quickInfo: "خصائص الكائن الحي"
     },
     {
-        id: "1-3-1",
+        id: "M1-1-3-1",
         title: "1.3.1. Cellule Procaryote : Noyau non organisé",
         isFree: true,
         type: 'lesson',
         quickInfo: "بدائيات النواة (Bacteria)"
     },
     {
-        id: "1-3-2",
+        id: "M1-1-3-2",
         title: "1.3.2. Cellule Procaryote : Paroi et membrane",
         isFree: true,
         type: 'lesson',
         quickInfo: "الغشاء والجدار البكتيري"
     },
     {
-        id: "1-3-3",
+        id: "M1-1-3-3",
         title: "1.3.3. Cellule Eucaryote : Réseau membranaire",
         isFree: true,
         type: 'lesson',
         quickInfo: "حقيقيات النواة (Eucaryote)"
     },
     {
-        id: "1-3-4",
+        id: "M1-1-3-4",
         title: "1.3.4. Cellule Eucaryote : Cytosquelette et dimensions",
         isFree: true,
         type: 'lesson',
         quickInfo: "الحجم والهيكل الخلوي"
     },
     {
-        id: "1-3-5",
+        id: "M1-1-3-5",
         title: "1.3.5. Comparaison : Cellule animale vs végétale",
         isFree: true,
         type: 'lesson',
         quickInfo: "الفرق بين الحيوانية والنباتية"
     },
     {
-        id: "1-3-6",
+        id: "M1-1-3-6",
         title: "1.3.6. Les Virus : Particules acellulaires",
         isFree: true,
         type: 'lesson',
@@ -99,175 +99,175 @@ export const BIO_CELL_CHAPTERS = [
     // 🔒 MODULE 2 : LES CONSTITUANTS CHIMIQUES
     // =======================================================
     {
-        id: "2-1-1",
+        id: "M1-2-1-1",
         title: "2.1.1. Acides aminés : structure (Radical, Amine...)",
         isFree: true,
         type: 'lesson',
         quickInfo: "تركيبة الأحماض الأمينية"
     },
     {
-        id: "2-1-2",
+        id: "M1-2-1-2",
         title: "2.1.2. Classification des Acides aminés",
         isFree: true,
         type: 'lesson',
         quickInfo: "Polaires, Aromatiques, etc."
     },
     {
-        id: "2-1-3",
+        id: "M1-2-1-3",
         title: "2.1.3. La liaison peptidique",
         isFree: true,
         type: 'lesson',
         quickInfo: "الرابطة بين الأحماض"
     },
     {
-        id: "2-1-4",
+        id: "M1-2-1-4",
         title: "2.1.4. Structure Primaire (Séquence)",
         isFree: true,
         type: 'lesson',
         quickInfo: "تسلسل الأحماض"
     },
     {
-        id: "2-1-5",
+        id: "M1-2-1-5",
         title: "2.1.5. Structure Secondaire (Hélice α, Feuillet β)",
         isFree: true,
         type: 'lesson',
         quickInfo: "الالتفاف الأولي"
     },
     {
-        id: "2-1-6",
+        id: "M1-2-1-6",
         title: "2.1.6. Structure Tertiaire (Repliement 3D)",
         isFree: true,
         type: 'lesson',
         quickInfo: "الشكل الثلاثي الأبعاد"
     },
     {
-        id: "2-1-7",
+        id: "M1-2-1-7",
         title: "2.1.7. Structure Quaternaire",
         isFree: true,
         type: 'lesson',
         quickInfo: "تجمع الوحدات (Monomères)"
     },
     {
-        id: "2-1-8",
+        id: "M1-2-1-8",
         title: "2.1.8. Liaisons stabilisatrices",
         isFree: true,
         type: 'lesson',
         quickInfo: "Ioniques, H, Hydrophobes, S-S"
     },
     {
-        id: "2-1-9",
+        id: "M1-2-1-9",
         title: "2.1.9. Fonctions des protéines",
         isFree: true,
         type: 'lesson',
         quickInfo: "Structurales vs Biologiques"
     },
     {
-        id: "2-2-1",
+        id: "M1-2-2-1",
         title: "2.2.1. Lipides simples : Glycérides, Stérides...",
         isFree: true,
         type: 'lesson',
         quickInfo: "الدهنيات البسيطة"
     },
     {
-        id: "2-2-2",
+        id: "M1-2-2-2",
         title: "2.2.2. Lipides complexes : Glycérophospholipides...",
         isFree: false,
         type: 'lesson',
         quickInfo: "الدهنيات المعقدة"
     },
     {
-        id: "2-2-3",
+        id: "M1-2-2-3",
         title: "2.2.3. Acides gras : Saturés vs Insaturés",
         isFree: false,
         type: 'lesson',
         quickInfo: "الفرق بين المشبعة وغير المشبعة"
     },
     {
-        id: "2-2-4",
+        id: "M1-2-2-4",
         title: "2.2.4. Amphipathie : Tête hydrophile / Queue hydrophobe",
         isFree: false,
         type: 'lesson',
         quickInfo: "القطبية واللاقطبية"
     },
     {
-        id: "2-2-5",
+        id: "M1-2-2-5",
         title: "2.2.5. Phospholipides : Base des membranes",
         isFree: false,
         type: 'lesson',
         quickInfo: "أساس الغشاء السيتوبلازمي"
     },
     {
-        id: "2-3-1",
+        id: "M1-2-3-1",
         title: "2.3.1. Les Oses : Aldoses vs Cétoses",
         isFree: false,
         type: 'lesson',
         quickInfo: "السكريات البسيطة"
     },
     {
-        id: "2-3-2",
+        id: "M1-2-3-2",
         title: "2.3.2. Exemples : Ribose, Glucose, Galactose...",
         isFree: false,
         type: 'lesson',
         quickInfo: "أمثلة مهمة"
     },
     {
-        id: "2-3-3",
+        id: "M1-2-3-3",
         title: "2.3.3. Disaccharides : Maltose, Lactose...",
         isFree: false,
         type: 'lesson',
         quickInfo: "السكريات الثنائية"
     },
     {
-        id: "2-3-4",
+        id: "M1-2-3-4",
         title: "2.3.4. Polyholosides de réserve : Amidon, Glycogène",
         isFree: false,
         type: 'lesson',
         quickInfo: "تخزين الطاقة"
     },
     {
-        id: "2-3-5",
+        id: "M1-2-3-5",
         title: "2.3.5. Polyholosides structuraux : Cellulose",
         isFree: false,
         type: 'lesson',
         quickInfo: "الجدار الخلوي النباتي"
     },
     {
-        id: "2-3-6",
+        id: "M1-2-3-6",
         title: "2.3.6. Rôles des glucides",
         isFree: false,
         type: 'lesson',
         quickInfo: "طاقة، بنية، تعرف"
     },
     {
-        id: "2-4-1",
+        id: "M1-2-4-1",
         title: "2.4.1. Structure du Nucléotide",
         isFree: false,
         type: 'lesson',
         quickInfo: "Base, Pentose, Phosphate"
     },
     {
-        id: "2-4-2",
+        id: "M1-2-4-2",
         title: "2.4.2. Bases Puriques vs Pyrimidiques",
         isFree: false,
         type: 'lesson',
         quickInfo: "A, G vs C, U, T"
     },
     {
-        id: "2-4-3",
+        id: "M1-2-4-3",
         title: "2.4.3. ADN : Double hélice & complémentarité",
         isFree: false,
         type: 'lesson',
         quickInfo: "A=T, G≡C"
     },
     {
-        id: "2-4-4",
+        id: "M1-2-4-4",
         title: "2.4.4. ARN : Structure monocaténaire",
         isFree: false,
         type: 'lesson',
         quickInfo: "شريط واحد"
     },
     {
-        id: "2-4-5",
+        id: "M1-2-4-5",
         title: "2.4.5. Types d'ARN : ARNm, ARNt, ARNr",
         isFree: false,
         type: 'lesson',
@@ -278,70 +278,70 @@ export const BIO_CELL_CHAPTERS = [
     // 🔒 MODULE 3 : MÉTHODES D'ÉTUDE
     // =======================================================
     {
-        id: "3-1-1",
+        id: "M1-3-1-1",
         title: "3.1.1. Microscope Optique (MO) : Principes",
         isFree: false,
         type: 'lesson',
         quickInfo: "المجهر الضوئي"
     },
     {
-        id: "3-1-2",
+        id: "M1-3-1-2",
         title: "3.1.2. Pouvoir séparateur et Résolution",
         isFree: false,
         type: 'lesson',
         quickInfo: "دقة الصورة"
     },
     {
-        id: "3-1-3",
+        id: "M1-3-1-3",
         title: "3.1.3. Microscope Électronique (MET et MEB)",
         isFree: false,
         type: 'lesson',
         quickInfo: "المجهر الإلكتروني النافذ والماسح"
     },
     {
-        id: "3-2-1",
+        id: "M1-3-2-1",
         title: "3.2.1. Coloration vitale (Rouge neutre)",
         isFree: false,
         type: 'lesson',
         quickInfo: "تلوين الخلايا الحية"
     },
     {
-        id: "3-2-2",
+        id: "M1-3-2-2",
         title: "3.2.2. Coloration fixatrice (Vert de méthyle)",
         isFree: false,
         type: 'lesson',
         quickInfo: "تلوين الخلايا الميتة"
     },
     {
-        id: "3-2-3",
+        id: "M1-3-2-3",
         title: "3.2.3. Montage lame/lamelle",
         isFree: false,
         type: 'lesson',
         quickInfo: "تحضير العينة"
     },
     {
-        id: "3-3-1",
+        id: "M1-3-3-1",
         title: "3.3.1. Broyage cellulaire (Mécanique vs Chimique)",
         isFree: false,
         type: 'lesson',
         quickInfo: "تفكيك الخلايا"
     },
     {
-        id: "3-3-2",
+        id: "M1-3-3-2",
         title: "3.3.2. Fractionnement par centrifugation",
         isFree: false,
         type: 'lesson',
         quickInfo: "فصل العضيات"
     },
     {
-        id: "3-3-3",
+        id: "M1-3-3-3",
         title: "3.3.3. Autoradiographie (Isotopes)",
         isFree: false,
         type: 'lesson',
         quickInfo: "التصوير الإشعاعي الذاتي"
     },
     {
-        id: "3-3-4",
+        id: "M1-3-3-4",
         title: "3.3.4. Expérience Pulse-Chasse",
         isFree: false,
         type: 'lesson',
@@ -352,98 +352,98 @@ export const BIO_CELL_CHAPTERS = [
     // 🔒 MODULE 4 : LA MEMBRANE PLASMIQUE
     // =======================================================
     {
-        id: "4-1-1",
+        id: "M1-4-1-1",
         title: "4.1.1. Modèle mosaïque fluide (Singer & Nicolson)",
         isFree: false,
         type: 'lesson',
         quickInfo: "النموذج الفسيفسائي المائع"
     },
     {
-        id: "4-1-2",
+        id: "M1-4-1-2",
         title: "4.1.2. Lipides membranaires",
         isFree: false,
         type: 'lesson',
         quickInfo: "Phospholipides & Cholestérol"
     },
     {
-        id: "4-1-3",
+        id: "M1-4-1-3",
         title: "4.1.3. Protéines : Intrinsèques vs Extrinsèques",
         isFree: false,
         type: 'lesson',
         quickInfo: "أنواع البروتينات الغشائية"
     },
     {
-        id: "4-1-4",
+        id: "M1-4-1-4",
         title: "4.1.4. Glucides : Glycocalyx",
         isFree: false,
         type: 'lesson',
         quickInfo: "دور الحماية والتعرف"
     },
     {
-        id: "4-1-5",
+        id: "M1-4-1-5",
         title: "4.1.5. Modèle d'étude : Le Globule Rouge",
         isFree: false,
         type: 'lesson',
         quickInfo: "لماذا الكرية الحمراء؟"
     },
     {
-        id: "4-2-1",
+        id: "M1-4-2-1",
         title: "4.2.1. Asymétrie membranaire",
         isFree: false,
         type: 'lesson',
         quickInfo: "اختلاف الطبقتين"
     },
     {
-        id: "4-2-2",
+        id: "M1-4-2-2",
         title: "4.2.2. Fluidité : Diffusion, Flip-flop...",
         isFree: false,
         type: 'lesson',
         quickInfo: "حركة الجزيئات"
     },
     {
-        id: "4-2-3",
+        id: "M1-4-2-3",
         title: "4.2.3. Cortex cellulaire (Spectrine, Ankyrine)",
         isFree: false,
         type: 'lesson',
         quickInfo: "دعامة الغشاء"
     },
     {
-        id: "4-3-1",
+        id: "M1-4-3-1",
         title: "4.3.1. Barrière sélective",
         isFree: false,
         type: 'lesson',
         quickInfo: "النفاذية الاختيارية"
     },
     {
-        id: "4-3-2",
+        id: "M1-4-3-2",
         title: "4.3.2. Transports : Endocytose/Exocytose",
         isFree: false,
         type: 'lesson',
         quickInfo: "النقل الحويصلي"
     },
     {
-        id: "4-3-3",
+        id: "M1-4-3-3",
         title: "4.3.3. Phagocytose",
         isFree: false,
         type: 'lesson',
         quickInfo: "البلعمة"
     },
     {
-        id: "4-3-4",
+        id: "M1-4-3-4",
         title: "4.3.4. Osmose : Turgescence, Plasmolyse...",
         isFree: false,
         type: 'lesson',
         quickInfo: "نقل الماء"
     },
     {
-        id: "4-3-5",
+        id: "M1-4-3-5",
         title: "4.3.5. Transduction d’énergie (Procaryotes)",
         isFree: false,
         type: 'lesson',
         quickInfo: "إنتاج الطاقة في الغشاء"
     },
     {
-        id: "4-3-6",
+        id: "M1-4-3-6",
         title: "4.3.6. Reconnaissance (Groupes sanguins)",
         isFree: false,
         type: 'lesson',
@@ -454,126 +454,126 @@ export const BIO_CELL_CHAPTERS = [
     // 🔒 MODULE 5 : ORGANITES ET FONCTIONS
     // =======================================================
     {
-        id: "5-1-1",
+        id: "M1-5-1-1",
         title: "5.1.1. Microfilaments (Kératine, Actine)",
         isFree: false,
         type: 'lesson',
         quickInfo: "الخيوط الدقيقة"
     },
     {
-        id: "5-1-2",
+        id: "M1-5-1-2",
         title: "5.1.2. Microtubules et Centrosome",
         isFree: false,
         type: 'lesson',
         quickInfo: "الأنيبيبات الدقيقة"
     },
     {
-        id: "5-2-1",
+        id: "M1-5-2-1",
         title: "5.2.1. REG : Synthèse des protéines",
         isFree: false,
         type: 'lesson',
         quickInfo: "الشبكة السيتوبلازمية المحببة"
     },
     {
-        id: "5-2-2",
+        id: "M1-5-2-2",
         title: "5.2.2. REL : Synthèse lipides, Détoxification",
         isFree: false,
         type: 'lesson',
         quickInfo: "الشبكة السيتوبلازمية الملساء"
     },
     {
-        id: "5-2-3",
+        id: "M1-5-2-3",
         title: "5.2.3. Appareil de Golgi : Structure",
         isFree: false,
         type: 'lesson',
         quickInfo: "Cis, Médiane, Trans"
     },
     {
-        id: "5-2-4",
+        id: "M1-5-2-4",
         title: "5.2.4. Golgi : Glycosylation, Sulfatation, Tri",
         isFree: false,
         type: 'lesson',
         quickInfo: "وظائف جهاز غولجي"
     },
     {
-        id: "5-3-1",
+        id: "M1-5-3-1",
         title: "5.3.1. Lysosomes : Hydrolases acides",
         isFree: false,
         type: 'lesson',
         quickInfo: "الهضم الخلوي"
     },
     {
-        id: "5-3-2",
+        id: "M1-5-3-2",
         title: "5.3.2. Hétérophagie vs Autophagie",
         isFree: false,
         type: 'lesson',
         quickInfo: "أنواع البلعمة"
     },
     {
-        id: "5-3-3",
+        id: "M1-5-3-3",
         title: "5.3.3. Peroxysomes : Catalases",
         isFree: false,
         type: 'lesson',
         quickInfo: "تفكيك الماء المؤكسج"
     },
     {
-        id: "5-4-1",
+        id: "M1-5-4-1",
         title: "5.4.1. Noyau : Enveloppe, Nucléole, Pore",
         isFree: false,
         type: 'lesson',
         quickInfo: "بنية النواة"
     },
     {
-        id: "5-4-2",
+        id: "M1-5-4-2",
         title: "5.4.2. Ribosomes",
         isFree: false,
         type: 'lesson',
         quickInfo: "مصانع البروتين"
     },
     {
-        id: "5-4-3",
+        id: "M1-5-4-3",
         title: "5.4.3. Transcription (ARNm, Épissage)",
         isFree: false,
         type: 'lesson',
         quickInfo: "الاستنساخ"
     },
     {
-        id: "5-4-4",
+        id: "M1-5-4-4",
         title: "5.4.4. Traduction (Initiation, Élongation, Fin)",
         isFree: false,
         type: 'lesson',
         quickInfo: "الترجمة"
     },
     {
-        id: "5-5-1",
+        id: "M1-5-5-1",
         title: "5.5.1. Mitochondrie : Structure",
         isFree: false,
         type: 'lesson',
         quickInfo: "الميتوكوندري"
     },
     {
-        id: "5-5-2",
+        id: "M1-5-5-2",
         title: "5.5.2. Respiration Cellulaire : Glycolyse, Krebs",
         isFree: false,
         type: 'lesson',
         quickInfo: "إنتاج ATP"
     },
     {
-        id: "5-5-3",
+        id: "M1-5-5-3",
         title: "5.5.3. Inhibiteurs (Cyanure...)",
         isFree: false,
         type: 'lesson',
         quickInfo: "مثبطات التنفس"
     },
     {
-        id: "5-5-4",
+        id: "M1-5-5-4",
         title: "5.5.4. Chloroplaste : Structure",
         isFree: false,
         type: 'lesson',
         quickInfo: "البلاستيدة الخضراء"
     },
     {
-        id: "5-5-5",
+        id: "M1-5-5-5",
         title: "5.5.5. Photosynthèse",
         isFree: false,
         type: 'lesson',
@@ -584,56 +584,56 @@ export const BIO_CELL_CHAPTERS = [
     // 🔒 MODULE 6 : COMMUNICATIONS CELLULAIRES
     // =======================================================
     {
-        id: "6-1-1",
+        id: "M1-6-1-1",
         title: "6.1.1. Échanges et Régulation",
         isFree: false,
         type: 'lesson',
         quickInfo: "مبادئ التواصل"
     },
     {
-        id: "6-1-2",
+        id: "M1-6-1-2",
         title: "6.1.2. Défense de l'organisme",
         isFree: false,
         type: 'lesson',
         quickInfo: "المناعة الخلوية"
     },
     {
-        id: "6-2-1",
+        id: "M1-6-2-1",
         title: "6.2.1. Jonctions imperméables (Occludens)",
         isFree: false,
         type: 'lesson',
         quickInfo: "الروابط المانعة"
     },
     {
-        id: "6-2-2",
+        id: "M1-6-2-2",
         title: "6.2.2. Jonctions d'ancrage (Adherens)",
         isFree: false,
         type: 'lesson',
         quickInfo: "الروابط المثبتة"
     },
     {
-        id: "6-2-3",
+        id: "M1-6-2-3",
         title: "6.2.3. Desmosomes (Macula adherens)",
         isFree: false,
         type: 'lesson',
         quickInfo: "الديسموزوم"
     },
     {
-        id: "6-2-4",
+        id: "M1-6-2-4",
         title: "6.2.4. Jonctions communicantes (Gap)",
         isFree: false,
         type: 'lesson',
         quickInfo: "الروابط التواصلية"
     },
     {
-        id: "6-3-1",
+        id: "M1-6-3-1",
         title: "6.3.1. Hormones Hydrophiles",
         isFree: false,
         type: 'lesson',
         quickInfo: "المستقبلات الغشائية"
     },
     {
-        id: "6-3-2",
+        id: "M1-6-3-2",
         title: "6.3.2. Hormones Hydrophobes",
         isFree: false,
         type: 'lesson',
