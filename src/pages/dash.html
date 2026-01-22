@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RR ENGLISH - لوحة التحكم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+        /* أنيماسيون بسيطة للتبديل */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #22c55e;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #22c55e;
+        }
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-[#F1F5F9] min-h-screen text-slate-800">
+
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-slate-900 text-white hidden md:block fixed h-full z-10 right-0">
+            <div class="p-6">
+                <h1 class="text-2xl font-black tracking-tighter text-yellow-400">RR ENGLISH</h1>
+                <p class="text-xs text-slate-400 mt-1">لوحة تحكم المدير</p>
+            </div>
+            <nav class="mt-6 px-4 space-y-2">
+                <a href="#" class="flex items-center gap-3 bg-white/10 text-white px-4 py-3 rounded-xl font-bold border border-white/5">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                    الطلاب والاشتراكات
+                </a>
+                <a href="#" class="flex items-center gap-3 text-slate-400 hover:text-white hover:bg-white/5 px-4 py-3 rounded-xl font-bold transition">
+                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                    المحتوى الدراسي
+                </a>
+                <a href="#" class="flex items-center gap-3 text-slate-400 hover:text-white hover:bg-white/5 px-4 py-3 rounded-xl font-bold transition">
+                    <i data-lucide="settings" class="w-5 h-5"></i>
+                    الإعدادات
+                </a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 md:mr-64 p-4 md:p-8">
+            <header class="flex justify-between items-center mb-8 bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                <div>
+                    <h2 class="text-xl font-black text-slate-900">إدارة اشتراكات الطلاب 🎓</h2>
+                    <p class="text-sm text-slate-500">تحكم فمن عندو الحق يشوف الموديلات</p>
+                </div>
+                <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-bold text-sm flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    وضع الآدمين (Admin Mode)
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="text-slate-400 text-xs font-bold mb-2">مجموع الطلاب</div>
+                    <div class="text-3xl font-black" id="total-users">0</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="text-slate-400 text-xs font-bold mb-2">اشتراكات M1 النشطة</div>
+                    <div class="text-3xl font-black text-blue-600" id="active-m1">0</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="text-slate-400 text-xs font-bold mb-2">المداخيل (تقديرية)</div>
+                    <div class="text-3xl font-black text-green-600" id="revenue">0 DH</div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+                <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                    <h3 class="font-bold text-lg">لائحة المسجلين</h3>
+                    <button onclick="addNewUser()" class="bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-slate-800 transition flex items-center gap-2">
+                        <i data-lucide="plus" class="w-4 h-4"></i> طالب جديد (Test)
+                    </button>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right">
+                        <thead class="bg-slate-50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+                            <tr>
+                                <th class="p-5">معلومات الطالب</th>
+                                <th class="p-5">Pack M1 (الخلية)</th>
+                                <th class="p-5">Pack M2 (الحيوان)</th>
+                                <th class="p-5">تفاصيل الاشتراك</th>
+                                <th class="p-5">حالة الحساب</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table" class="divide-y divide-slate-100">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 1. الداتا الوهمية (Mock Database)
+        // هادي هي اللي غاتعوضها بـ Firebase من بعد
+        let mockDatabase = [
+            {
+                id: "usr_1",
+                name: "أمين التازي",
+                email: "amine@gmail.com",
+                avatar: "AT",
+                color: "bg-blue-100 text-blue-600",
+                subscriptions: {
+                    "M1": { active: true, startDate: "2024-01-20", expiryDate: "2024-04-20" }
+                }
+            },
+            {
+                id: "usr_2",
+                name: "سارة العلمي",
+                email: "sarah.bio@edu.ma",
+                avatar: "SA",
+                color: "bg-purple-100 text-purple-600",
+                subscriptions: {} // ما عندها والو
+            },
+            {
+                id: "usr_3",
+                name: "كريم بناني",
+                email: "karim.dev@gmail.com",
+                avatar: "KB",
+                color: "bg-yellow-100 text-yellow-600",
+                subscriptions: {
+                    "M1": { active: true, startDate: "2024-01-15", expiryDate: "2024-04-15" },
+                    "M2": { active: true, startDate: "2024-01-18", expiryDate: "2024-04-18" }
+                }
+            }
+        ];
+
+        // 2. دالة الرسم (Render Function)
+        function renderDashboard() {
+            const tableBody = document.getElementById('users-table');
+            tableBody.innerHTML = '';
+            
+            let m1Count = 0;
+            let revenue = 0;
+
+            mockDatabase.forEach(user => {
+                // حساب الإحصائيات
+                if(user.subscriptions["M1"]?.active) { m1Count++; revenue += 200; }
+                if(user.subscriptions["M2"]?.active) { revenue += 200; }
+
+                // واش M1 و M2 مفعلين؟
+                const isM1Active = user.subscriptions["M1"]?.active;
+                const isM2Active = user.subscriptions["M2"]?.active;
+
+                // تاريخ الانتهاء (للعرض)
+                const expiryText = isM1Active 
+                    ? `<span class="text-xs font-mono text-slate-500">M1 يسالي فـ: ${user.subscriptions["M1"].expiryDate}</span>` 
+                    : '<span class="text-xs text-slate-300">-</span>';
+
+                const row = `
+                    <tr class="hover:bg-slate-50 transition-colors fade-in group">
+                        <td class="p-5">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full ${user.color} flex items-center justify-center font-bold text-sm">
+                                    ${user.avatar}
+                                </div>
+                                <div>
+                                    <div class="font-bold text-slate-900">${user.name}</div>
+                                    <div class="text-xs text-slate-400 font-mono">${user.email}</div>
+                                </div>
+                            </div>
+                        </td>
+                        
+                        <td class="p-5">
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer" onchange="toggleSubscription('${user.id}', 'M1')" ${isM1Active ? 'checked' : ''}>
+                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                                <span class="mr-3 text-xs font-bold ${isM1Active ? 'text-blue-600' : 'text-slate-400'}">
+                                    ${isM1Active ? 'مفعل' : 'مقفول'}
+                                </span>
+                            </label>
+                        </td>
+
+                        <td class="p-5">
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer" onchange="toggleSubscription('${user.id}', 'M2')" ${isM2Active ? 'checked' : ''}>
+                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-yellow-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-500"></div>
+                                <span class="mr-3 text-xs font-bold ${isM2Active ? 'text-yellow-600' : 'text-slate-400'}">
+                                    ${isM2Active ? 'مفعل' : 'مقفول'}
+                                </span>
+                            </label>
+                        </td>
+
+                        <td class="p-5">
+                            ${expiryText}
+                        </td>
+
+                        <td class="p-5">
+                            <button class="text-slate-400 hover:text-red-500 transition">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+
+            // تحديث الأرقام الفوق
+            document.getElementById('total-users').innerText = mockDatabase.length;
+            document.getElementById('active-m1').innerText = m1Count;
+            document.getElementById('revenue').innerText = revenue + " DH";
+
+            // إعادة تفعيل الأيقونات
+            lucide.createIcons();
+        }
+
+        // 3. دالة التحكم (The Logic) 🧠
+        // هادي هي اللي غاتبدلها من بعد بـ updateDoc ديال Firebase
+        function toggleSubscription(userId, moduleId) {
+            // نلقاو الطالب
+            const userIndex = mockDatabase.findIndex(u => u.id === userId);
+            const user = mockDatabase[userIndex];
+
+            // واش ديجا عندو؟
+            const isActive = user.subscriptions[moduleId]?.active;
+
+            if (isActive) {
+                // إلا كان مفعل => كنحبسوه (Deactivate)
+                // في الواقع يمكن ليك تمسحو كاع: delete user.subscriptions[moduleId]
+                user.subscriptions[moduleId].active = false;
+                console.log(`🚫 تم إيقاف ${moduleId} للطالب ${user.name}`);
+            } else {
+                // إلا كان طافي => كنشعلوه ونحسبو التاريخ
+                const today = new Date();
+                const expiry = new Date();
+                expiry.setMonth(today.getMonth() + 3); // كنزيدو 3 شهور
+
+                // كنعمرو الـ Object
+                user.subscriptions[moduleId] = {
+                    active: true,
+                    startDate: today.toISOString().split('T')[0],
+                    expiryDate: expiry.toISOString().split('T')[0]
+                };
+                console.log(`✅ تم تفعيل ${moduleId} للطالب ${user.name} حتى لـ ${expiry.toISOString().split('T')[0]}`);
+            }
+
+            // كنعاودو نرسمو الجدول باش التغيير يبان
+            renderDashboard();
+        }
+
+        // دالة زيادة طالب وهمي للتجربة
+        function addNewUser() {
+            const id = "usr_" + Math.floor(Math.random() * 1000);
+            mockDatabase.push({
+                id: id,
+                name: "طالب جديد " + Math.floor(Math.random() * 100),
+                email: "new.student@test.com",
+                avatar: "NS",
+                color: "bg-slate-200 text-slate-600",
+                subscriptions: {}
+            });
+            renderDashboard();
+        }
+
+        // التشغيل الأول
+        renderDashboard();
+
+    </script>
+</body>
+</html>

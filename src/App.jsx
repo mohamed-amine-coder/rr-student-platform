@@ -9,7 +9,6 @@ import JoinWaitlist from './pages/JoinWaitlist';
 import LessonViewer from './features/lessons/LessonViewer';
 import ModulePage from './pages/ModulePage';
 import ScrollToTop from './components/ScrollToTop';
-
 function App() {
   return (
     <Router>

@@ -24,7 +24,7 @@ export const COURSES = [
     id: "bio-cell",
     title: "Biologie Cellulaire (S1)",
     description: "الموديل مفصل بـ 'الخشيبات': 87 فقرة قصيرة، كويزات، وامتحانات مصححة.",
-    price: 49,
+    price: 99,
     originalPrice: 199,
     
     // 👇 تم استبدال القائمة الطويلة بالمتغير المستورد
@@ -36,7 +36,7 @@ export const COURSES = [
     id: "embryo-histo",
     title: "Embryologie & Histologie",
     description: "كيفاش كيتكون الجنين (Embryo) وشنو هي الأنسجة (Tissus) اللي فينا.",
-    price: 59,
+    price: 199,
     chapters: [
       { 
         id: "gametogenese", 
@@ -52,7 +52,7 @@ export const COURSES = [
     id: "geologie",
     title: "Géologie Générale",
     description: "فهم كوكب الأرض: من الانفجار العظيم (Big Bang) حتى للبراكين.",
-    price: 39,
+    price: 159,
     chapters: [
       { 
         id: "gametogenese", 
@@ -68,7 +68,7 @@ export const COURSES = [
     id: "math-s1",
     title: "Mathématiques (S1)",
     description: "الماط اللي غاتحتاجو فـ البيولوجيا (Statistiques & Analyse).",
-    price: 39,
+    price: 299,
     chapters: [
       { 
         id: "gametogenese", 
@@ -84,7 +84,7 @@ export const COURSES = [
     id: "chimie-s1",
     title: "Chimie Générale",
     description: "بنية المادة (Atomistique) والتفاعلات الحرارية (Thermochimie).",
-    price: 39,
+    price: 199,
     chapters: [
       { 
         id: "gametogenese", 
@@ -100,7 +100,7 @@ export const COURSES = [
     id: "physique-s1",
     title: "Physique I (Optique & Thermo)",
     description: "الفيزياء الأساسية للبيولوجيست.",
-    price: 39,
+    price: 199,
     chapters: [
       { 
         id: "gametogenese", 
@@ -110,12 +110,12 @@ export const COURSES = [
       },
     ]
   },
-  // --- MODULE 6: PHYSIQUE I ---
+  // --- MODULE 8: biologie animale ---
   {
     id: "biologie animale",
-    title: "Biologie animale (test)",
+    title: "Biologie animale (S2 bonus) ",
     description: "تجربة فقط",
-    price: 39,
+    price: 99,
     chapters: BIO_ANIMALE_CHAPTERS,
   },
 ];

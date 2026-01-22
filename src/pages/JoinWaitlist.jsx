@@ -14,8 +14,8 @@ const JoinWaitlist = () => {
   const [status, setStatus] = useState('idle');
 
   const interestOptions = [
-    { id: 'full_pack', label: 'باقة S1 كاملة', icon: Package, badge: 'توفير %🔥', desc: 'كلشي فدقة وحدة' },
-    { id: 'multi_pack', label: 'أكثر من موديل', icon: BookOpen, badge: null, desc: 'اختيار مخصص' },
+    { id: 'multi_pack', label: 'أكثر من موديل', icon: BookOpen, badge: 'توفير %🔥', desc: 'اختيار مخصص' },
+    { id: 'full_pack', label: 'باقة S1/S2 كاملة', icon: Package, badge: null, desc: 'كلشي فدقة وحدة' },
     { id: 'single_module', label: 'موديل واحد', icon: Microscope, badge: null, desc: 'تجربة المادة' },
   ];
 
