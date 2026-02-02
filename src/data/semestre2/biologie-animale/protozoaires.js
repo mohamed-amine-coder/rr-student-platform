@@ -1,3 +1,4 @@
+// import I000A from './images+audios/I000A.jpg'
 export const Lesson_1_1_1 = {
 "id": "amine-pro-lesson-1-1-1",
 "title": "Architecture Cellulaire et Cytosquelette des Protozoaires",
@@ -13,7 +14,7 @@ export const Lesson_1_1_1 = {
 {
 "type": "introduction",
 "content": {
-"text": "السلام عليكم يا أحسن ستودنت! معكم أمين، واليوم غادي نغوصو فواحد العالم مجهري واعر بزاف. تخيل معايا كائن حي كلو عبارة عن خلية وحدة (Unicellulaire). هاد الخلية هي اللي كتدير كاع الأدوار: كتاكل، كتحرك، وكتكاثر. واش عمرك سألتي راسك كيفاش هاد 'السكني' الصغير شاد فورمتو وما كيتفركعش؟ هادشي اللي غادي نكتشفو دابا!"
+"text": "السلام عليكم يا أحسن ستودنت! اليوم غادي نغوصو فواحد العالم مجهري واعر بزاف. تخيل معايا كائن حي كلو عبارة عن خلية وحدة (Unicellulaire). هاد الخلية هي اللي كتدير كاع الأدوار: كتاكل، كتحرك، وكتكاثر. واش عمرك سألتي راسك كيفاش هاد 'السكني' الصغير شاد فورمتو وما كيتفركعش؟ هادشي اللي غادي نكتشفو دابا!"
 }
 },
 {
@@ -32,9 +33,8 @@ export const Lesson_1_1_1 = {
 {
 "type": "image",
 "content": {
-"src": "https://rr-student.web.app/images/proto-structure-1.png",
-"prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. A large, detailed single-cell protozoan showing its outer membrane and internal layers with clear labels in French.",
-"caption": "الهندسة الخارجية للخلية: الغشاء والقشرة الواقية."
+"src": '/S2/Biologie_Animale/I111A.jpg',
+"caption": "RR STUDENT"
 }
 },
 {
@@ -67,6 +67,13 @@ export const Lesson_1_1_1 = {
 "type": "introduction",
 "content": {
 "text": "نهضرو على الـ Ectoplasme. هادي هي الطبقة اللي جاية مباشرة تحت الغشاء. المميزات ديالها أنها 'Hyalin'، يعني شفافة وصافية بحال الزجاج. والأهم من هادشي أنها كتكون فواحد الحالة الفيزيائية سميتها 'État de gel'، يعني عاقدة وشادة راسها بحال الجيل ديال الشعر. هاد الطبقة ما فيهاش أعضاء (Pas d'organites) ولكن فيها بروتين الـ Actine اللي كينفع فالحركة."
+}
+},
+{
+"type": "image",
+"content": {
+"src": '/S2/Biologie_Animale/I111B.jpg',
+"caption": "RR STUDENT"
 }
 },
 {
@@ -109,17 +116,16 @@ export const Lesson_1_1_1 = {
 }
 },
 {
-"type": "image",
-"content": {
-"src": "https://rr-student.web.app/images/proto-cytoplasm-2.png",
-"prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Detailed diagram showing the transition between Ectoplasm (Gel state) and Endoplasm (Sol state) with arrows showing fluid movement.",
-"caption": "الفرق بين الـ Ectoplasme (الجيل) والـ Endoplasme (السائل)."
-}
-},
-{
 "type": "introduction",
 "content": {
 "text": "واحد النقطة علمية مهمة بزاف: الـ Ectoplasme والـ Endoplasme ماشي حيط ثابت بيناتهم. بالعكس، الخلية تقدر تحول الـ Gel لـ Sol والـ Sol لـ Gel على حساب الحاجة. هاد الظاهرة سميتها 'Thixotropie'. هادشي هو اللي كيخلي الأميبة (Amibe) تخرج دوك 'الرجلين الكاذبة' (Pseudopodes) باش تمشى ولا تشد الماكلة."
+}
+},
+{
+"type": "image",
+"content": {
+"src": '/S2/Biologie_Animale/I111C.jpg',
+"caption": "RR STUDENT"
 }
 },
 {
@@ -189,9 +195,15 @@ export const Lesson_1_1_1 = {
 {
 "type": "image",
 "content": {
-"src": "https://rr-student.web.app/images/proto-final-3.png",
-"prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. A summary poster showing the key vocabulary: Ectoplasme, Endoplasme, Membrane, Nucleus, with clear arrows.",
-"caption": "ملخص شامل لبنية الخلية عند الأوليات."
+"src": '/S2/Biologie_Animale/I111D.jpg',
+"caption": "RR STUDENT"
+}
+},
+{
+"type": "image",
+"content": {
+"src": '/S2/Biologie_Animale/I111E.jpg',
+"caption": "RR STUDENT"
 }
 },
 {
@@ -212,6 +224,13 @@ export const Lesson_1_1_1 = {
 "type": "exam_trap",
 "content": {
 "text": "آخر فخ: ما تخلطش بين الـ Cytoplasme والـ Cytosquelette. الأول هو المادة اللي كتعمر الخلية، والثاني هو الهيكل (الأنابيب والخيوط) اللي شاد الخلية."
+}
+},
+{
+"type": "image",
+"content": {
+"src": '/S2/Biologie_Animale/I111F.jpg',
+"caption": "RR STUDENT"
 }
 },
 {
@@ -280,6 +299,7 @@ export const Lesson_1_1_1 = {
 }
 ]
 }
+
 export const Lesson_1_1_2 = {
 "id": "svi-s2-protozoa-osmoregulation-amine",
 "title": "1.1.2. Osmorégulation : La Vacuole Pulsatile",
@@ -307,7 +327,7 @@ export const Lesson_1_1_2 = {
 {
 "type": "image",
 "content": {
-"src": "https://rr-student.web.app/images/osmosis-protozoa.png",
+// "src": i112i1,
 "prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Illustration showing water molecules (blue arrows) entering a protozoan cell across the membrane due to osmotic pressure.",
 "caption": "ظاهرة الأسموزية: الما كيدخل للخلية حيت هي 'شبعانة' أملاح مقارنة ببرا."
 }

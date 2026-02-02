@@ -15,16 +15,16 @@ const CoursesSection = () => {
               <Sparkles size={14} /> اختر الموديل
             </div>
             <h2 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
-              Semestre 1 - BG (S1)
+              الموديلات المفتوحة حاليا
             </h2>
           </div>
           
           <div className="bg-slate-50 p-1 rounded-xl flex border border-slate-100 shrink-0">
              <button className="bg-white text-slate-900 px-4 py-1.5 rounded-lg shadow-sm text-[11px] font-black border border-slate-100">
-               S1 SVTU
+               S1 - S2 SVTU
              </button>
              <button className="text-slate-400 px-4 py-1.5 text-[11px] font-bold cursor-not-allowed">
-               قريباً S2
+               قريباً S3 - S4
              </button>
           </div>
         </div>

@@ -34,63 +34,63 @@ export const BIO_CELL_CHAPTERS = [
     {
         id: "M1-1-2-1",
         title: "1.2.1. Système hautement organisé de molécules",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الماء والأملاح المعدنية"
     },
     {
         id: "M1-1-2-2",
         title: "1.2.2. Le Métabolisme : utilisation de matière et d'énergie",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "كيفاش الخلية كتاكل وتنتج"
     },
     {
         id: "M1-1-2-3",
         title: "1.2.3. Capacités de développement, reproduction et adaptation",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "خصائص الكائن الحي"
     },
     {
         id: "M1-1-3-1",
         title: "1.3.1. Cellule Procaryote : Noyau non organisé",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "بدائيات النواة (Bacteria)"
     },
     {
         id: "M1-1-3-2",
         title: "1.3.2. Cellule Procaryote : Paroi et membrane",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الغشاء والجدار البكتيري"
     },
     {
         id: "M1-1-3-3",
         title: "1.3.3. Cellule Eucaryote : Réseau membranaire",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "حقيقيات النواة (Eucaryote)"
     },
     {
         id: "M1-1-3-4",
         title: "1.3.4. Cellule Eucaryote : Cytosquelette et dimensions",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الحجم والهيكل الخلوي"
     },
     {
         id: "M1-1-3-5",
         title: "1.3.5. Comparaison : Cellule animale vs végétale",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الفرق بين الحيوانية والنباتية"
     },
     {
         id: "M1-1-3-6",
         title: "1.3.6. Les Virus : Particules acellulaires",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الفيروسات ودورة حياتها"
     },
@@ -101,70 +101,70 @@ export const BIO_CELL_CHAPTERS = [
     {
         id: "M1-2-1-1",
         title: "2.1.1. Acides aminés : structure (Radical, Amine...)",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "تركيبة الأحماض الأمينية"
     },
     {
         id: "M1-2-1-2",
         title: "2.1.2. Classification des Acides aminés",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "Polaires, Aromatiques, etc."
     },
     {
         id: "M1-2-1-3",
         title: "2.1.3. La liaison peptidique",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الرابطة بين الأحماض"
     },
     {
         id: "M1-2-1-4",
         title: "2.1.4. Structure Primaire (Séquence)",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "تسلسل الأحماض"
     },
     {
         id: "M1-2-1-5",
         title: "2.1.5. Structure Secondaire (Hélice α, Feuillet β)",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الالتفاف الأولي"
     },
     {
         id: "M1-2-1-6",
         title: "2.1.6. Structure Tertiaire (Repliement 3D)",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الشكل الثلاثي الأبعاد"
     },
     {
         id: "M1-2-1-7",
         title: "2.1.7. Structure Quaternaire",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "تجمع الوحدات (Monomères)"
     },
     {
         id: "M1-2-1-8",
         title: "2.1.8. Liaisons stabilisatrices",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "Ioniques, H, Hydrophobes, S-S"
     },
     {
         id: "M1-2-1-9",
         title: "2.1.9. Fonctions des protéines",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "Structurales vs Biologiques"
     },
     {
         id: "M1-2-2-1",
         title: "2.2.1. Lipides simples : Glycérides, Stérides...",
-        isFree: true,
+        isFree: false,
         type: 'lesson',
         quickInfo: "الدهنيات البسيطة"
     },

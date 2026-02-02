@@ -9,6 +9,8 @@ import JoinWaitlist from './pages/JoinWaitlist';
 import LessonViewer from './features/lessons/LessonViewer';
 import ModulePage from './pages/ModulePage';
 import ScrollToTop from './components/ScrollToTop';
+import Login from './pages/Login';
+import AdminDashboard from './components/Admin/AdminDashboard';
 function App() {
   return (
     <Router>
@@ -21,6 +23,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Home />} />
             <Route path="join-waitlist" element={<JoinWaitlist />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/admin-control" element={<AdminDashboard />} />
             <Route path="/lesson/:id" element={<LessonViewer />} />
             <Route path="/module/:moduleId" element={<ModulePage />} />
           </Routes>
