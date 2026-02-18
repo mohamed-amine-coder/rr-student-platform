@@ -4,7 +4,7 @@ service cloud.firestore {
     
     // 1. دالة كتعرف بلي نتا هو "المدير" بهاد الـ UID
     function isAdmin() {
-      return request.auth.uid == "RaPnwD08YvNlKAs4YlN7EJJdFd62"; 
+      return request.auth.uid == "HtR42ySkZGPkUa2WVVxI6cVFLYk2";
     }
 
     match /users/{userId} {

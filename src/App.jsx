@@ -11,6 +11,8 @@ import ModulePage from './pages/ModulePage';
 import ScrollToTop from './components/ScrollToTop';
 import Login from './pages/Login';
 import AdminDashboard from './components/Admin/AdminDashboard';
+import LessonImageGenerator from './components/ui/LessonImageGenerator';
+
 function App() {
   return (
     <Router>
@@ -27,6 +29,7 @@ function App() {
             <Route path="/admin-control" element={<AdminDashboard />} />
             <Route path="/lesson/:id" element={<LessonViewer />} />
             <Route path="/module/:moduleId" element={<ModulePage />} />
+            <Route path="/LessonImageGenerator" element={<LessonImageGenerator />} />
           </Routes>
         </main>
         <Footer />

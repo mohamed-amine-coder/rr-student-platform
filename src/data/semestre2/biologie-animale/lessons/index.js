@@ -8,7 +8,11 @@ import * as Partie6 from '../mammiferes'
 import * as Exame from '../exames'
 export const BIO_ANIMALE = {
     "M8-0-0-0": Partie0.Lesson_0_0_0,
+    "M8-0-1": Partie0.Lesson_0_1,
+    "M8-0-2": Partie0.Lesson_0_2,
+    "M8-0-3": Partie0.Lesson_0_3,
     "M8-1-1-1": Partie1.Lesson_1_1_1,
+    "M8-1-1-1E": Exame.Lesson_1_1_1E,
     "M8-1-1-2": Partie1.Lesson_1_1_2,
     "M8-1-1-2E": Exame.Lesson_1_1_2E,
     "M8-1-1-3": Partie1.Lesson_1_1_3,

@@ -8,7 +8,7 @@ import { Search, User, ShieldCheck, Zap, AlertCircle, CheckCircle2, Lock, Unlock
 
 const AdminDashboard = () => {
   // --- 1. إعدادات الأمان (Security Config) ---
-  const ADMIN_EMAIL = "mohamedajimi66@gmail.com"; // 🔴 ضروري: كتب الإيميل ديالك هنا
+  const ADMIN_EMAIL = "team.rrplatform@gmail.com"; // 🔴 ضروري: كتب الإيميل ديالك هنا
   // ------------------------------------------
 
   const [email, setEmail] = useState('');

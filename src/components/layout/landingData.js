@@ -66,7 +66,7 @@ export const COURSES = [
     id: "bio-vegetale",
     title: "Biologie des végétaux (S2)",
     description: "دراسة النباتات: التصنيف، التكاثر، والبنيات.",
-    price: 199,
+    price: 99,
     chapters: [],
   },
 

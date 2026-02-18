@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RR Fast Sender ⚡</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid #334155;
+        }
+        h2 { text-align: center; color: #fbbf24; margin-bottom: 0.5rem; }
+        
+        /* Checkbox Style */
+        .settings-box {
+            background: #334155;
+            padding: 10px;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .switch-label { font-size: 0.9rem; color: #e2e8f0; cursor: pointer; }
+        input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: #25D366; }
+
+        /* Input Fields */
+        .input-group { margin-bottom: 1.2rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #94a3b8; }
+        input[type="text"], input[type="tel"] {
+            width: 100%; padding: 12px; border-radius: 0.75rem; border: 2px solid #334155;
+            background-color: #0f172a; color: white; font-size: 1.1rem; box-sizing: border-box;
+        }
+        input:focus { outline: none; border-color: #fbbf24; }
+
+        /* Gender */
+        .gender-group { display: flex; gap: 1rem; margin-bottom: 1.2rem; }
+        .radio-label {
+            flex: 1; background-color: #0f172a; padding: 10px; border-radius: 0.75rem;
+            border: 2px solid #334155; text-align: center; cursor: pointer; transition: 0.2s; color: white;
+        }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + .radio-label {
+            background-color: #fbbf24; color: #0f172a; font-weight: bold; border-color: #fbbf24;
+        }
+
+        /* Buttons */
+        .buttons-grid { display: grid; gap: 10px; }
+        button {
+            width: 100%; padding: 1rem; color: white; border: none; border-radius: 0.75rem;
+            font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: transform 0.1s;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        button:active { transform: scale(0.98); }
+        .btn-1 { background-color: #25D366; }
+        .btn-2 { background-color: #128C7E; }
+        .btn-3 { background-color: #075E54; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>⚡ RR Turbo Sender</h2>
+        
+        <div class="settings-box">
+            <label class="switch-label" for="useApp">💻 عندي تطبيق واتساب فالبيسي (أسرع)</label>
+            <input type="checkbox" id="useApp" checked> 
+        </div>
+
+        <div class="input-group">
+            <div class="gender-group">
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male" class="radio-label">ولد 👨‍🎓</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female" class="radio-label">بنت 👩‍🎓</label>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="nameInput" placeholder="الاسم...">
+        </div>
+        <div class="input-group">
+            <input type="tel" id="phoneInput" placeholder="رقم الهاتف">
+        </div>
+
+        <div class="buttons-grid">
+            <button class="btn-1" onclick="sendMsg(1)"><span>1. ترحيب</span> <span>👋</span></button>
+            <button class="btn-2" onclick="sendMsg(2)"><span>2. الرابط</span> <span>🔗</span></button>
+            <button class="btn-3" onclick="sendMsg(3)"><span>3. العرض</span> <span>🎁</span></button>
+        </div>
+    </div>
+
+    <script>
+        // نصوص الرسائل
+        const msg1_M = `السلام عليكم [الاسم]، 👋 نتمنى تكون بخير!
+باقين عاقلين عليك فـ RR STUDENT! حيت كنتي تسجلتي فاللائحة د الانتظار،
+هادشي علاش قررنا نعطيوك الأسبقية نتا الأول هاد المرة باش تضمن بلاصتك فموديل Biologie Animale قبل ما يبدا S2`;
+        const msg1_F = `السلام عليكم [الاسم]، 👋 نتمنى تكوني بخير!
+باقين عاقلين عليك فـ RR STUDENT! حيت كنتي تسجلتي فاللائحة د الانتظار،
+هادشي علاش قررنا نعطيوك الأسبقية نتي اللولة هاد المرة باش تضمني بلاصتك فموديل Biologie Animale قبل ما يبدا S2`;
+
+        const msg2_M = `⚠️ علاش دابا؟ حيت S2 قصير ورمضان جاي 🌙. اللهم تهنى من الموديل دابا وتفهمو بالداريجة بلا ما تزير مع الصيام والعيا.
+حلينا ليك أول 3 فقرات فابور باش تجرب وتحكم بنفسك 👇
+https://rr-student.web.app`;
+        const msg2_F = `⚠️ علاش دابا؟ حيت S2 قصير ورمضان جاي 🌙. اللهم تهناي من الموديل دابا وتفهميه بالداريجة بلا ما تزيري مع الصيام والعيا.
+حلينا ليك أول 3 فقرات فابور باش تجربي وتحكمي بنفسك 👇
+https://rr-student.web.app`;
+
+        const msg3_M = `🎁 عرض خاص بيك: الموديل كامل بـ 99 درهم فقط (عوض 199 درهم).
+اعتبر هاد التخفيض هدية د الصلح واعتذار منا حيت ماكتابش ليك بلاصة فـ S1، وبغينا نعوضوها ليك فـ S2.
+⏳ رد البال: العرض كيسالي نهار 6 فبراير (غدا).
+باش تفعل الحساب وتبدا، صيفط لينا كلمة 'S2' 🚀`;
+        const msg3_F = `🎁 عرض خاص بيك: الموديل كامل بـ 99 درهم فقط (عوض 199 درهم).
+اعتبري هاد التخفيض هدية د الصلح واعتذار منا حيت ماكتابش ليك بلاصة فـ S1، وبغينا نعوضوها ليك فـ S2.
+⏳ ردي البال: العرض كيسالي نهار 6 فبراير (غدا).
+باش تفعلي الحساب وتبداي، صيفطي لينا كلمة 'S2' 🚀`;
+
+        function sendMsg(step) {
+            let name = document.getElementById('nameInput').value;
+            let phone = document.getElementById('phoneInput').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const useApp = document.getElementById('useApp').checked;
+
+            if (phone === '') { alert('⚠️ عافاك كتب النمرة!'); return; }
+            if (name === '') name = (gender === 'male') ? 'صديقي' : 'صديقتي';
+
+            phone = phone.replace(/\s+/g, '');
+            if (phone.startsWith('0')) phone = '212' + phone.substring(1);
+
+            let textToSend = "";
+            if (step === 1) textToSend = (gender === 'male') ? msg1_M : msg1_F;
+            else if (step === 2) textToSend = (gender === 'male') ? msg2_M : msg2_F;
+            else if (step === 3) textToSend = (gender === 'male') ? msg3_M : msg3_F;
+
+            textToSend = textToSend.replace('[الاسم]', name);
+            let encodedMsg = encodeURIComponent(textToSend);
+
+            if (useApp) {
+                // الطريقة السريعة: تطبيق البيسي
+                window.location.href = `whatsapp://send?phone=${phone}&text=${encodedMsg}`;
+            } else {
+                // الطريقة العادية: متصفح (نفس النافذة)
+                let url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodedMsg}`;
+                window.open(url, 'RR_WHATSAPP_TAB'); 
+            }
+        }
+    </script>
+</body>
+</html>

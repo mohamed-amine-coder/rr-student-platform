@@ -1,4 +1,3 @@
-// import I000A from './images+audios/I000A.jpg'
 export const Lesson_1_1_1 = {
 "id": "amine-pro-lesson-1-1-1",
 "title": "Architecture Cellulaire et Cytosquelette des Protozoaires",
@@ -299,330 +298,557 @@ export const Lesson_1_1_1 = {
 }
 ]
 }
-
+// export const Lesson_1_1_1 = {
+//   "id": "bio-animale-chap1-intro-v2",
+//   "title": "Chapitre 1: Introduction à la Biologie Animale",
+//   "blocks": [
+//     {
+//       "type": "title",
+//       "content": {
+//         "number": "1.1",
+//         "title_fr": "Les Objectifs du Module",
+//         "title_ar": "أهداف دراسة البيولوجيا الحيوانية"
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "فاش كانقراو Biologie Animale، راه ماشي الهدف غير نتفرجو فالحيوانات. كاينين 5 دالأهداف كبار (Objectifs majeurs) خاصك تكون ضابطهم. أول هدف هو 'Inventaire de la diversité'. يعني خاصنا نديرو إحصاء وجرد لكاع الأنواع الحيوانية اللي كاينا فالطبيعة، من أصغر حشرة لأكبر حيوان."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "الهدف الثاني والثالث هوما: 'Organisation et Fonctionnement'. هنا مابقيتيش غير كاتحسب، وليتي باغي تفهم 'البني' (Structure) ديال الحيوان وكيفاش 'الوظائف' (Fonctions) ديالو خدامين. يعني كيفاش القلب كيضرب، كيفاش الماكلة كتهضم. هادا هو الفرق بين الشوفة السطحية والشوفة العلمية."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "الهدف الرابع هو 'Adaptation au milieu'. الحيوان ماشي عايش ففراغ، عايش فوسط (Milieu). خاصنا نفهمو كيفاش الحيوان كايقدر يغير من راسو أو من التصرفات ديالو باش يقاوم الظروف الصعيبة (البرد، السخونية، الجفاف). هادي هي 'L'adaptation'."
+//       }
+//     },
+//     {
+//       "type": "image",
+//       "content": {
+//         "src": "https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+//         "prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Illustration showing a chameleon adapting to its environment, representing 'Adaptation'.",
+//         "caption": "L'Adaptation: القدرة باش تعيش فأي وسط."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "الهدف الخامس والأخير هو الجانب التقني: 'Systématique et Nomenclature' + 'Maîtrise technique'. خاصك تعلم كيفاش 'تصنف' (Classer) الحيوانات فمجموعات، وكيفاش 'تسميهم' (Nommer) بالاسم العلمي اللاتيني، وزيد عليها تعلم تقنيات 'Dissection' (التشريح) باش تشوف الأعضاء بعينك."
+//       }
+//     },
+//     {
+//       "type": "quiz",
+//       "content": {
+//         "question": "شنو هو الفرق بين Systématique و Dissection؟",
+//         "options": [
+//           "بحال بحال، بجوج كايعنيو التشريح",
+//           "Systématique هي التصنيف والتسمية، و Dissection هي التشريح",
+//           "Systématique هي دراسة الخلايا، و Dissection هي التصنيف"
+//         ],
+//         "correctIndex": 1,
+//         "explanation": "الله يرضي عليك. Systématique جاية من Système (نظام التصنيف). Dissection هي الفعل اليدوي ديال التشريح."
+//       }
+//     },
+//     {
+//       "type": "exam_trap",
+//       "content": {
+//         "text": "⚠️ رد البال: فالامتحان يقدر يحط ليك Prof جملة تقول: 'La biologie animale se limite à la description'. (البيولوجيا تقتصر على الوصف). الجواب: Faux. هي كاتبحث فالفهم (Compréhension)، التنظيم (Organisation)، والتكيف (Adaptation)."
+//       }
+//     },
+//     {
+//       "type": "title",
+//       "content": {
+//         "number": "1.2",
+//         "title_fr": "Définition de l’être vivant",
+//         "title_ar": "تعريف الكائن الحي"
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "دابا شنو هو 'Être vivant' (الكائن الحي)؟ التعريف العلمي دقيق جداً: هو 'Système ouvert' (نظام مفتوح). علاش مفتوح؟ حيت كاين تبادل دائم (Échange permanent). الكائن الحي كايدخل 'Matière' (مادة) و 'Énergie' (طاقة) من الوسط، وكايخرج فضلات وطاقة حرارية."
+//       }
+//     },
+//     {
+//       "type": "advice",
+//       "content": {
+//         "title": "مثال باش تعقل",
+//         "text": "تخيل الكائن الحي بحال 'الموطور'. خاصك تكب ليسانس (Matière/Énergie) باش يخدم، وكايخرج الدخان (Déchets) والسخونية. كون كان 'Système fermé' (نظام مغلق) كون راه مات حيت ماتاياكل ماكايتنفس."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "الكائن الحي كيتميز بجوج قدرات كبار (2 Capacités majeures). الأولى: 'Auto-construction'. نتا كاتاكل تفاحة، الجسم ديالك كايفككها وكايبني بيها خلايا جلد جديدة. يعني الكائن الحي كايقدر يصاوب المادة الحية ديالو انطلاقا من عناصر الوسط. هاد العملية هي أساس 'Métabolisme'."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "القدرة الثانية: 'Auto-reproduction'. الكائن الحي ماكايتسناش وزين يصاوب ليه ولادو. هو قادر ينتج كائنات كتشبه ليه (Semblables). شكون المسؤول على هادشي؟ هو 'Matériel génétique' (ADN/Programme génétique). هو اللي فيه الخطة (Plan) ديال البناء."
+//       }
+//     },
+//     {
+//       "type": "image",
+//       "content": {
+//         "src": "https://images.unsplash.com/photo-1530210124550-912dc1381cb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+//         "prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Diagram showing 'Input (Food) -> Organism -> Output (Waste)', labeling it as 'Système Ouvert'.",
+//         "caption": "Système Ouvert: التبادل المستمر مع الوسط."
+//       }
+//     },
+//     {
+//       "type": "quiz",
+//       "content": {
+//         "question": "شنو كاتعني Auto-construction؟",
+//         "options": [
+//           "أن الكائن الحي كيبني دار فين يسكن",
+//           "أن الكائن الحي كيحول مادة الوسط إلى مادة حية خاصة به",
+//           "أن الكائن الحي كيتكاثر بوحدو"
+//         ],
+//         "correctIndex": 1,
+//         "explanation": "صحيح. Auto = ذاتي. Construction = بناء. يعني كيبني الجسم ديالو بالمادة اللي كلاها (Métabolisme)."
+//       }
+//     },
+//     {
+//       "type": "exam_trap",
+//       "content": {
+//         "text": "⚠️ Trap: واش Métabolisme هو غير الهضم؟ لا! Métabolisme هو المجموع ديال التفاعلات كاملة: تحويل المادة (Transformation)، إنتاج الطاقة، وبناء الخلايا."
+//       }
+//     },
+//     {
+//       "type": "title",
+//       "content": {
+//         "number": "1.3",
+//         "title_fr": "Propriétés fondamentales",
+//         "title_ar": "الخصائص الأساسية"
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "باش نقولو على شي حاجة 'حية'، خاص يتوفرو فيها 3 خصائص أساسية (Propriétés fondamentales). رقم 1: 'La Cellule'. الخلية هي الوحدة الهيكلية (Structurale) والوظيفية (Fonctionnelle). هي الساس. مايمكنش يكون حيوان بلا خلايا."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "الخاصية رقم 2: 'Homéostasie'. ركز مزيان. الوسط الداخلي ديالك (الدم، الحرارة) خاصو يبقى 'Stable' (مستقر) وخا الدنيا تقلب برا. هاد القدرة على الحفاظ على التوازن الداخلي سميتها Homéostasie."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "الخاصية رقم 3: 'Adaptabilité'. هادي العكس ديال الأولى. الأولى كاتحمي الداخل، وهادي كاتخليك تفاعل مع الخارج. هي القدرة على رد الفعل (Réagir) تجاه المنبهات (Stimuli) ديال الوسط (الضوء، الصوت، الخطر) باش تبقى عايش."
+//       }
+//     },
+//     {
+//       "type": "advice",
+//       "content": {
+//         "title": "الفرق بين Homéostasie و Adaptabilité",
+//         "text": "Homeostasie = الداخل (Interne) = استقرار.\nAdaptabilité = الخارج (Externe) = تفاعل."
+//       }
+//     },
+//     {
+//       "type": "quiz",
+//       "content": {
+//         "question": "إلى طلع ليك السكر فالدم والبنكرياس هبطو باش يتقاد، هادي:",
+//         "options": [
+//           "Adaptabilité",
+//           "Homéostasie",
+//           "Auto-reproduction"
+//         ],
+//         "correctIndex": 1,
+//         "explanation": "برافو. هادا توازن داخلي (Equilibre interne)، إذن Homéostasie."
+//       }
+//     },
+//     {
+//       "type": "title",
+//       "content": {
+//         "number": "1.4",
+//         "title_fr": "Le Cycle de Vie",
+//         "title_ar": "دورة الحياة"
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "آخر محور فهاد الدرس هو 'Cycle de vie'. جميع الكائنات الحية كدوز من مراحل ثابتة (Phases immuables). 1. 'Naissance' (الولادة). 2. 'Croissance' (النمو). هنا حبس! النمو ماشي غير كايطوال."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "فمرحلة 'Croissance'، كايوقعو جوج حوايج: زيادة فـ 'Biomasse' (الوزن/الحجم)، و 'Différenciation' (التمايز). الخلايا كاتخصص، هادي كاتولي كبدة، هادي عصب، هادي عظم. عقل على كلمة Différenciation."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "المرحلة 3: 'Reproduction'. الوصول لسن البلوغ (Maturité) والقدرة على نقل الحياة. المرحلة 4: 'Mort'. وهي توقف الوظائف الحيوية (Cessation de vie)، وهي مرحلة ضرورية فالبيولوجيا."
+//       }
+//     },
+//     {
+//       "type": "image",
+//       "content": {
+//         "src": "https://images.unsplash.com/photo-1596719602236-40742d46e276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+//         "prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Simple flowchart: Naissance -> Croissance (Biomasse/Différenciation) -> Reproduction -> Mort.",
+//         "caption": "دورة الحياة: تسلسل لا يتغير."
+//       }
+//     },
+//     {
+//       "type": "exam_trap",
+//       "content": {
+//         "text": "⚠️ Trap: يقدر يقوليك Prof: النمو هو فقط زيادة فالقد (Taille). خطأ! النمو هو Augmentation de biomasse + Différenciation des tissus (تخصص الأنسجة)."
+//       }
+//     },
+//     {
+//       "type": "quiz",
+//       "content": {
+//         "question": "شنو هما العنصرين اللي كيميزو مرحلة النمو (Croissance)؟",
+//         "options": [
+//           "الولادة والموت",
+//           "زيادة الكتلة الحيوية (Biomasse) والتمايز (Différenciation)",
+//           "النوم والأكل"
+//         ],
+//         "correctIndex": 1,
+//         "explanation": "بالضبط. الحيوان كيكبر فالحجم (Biomasse) والأعضاء ديالو كيتكونو وكيتخصصو (Différenciation)."
+//       }
+//     },
+//     {
+//       "type": "introduction",
+//       "content": {
+//         "text": "دابا نجمعو كلشي. البيولوجيا الحيوانية علم دقيق كيدرس الكائن الحي كنظام مفتوح، كيبني راسو وكيتكاثر، مبني من خلايا، كيحافظ على توازنو، وكيدوز من دورة حياة محددة."
+//       }
+//     },
+//     {
+//       "type": "translation",
+//       "content": {
+//         "title": "Dictionnaire (مصطلحات للحفظ)",
+//         "terms": [
+//           { "fr": "Inventaire", "ar": "جرد / إحصاء" },
+//           { "fr": "Systématique", "ar": "علم التصنيف" },
+//           { "fr": "Système ouvert", "ar": "نظام مفتوح (تبادل الطاقة والمادة)" },
+//           { "fr": "Auto-construction", "ar": "بناء ذاتي" },
+//           { "fr": "Auto-reproduction", "ar": "تكاثر ذاتي" },
+//           { "fr": "Métabolisme", "ar": "استقلاب (مجموع التفاعلات)" },
+//           { "fr": "Homéostasie", "ar": "توازن داخلي" },
+//           { "fr": "Adaptabilité", "ar": "قابلية التكيف" },
+//           { "fr": "Stimuli", "ar": "منبهات" },
+//           { "fr": "Biomasse", "ar": "كتلة حيوية" },
+//           { "fr": "Différenciation", "ar": "تمايز (تخصص الخلايا)" },
+//           { "fr": "Cessation", "ar": "توقف / انقطاع" }
+//         ]
+//       }
+//     },
+//     {
+//       "type": "resume",
+//       "content": {
+//         "title_fr": "Résumé Global",
+//         "explanation": "La biologie animale étudie les organismes vivants avec pour objectifs : l'inventaire de la diversité, la compréhension de l'organisation et du fonctionnement, l'adaptation au milieu, et la systématique. L'être vivant est un système ouvert (échange matière/énergie), capable d'auto-construction (métabolisme) et d'auto-reproduction (via l'ADN). Ses propriétés clés sont la cellule, l'homéostasie (équilibre interne) et l'adaptabilité. Son cycle de vie suit les phases : Naissance, Croissance (Biomasse + Différenciation), Reproduction et Mort.",
+//         "keywords": ["Système ouvert", "Homéostasie", "Métabolisme", "Différenciation", "Adaptation"]
+//       }
+//     },
+//     {
+//       "type": "checklist",
+//       "content": {
+//         "title": "Checklist (واش ناضي؟)",
+//         "items": [
+//           "عرفت بلي الكائن الحي هو Système ouvert.",
+//           "فرقت بين Auto-construction و Auto-reproduction.",
+//           "حفظت معنى Homéostasie (التوازن الداخلي).",
+//           "عرفت بلي النمو فيه Différenciation ماشي غير الزيادة فالوزن.",
+//           "عرفت الفرق بين Systématique (تصنيف) و Dissection (تشريح)."
+//         ]
+//       }
+//     }
+//   ]
+// };
 export const Lesson_1_1_2 = {
-"id": "svi-s2-protozoa-osmoregulation-amine",
-"title": "1.1.2. Osmorégulation : La Vacuole Pulsatile",
-"blocks": [
-{
-"type": "title",
-"content": {
-"number": "1.1.2",
-"title_fr": "L'Osmorégulation et la Vacuole Pulsatile",
-"title_ar": "التنظيم الأسموزي والفجوة المنقبضة"
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "مرحبا بيك أ ستودنت فالحصة ديال 'أمين'. اليوم غادي نهضرو على واحد المشكل كبير كيواجه الكائنات اللي عايشة فـ 'الماء الحلو' (Eau douce). تخيل معايا راسك نفاخة وسط روبيني محلول، الما كيطلع ليك لداخل وبغيتي تفركع! هاد الكائنات المجهرية (Protozoaires) عايشين فهاد الخطر كل ثانية. كيفاش كيديرو باش ما يتفركعوش؟ هادشي اللي غادي نكتشفو!"
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "أول حاجة خاصك تفهمها هي واحد الظاهرة فيزيائية سميتها 'L'Osmose' (الأسموزية). القاعدة كتقول: الما ديما كيمشي من البلاصة اللي فيها الملح قليل للبلاصة اللي فيها الملح بزاف. لداخل ديال الخلية (Cytoplasme) كيكون عامر أملاح وبروتينات، يعني كيتسمى 'Hypertonique'. والما اللي على برا (Eau douce) كيكون 'Hypotonique'. النتيجة؟ الما كيهجم على الخلية لداخل بلا حبس!"
-}
-},
-{
-"type": "image",
-"content": {
-// "src": i112i1,
-"prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Illustration showing water molecules (blue arrows) entering a protozoan cell across the membrane due to osmotic pressure.",
-"caption": "ظاهرة الأسموزية: الما كيدخل للخلية حيت هي 'شبعانة' أملاح مقارنة ببرا."
-}
-},
-{
-"type": "quiz",
-"content": {
-"question": "علاش الما كيدخل لوسط الخلية ديال البروتوزوا اللي عايشة فالماء الحلو؟",
-"options": [
-"حيت لداخل ديال الخلية فيه تركيز عالي ديال الأملاح (Hypertonique)",
-"حيت الخلية بغات تشرب حيت فيها العطش",
-"حيت الما اللي برا فيه الملح بزاف",
-"حيت الغشاء ديالها فيه تقابي كبار"
-],
-"correctIndex": 0,
-"explanation": "الخاصية الأسموزية كتدفع الما يدخل للبلاصة اللي مركزي فيها الأملاح (Le milieu le plus concentré)."
-}
-},
-{
-"type": "exam_trap",
-"content": {
-"text": "رد بالك! فالمتحان يقدر يقلب ليك الكلمات. عقل: لداخل (Cytoplasme) هو Hypertonique، وبرا (Eau douce) هو Hypotonique. إلا قلبتيهم، المعنى كلو كيمشي غلط!"
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "دابا فكر معايا، إلا بقى هاد الما كيدخل، الخلية غادي تنفخ تنفخ حتى تفركع، وهادشي كيتسمى 'La Lyse cellulaire'. باش يتفاداو هاد الكارثة، ربي عطى لهاد الكائنات واحد 'المضخة' (Pompe hydraulique) ذكية بزاف سميتها 'La Vacuole Pulsatile' (الفجوة المنقبضة) ولا كيتسمى 'Vacuole Contractile'."
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "هاد الفجوة المنقبضة هي بحال واحد 'الروبيني' كيعمر بالما الزايد ويخرجو لبرا. هاد العملية ديال التوازن ديال الما لداخل كتسمى 'L'Osmorégulation'. يعني الخلية كتحكم فكمية الما اللي عندها باش تبقى عايشة بيخير."
-}
-},
-{
-"type": "advice",
-"content": {
-"title": "كلمة ساروت",
-"text": "عقل على كلمة 'Osmorégulation' بـ 'Régulation' (تنظيم) ديال 'Osmose' (الما اللي داخل). ساهلة ياك؟"
-}
-},
-{
-"type": "quiz",
-"content": {
-"question": "شنو هو الدور الأساسي ديال الفجوة المنقبضة (Vacuole pulsatile)؟",
-"options": [
-"هضم الماكلة",
-"التنفس",
-"التنظيم الأسموزي (Osmorégulation) وطرد الما الزايد",
-"التكاثر الجنسي"
-],
-"correctIndex": 2,
-"explanation": "هي 'المضخة' اللي كتخرج الما الزايد باش الخلية ما تفركعش."
-}
-},
-{
-"type": "exam_trap",
-"content": {
-"text": "حضي راسك! البروتوزوا اللي عايشين فالبحر (Milieu marin) غالبا ما كيكونش عندهم هاد الفجوة المنقبضة. علاش؟ حيت ملوحة البحر قريبة لملوحة الخلية، فما كيدخلش ليهم الما بزاف. هاد المشكل كاين غير عند صحاب 'الماء الحلو' (Dulçaquicoles)."
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "يلاه ندخلو للديكور لداخل! العملية فيها جوج مراحل بحال القلب. المرحلة الأولى هي فاش كتعمر الفجوة بالما، وهادي كتسمى 'La Diastole'. الما كيتجمع من السيتوبلازم وكيدوز فواحد القنوات صغار سميتهم 'Canaux collecteurs' (قنوات جامعة) اللي كيصبو فواحد 'الشكارة' وسطانية سميتها 'L'ampoule centrale'."
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "المرحلة الثانية هي فاش كتوصل هاد الشكارة (L'ampoule) لواحد الحجم كبير، كتقلص دغيا وبقوة باش تلوح الما لبرا. هاد المرحلة كتسمى 'La Systole'. الما كيخرج عبر واحد التقبة مؤقتة فغشاء الخلية وكيمشي فحالو."
-}
-},
-{
-"type": "exam_trap",
-"content": {
-"text": "عقل مزيان على الأسماء: Diastole = تعمار (Remplissage)، Systole = خويان (Contraction/Expulsion). ما تخلطش بيناتهم!"
-}
-},
-{
-"type": "image",
-"content": {
-"src": "https://rr-student.web.app/images/vacuole-pulsatile-cycle.png",
-"prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Diagram of the Vacuole Pulsatile showing the filling phase (Diastole) with collecting canals and the contraction phase (Systole) expelling water through a pore.",
-"caption": "دورة حياة الفجوة المنقبضة: من التعمار (Diastole) حتى للانقباض (Systole)."
-}
-},
-{
-"type": "advice",
-"content": {
-"title": "تقنية عقل عليها",
-"text": "تفكر القلب ديال بنادم: حتا هو فيه Diastole و Systole. نفس الخدمة ونفس الأسماء!"
-}
-},
-{
-"type": "quiz",
-"content": {
-"question": "شنو هي المرحلة اللي فيها كتفرغ الفجوة الما لبرا؟",
-"options": [
-"La Diastole",
-"La Systole",
-"La Phagocytose",
-"La Mitose"
-],
-"correctIndex": 1,
-"explanation": "الـ Systole هي الانقباض اللي كيدفع الما يخرج لبرا."
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "هاد 'المضخة' ما خداماش غير هكاك فسبيل الله، هي كتحتاج الطاقة! والخلية باش تجيب الطاقة خاصها الـ ATP. داكشي علاش العلماء فاش كيشوفو بالمجهر، كيلقاو بلي الميتوكوندري (Mitochondries) - اللي هما مصانع الطاقة - مجموعين ومزاحمين دايرين بالفجوة المنقبضة."
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "يعني هاد العملية كتسمى 'Transport actif' (نقل نشط). حيت الخلية كتخلص 'الثمن' ديال طرد الما بالطاقة اللي عندها. هادشي كيبين لينا بلي الفجوة المنقبضة هي عضو معقد ماشي غير نفاخة عادية."
-}
-},
-{
-"type": "exam_trap",
-"content": {
-"text": "يقدر يسولك البروف: واش هاد العملية كتستهلك الطاقة؟ الجواب هو نعم (Consommatrice d'ATP). والدليل هو وجود بزاف ديال الميتوكوندري دايرين بيها."
-}
-},
-{
-"type": "quiz",
-"content": {
-"question": "علاش كنلقاو بزاف ديال الميتوكوندري دايرين بالفجوة المنقبضة؟",
-"options": [
-"باش يسخنوها",
-"باش يعطيوها الطاقة (ATP) اللازمة للانقباض",
-"باش يصبغو الخلية باللون الأصفر",
-"ما كاين حتى علاقة بيناتهم"
-],
-"correctIndex": 1,
-"explanation": "الميتوكوندري هي اللي كتنتج الطاقة اللي كتحتاجها الفجوة باش تخدم 'المضخة' ديالها."
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "واحد النقطة أخرى واعرة، هي أن هاد الفجوة كتلعب دور 'الكلية' (Rein primitif). الكلية ديالنا كتصفي الدم وكتخرج الما والفضلات، حتا هاد الفجوة كتخرج الما الزايد ومعاه شي فضلات ذائبة. يعني هي اللي مكلفة بـ 'L'homéostasie hydrique' (التوازن المائي) ديال الخلية."
-}
-},
-{
-"type": "advice",
-"content": {
-"title": "تشبيه زوين",
-"text": "تخيل الفجوة المنقبضة هي 'الكرّاطة' ديال الخلية، فين ما جا الما كدفعو لبرا باش الدار (الخلية) ما تغرقش!"
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "خلاصة القول، الفجوة المنقبضة هي نظام هيدروليكي متطور. كيبدا بجمع الما فـ 'Canaux collecteurs'، كيدوز لـ 'Ampoule centrale' (Diastole)، ومن بعد كيطرطق لبرا (Systole) باستعمال طاقة الـ ATP. هادشي كلو باش يحافظ على الخلية صاينة فوسط مائي خطر."
-}
-},
-{
-"type": "image",
-"content": {
-"src": "https://rr-student.web.app/images/proto-mitochondria-vacuole.png",
-"prompt": "Style: Flat Vector. Brand: Yellow Background (#FFD700), Black Lightning Logo, Text 'RR STUDENT', URL 'rr-student.web.app'. Detailed cell internal view showing mitochondria (power plants) surrounding the contractile vacuole to supply ATP.",
-"caption": "الميتوكوندري (بالأحمر) دايرين بالفجوة باش يعطيوها الطاقة اللازمة."
-}
-},
-{
-"type": "exam_trap",
-"content": {
-"text": "فالرسم (Schéma) ديال الامتحان، إلا طلب منك ترسم Vacuole pulsatile، ما تنساش ترسم حداها الميتوكوندري وتكتب سميتهم، باش تبين للبروف بلي فاهم بلي كتحتاج طاقة!"
-}
-},
-{
-"type": "quiz",
-"content": {
-"question": "شنو هي القنوات اللي كتجمع الما من السيتوبلازم وتديه للفجوة؟",
-"options": [
-"Canaux collecteurs",
-"Canaux de sodium",
-"القنوات التلفزية",
-"Les pores nucléaires"
-],
-"correctIndex": 0,
-"explanation": "القنوات الجامعة (Canaux collecteurs) هي اللي كتجمع الما من كاع القنات ديال الخلية."
-}
-},
-{
-"type": "advice",
-"content": {
-"title": "Mnemonic لعملية Systole",
-"text": "Systole تبدا بـ S، تفكر 'Sortie' (خروج) ديال الما. هكا عمرك تنساها!"
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "دابا وليتي ضابط 'L'osmorégulation'. عرفتي بلي الما كيدخل بالأسموزية (Osmose)، والخلية كتجاوب بالفجوة المنقبضة اللي هي مضخة أكتيف. هاد العضو الصغير هو اللي كيمنع الانفجار (Lyse) وكيخلي الخلية تعيش فسلام."
-}
-},
-{
-"type": "introduction",
-"content": {
-"text": "هاد الدرس هو مثال حي كيفاش البيولوجيا هي هندسة دقيقة. حتا فكائن فيه غير خلية وحدة، كاين نظام أمان معقد كيحافظ على الحياة. تبارك الله عليك أ ستودنت، كمل بحال هكا!"
-}
-},
-{
-"type": "advice",
-"content": {
-"title": "السر ديال النجاح",
-"text": "الأسئلة ديال هاد الفقرة ديما كيدورو على: علاش الما كيدخل؟ (Osmose) وكيفاش كيخرج؟ (Vacuole Pulsatile) واش كيحتاج طاقة؟ (نعم، ATP)."
-}
-},
-{
-"type": "quiz",
-"content": {
-"question": "شنو كيطرا للخلية إلا حبسنا ليها الخدمة ديال الفجوة المنقبضة؟",
-"options": [
-"غادي تزيان",
-"غادي تنفخ وتفركع (Lyser)",
-"غادي تولي سريعة",
-"ما غادي يطرا والو"
-],
-"correctIndex": 1,
-"explanation": "بلا طرد الما الزايد، الضغط لداخل غادي يزيد حتى تفركع الخلية (Lysis)."
-}
-},
-{
-"type": "exam_trap",
-"content": {
-"text": "حضي راسك من هاد المصطلح: 'Rein primitif'. يقدر يسولك شكون هو العضو اللي كيلعب هاد الدور عند البروتوزوا. الجواب هو الـ Vacuole Pulsatile."
-}
-},
-{
-"type": "resume",
-"content": {
-"title_fr": "Résumé Global : L'Osmorégulation",
-"explanation": "L'osmorégulation est un défi majeur pour les protozoaires dulçaquicoles car leur cytoplasme est hypertonique par rapport au milieu extérieur. L'eau pénètre continuellement dans la cellule par osmose, menaçant de provoquer une lyse cellulaire. Pour y remédier, l'évolution a doté ces organismes d'une vacuole pulsatile (ou contractile), agissant comme une pompe hydraulique active. Le cycle comporte deux phases : la diastole, où l'eau est drainée par des canaux collecteurs vers une ampoule centrale ; et la systole, où la vacuole se contracte brusquement pour expulser l'eau via un pore temporaire. Ce processus est un transport actif consommateur d'ATP, d'où l'abondance de mitochondries autour de la vacuole. Elle assure ainsi l'homéostasie hydrique et joue le rôle d'un rein primitif.",
-"keywords": [
-"Osmorégulation",
-"Hypertonique",
-"Diastole",
-"Systole",
-"ATP",
-"Mitochondries",
-"Homéostasie hydrique"
-]
-}
-},
-{
-"type": "translation",
-"content": {
-"title": "دكسيونير الدرس (Dictionnaire)",
-"terms": [
-{ "fr": "Osmorégulation", "ar": "تنظيم أسموزي" },
-{ "fr": "Vacuole pulsatile", "ar": "فجوة منقبضة" },
-{ "fr": "Hypertonique", "ar": "مرتفع الضغط الأسموزي" },
-{ "fr": "Hypotonique", "ar": "منخفض الضغط الأسموزي" },
-{ "fr": "Diastole", "ar": "مرحلة الامتلاء" },
-{ "fr": "Systole", "ar": "مرحلة الانقباض" },
-{ "fr": "Canaux collecteurs", "ar": "قنوات جامعة" },
-{ "fr": "Ampoule centrale", "ar": "أمبولة مركزية" },
-{ "fr": "Lyse cellulaire", "ar": "تحلل الخلية (انفجار)" },
-{ "fr": "Dulçaquicoles", "ar": "تعيش في المياه العذبة" },
-{ "fr": "Transport actif", "ar": "نقل نشط" },
-{ "fr": "Mitochondries", "ar": "ميتوكوندريا" },
-{ "fr": "Homéostasie", "ar": "توازن داخلي" },
-{ "fr": "Hydrique", "ar": "مائي" },
-{ "fr": "Pore", "ar": "ثقب / مسام" },
-{ "fr": "Osmose", "ar": "تناضح / أسموزية" },
-{ "fr": "ATP", "ar": "عملة الطاقة في الخلية" },
-{ "fr": "Contractile", "ar": "قابلة للانقباض" },
-{ "fr": "Rein primitif", "ar": "كلية بدائية" },
-{ "fr": "Milieu extérieur", "ar": "الوسط الخارجي" }
-]
-}
-},
-{
-"type": "checklist",
-"content": {
-"title": "Checklist: واش نتا واعر؟",
-"items": [
-"عرفتي علاش الما كيدخل للخلية (Osmose).",
-"فهمتي بلي الخلية Hypertonique مقارنة ببرا.",
-"فرقتي بين Diastole (تعمار) و Systole (خويان).",
-"عرفتي بلي العملية كتحتاج ATP (طاقة).",
-"فهمتي علاش الميتوكوندري كيكونو مجموعين حدا الفجوة.",
-"ضبطتي دور الفجوة كـ 'كلية بدائية'."
-]
-}
-}
-]
-}
+  "id": "svi-s2-protozoa-osmoregulation-amine",
+  "title": "1.1.2. Osmorégulation : La Vacuole Pulsatile",
+  "blocks": [
+    {
+      "type": "title",
+      "content": {
+        "number": "1.1.2",
+        "title_fr": "L'Osmorégulation : Le défi de l'eau",
+        "title_ar": "التنظيم الأسموزي وتحدي المياه"
+      }
+    },
+    {
+    "type": "translation",
+    "content": {
+        "title": "📚 الدليل الشامل للمصطلحات (Lexique)",
+        "terms": [
+        { "fr": "Osmorégulation", "ar": "تنظيم أسموزي (توازن الماء والأملاح)" },
+        { "fr": "Vacuole Pulsatile (Contractile)", "ar": "فجوة منقبضة (نابضة)" },
+        { "fr": "Milieu Hypertonique", "ar": "وسط مرتفع التركيز (عامر أملاح)" },
+        { "fr": "Milieu Hypotonique", "ar": "وسط منخفض التركيز (خفيف)" },
+        ]
+    }
+    },
+    {
+    "type": "translation",
+    "content": {
+        "title": "📚 الدليل الشامل للمصطلحات (Lexique)",
+        "terms": [
+        { "fr": "Phénomène d'Osmose", "ar": "ظاهرة التناضح (هجرة الماء)" },
+        { "fr": "Lyse Cellulaire", "ar": "انحلال الخلية (انفجار)" },
+        { "fr": "Diastole", "ar": "مرحلة الامتلاء (انبساط)" },
+        { "fr": "Systole", "ar": "مرحلة الإفراغ (انقباض)" },
+        ]
+    }
+    },
+    {
+    "type": "translation",
+    "content": {
+        "title": "📚 الدليل الشامل للمصطلحات (Lexique)",
+        "terms": [
+        { "fr": "Spongiome (Canaux collecteurs)", "ar": "قنوات جامعة (شباك إسفنجي)" },
+        { "fr": "Mitochondries", "ar": "ميتوكوندري (مصانع الطاقة)" },
+        { "fr": "ATP (Adénosine Triphosphate)", "ar": "جزيئة الطاقة" },
+        { "fr": "Transport Actif", "ar": "نقل نشط (يستهلك طاقة)" },
+        { "fr": "Pore excréteur", "ar": "ثقب الإفراغ" },
+        { "fr": "Dulçaquicole", "ar": "كائن يعيش في المياه العذبة" }
+        ]
+    }
+    },
+    {
+      "type": "introduction",
+      "content": {
+        "text": "تخيل معايا نتا هو قبطان ديال واحد السفينة (الخلية) وسط البحر. ولكن هاد السفينة فيها مشكل خطير: فيها تقابي صغار كيدخلو الما بلا توقف! إلا ما جبتيش 'سطل' وبقيتي كتخوي الما لبرا، السفينة غادي تغرق وتفركع. هادشي بالضبط اللي واقع للكائنات وحيدة الخلية (Protozoaires) اللي عايشة فـ 'Eau douce' (الماء العذب)."
+      }
+    },
+    {
+      "type": "image",
+      "content": {
+        "src": "/S2/Biologie_Animale/I112A.jpg",
+        "prompt": "Style: Flat Vector Art, Minimalist. Background: Pure White. Subject: A simple illustration of a small boat leaking water, with a character bailing water out using a bucket labeled 'Vacuole'. Important: Keep the bottom right corner completely white and empty.",
+        "caption": "الخلية بحال السفينة المثقوبة: خاصها ضروري تخرج الما اللي كيدخل باش ما تغرقش."
+      }
+    },
+    {
+      "type": "introduction",
+      "content": {
+        "text": "أول سؤال غايطيح ليك فالبال: وعلاش أصلاً الما كيدخل 'بزز' للخلية؟ الجواب هو الفيزيك: **L'Osmose**. \nالقاعدة كتقول: الما عزيز عليه يمشي للبلاصة اللي عامرة (Concentrée). السيتوبلازم ديال الخلية عامر أملاح وبروتينات (**Hypertonique**)، بينما الماء اللي عايشة فيه خفيف ومافيه والو (**Hypotonique**). إذن، الما كيهجم على الخلية باش 'يخففها'."
+      }
+    },
+    {
+      "type": "image",
+      "content": {
+        "src": "/S2/Biologie_Animale/I112B.jpg",
+        "prompt": "Style: Educational Science Diagram, Flat Vector. Background: Pure White. Composition: Split screen. Left side shows 'Eau douce' (few dots), Right side shows 'Cytoplasme' (many dots). Blue arrows pointing from Left to Right. Clean layout with white space at the bottom right.",
+        "caption": "قانون الأسموزية: الما كيهرب من الوسط الخفيف (Bra) وكيدخل للوسط العامر (Ldakhel)."
+      }
+    },
+    {
+      "type": "quiz",
+      "content": {
+        "question": "إلا شدينا باراميسيوم (Paramecie) وحطيناها فماء مقطر (Eau distillée)، شنو غايوقع؟",
+        "options": [
+          "غادي تكمش وتخوى من الما",
+          "غادي تنفخ بزاف حيت الما غايدخل بقوة",
+          "ما غايوقع والو",
+          "غادي تحول لضفدعة"
+        ],
+        "correctIndex": 1,
+        "explanation": "الماء المقطر هو Hypotonique بزاف (0 أملاح)، يعني الفرق فالتركيز غايكون كبير، والما غايدخل بواحد السرعة خيالية حتى تقدر تفركع الخلية."
+      }
+    },
+    {
+      "type": "exam_trap",
+      "content": {
+        "text": "⚠️ **Piège:** واش هاد المشكل كاين عند البروتوزوا اللي عايشين فالبحر (Marins)؟ \nلا! حيت ماء البحر مالح، والخلية مالحة، يعني هما **Isotoniques** (قد قد). إذن ماكيحتاجوش يخرجو الما بزاف."
+      }
+    },
+    {
+      "type": "introduction",
+      "content": {
+        "text": "باش الخلية ما تفركعش (**Lyse**)، ربي خلق ليها واحد 'المضخة' واعرة سميتها **La Vacuole Pulsatile** (الفجوة المنقبضة). هادي ماشي غير شكارة، هادي ماكينة خدامة بضو (Energie) وكتنظم كمية الما لداخل. العملية كتسمى **L'Osmorégulation**."
+      }
+    },
+    {
+      "type": "image",
+      "content": {
+        "src": "/S2/Biologie_Animale/I112C.jpg",
+        "prompt": "Style: Scientific Illustration, Flat Vector. Background: Pure White. Subject: A single Protozoa cell (Paramecium) with a bright yellow star-shaped organelle (Vacuole) highlighted. Clean white background, no clutter in corners.",
+        "caption": "الفجوة المنقبضة: النجدة ديال الخلية ضد الطوفان."
+      }
+    },
+    {
+      "type": "introduction",
+      "content": {
+        "text": "أجي ندخلو دابا لوسط هاد الماكينة ونشوفو كيفاش خدامة. الخدمة ديالها مقسمة لجوج مراحل، بحال القلب ديال بصح:"
+      }
+    },
+    {
+      "type": "introduction",
+      "content": {
+        "text": "1️⃣ **La Diastole (مرحلة التعمار):** \nهنا الفجوة كتكون مرخية، وكتبدا تعمر بالما. منين كيجيها الما؟ كيجيها من واحد القنوات صغار بحال 'التييوات' سميتهم **Le Spongiome** (أو Canaux collecteurs). هاد التييوات كيجمعو الما من كاع القنات دالخلية ويكبوه فالفجوة الوسطانية (Ampoule)."
+      }
+    },
+    {
+      "type": "image",
+      "content": {
+        "src": "/S2/Biologie_Animale/I112D.jpg",
+        "prompt": "Style: Flat Vector Diagram, Clean line art. Background: Pure White. Subject: Close-up on the Vacuole in 'Diastole' phase (Full and Round). Arrows pointing INWARDS from small canals. Bottom right corner MUST be empty white space.",
+        "caption": "مرحلة Diastole: الفجوة (Ampoule) كتعمر بالما اللي جاي من قنوات Spongiome."
+      }
+    },
+    {
+      "type": "introduction",
+      "content": {
+        "text": "2️⃣ **La Systole (مرحلة الخويان):** \nفاش الفجوة كتعمر حتى للحد (Maximum)، كيوقع 'انقباض' مفاجئ (**Contraction**). الفجوة كتعصر راسها، وكتحل واحد التقبة فغشاء الخلية (**Pore excréteur**) وكتفيري داك الما لبرا. وهكا الخلية كتنفس الصعداء!"
+      }
+    },
+    {
+      "type": "image",
+      "content": {
+        "src": "/S2/Biologie_Animale/I112E.jpg",
+        "prompt": "Style: Flat Vector Diagram, Clean line art. Background: Pure White. Subject: Close-up on the Vacuole in 'Systole' phase (Shrunken/Star shaped). Big Arrow pointing OUTWARDS. Minimalist design, white background.",
+        "caption": "مرحلة Systole: الفجوة كتعصر وكتلوح الما لبرا."
+      }
+    },
+    {
+      "type": "advice",
+      "content": {
+        "title": "💡 باش تعقل عليها",
+        "text": "تفكر: **S**ystole كتبدا بـ S يعني **S**ortie (خروج). \n**D**iastole كتبدا بـ D يعني **D**akhil (داخل/تعمار) أو Dilatation."
+      }
+    },
+    {
+      "type": "quiz",
+      "content": {
+        "question": "شنو هو الدور ديال le Spongiome؟",
+        "options": [
+          "هو اللي كيعصر الفجوة",
+          "هو اللي كيجمع الما من السيتوبلازم ويديه للفجوة",
+          "هو الغشاء الخارجي ديال الخلية",
+          "هو النواة ديال الفجوة"
+        ],
+        "correctIndex": 1,
+        "explanation": "Le Spongiome هو شبكة القنوات (Canaux collecteurs) اللي كتجمع الما."
+      }
+    },
+    {
+      "type": "introduction",
+      "content": {
+        "text": "واش كيحساب ليك هاد الخدمة فابور؟ لا! \nباش تخرج الما (اللي باغي يدخل بزز)، خاصك مجهود. هاد العملية هي **Transport Actif** وكتحتاج لـ 'الفلوس' ديال الخلية اللي هي **ATP**. داكشي علاش، إلا درنا زووم، غانلقاو الفجوة محاطة بجيش ديال **Mitochondries**."
+      }
+    },
+    {
+      "type": "image",
+      "content": {
+        "src": "/S2/Biologie_Animale/I112F.jpg",
+        "prompt": "Style: Detailed Vector, Scientific. Background: Pure White. Subject: The Vacuole surrounded by many red bean-shaped Mitochondria. Yellow lightning bolt symbols (⚡) indicating energy transfer. Isolate on white.",
+        "caption": "الميتوكوندري (المصانع) دايرين بالفجوة باش يعطيوها الطاقة (ATP) باش تقدر تخدم."
+      }
+    },
+    {
+      "type": "exam_trap",
+      "content": {
+        "text": "🚨 **سؤال كتحط بزاف:** علاش كنلقاو Mitochondries حدا Vacuole Pulsatile؟ \nالجواب: حيت Expulsion de l'eau (Systole) هو عمل نشيط (**Actif**) كيستهلك طاقة (**ATP**)."
+      }
+    },
+    {
+    "type": "image",
+    "content": {
+        "src": "/S2/Biologie_Animale/I112G.jpg",
+        "prompt": "Style: High-end medical infographic, clean flat vector, minimalist design. Background: Pure White (Crucial: ensure bottom right corner is empty white space). Composition: A structured horizontal flow diagram within a stylized cell outline. Title at top: 'LE CYCLE OSMORÉGULATEUR (دورة التنظيم المائي)'. Left Section (Influx): Blue arrows entering from external zone labeled 'EAU DOUCE (ماء عذب - Hypotonique)'. Inside, text label: 'OSMOSE: Entrée passive d\'eau (دخول الماء)'. Middle Section (The Mechanism): A large two-stage cycle diagram. Top part: A swollen round vacuole labeled '1. DIASTOLE (تعمار)', fed by small tubes labeled 'SPONGIOME (قنوات)'. Bottom part: A shrunken star-shaped vacuole labeled '2. SYSTOLE (خويان)', with water jet exiting through a pore labeled 'EXPULSION (طرد)'. Right Section (Energy): Next to the Systole phase, red mitochondria icons with lightning bolts, connected by an arrow labeled 'ÉNERGIE ACTIVE (طاقة ضرورية): ATP ⚡'. Color palette: Professional blue, yellow, and clean grey accents.",
+        "caption": "📊 الخلاصة الاحترافية: هكذا تواجه الخلية طوفان الماء (Osmose) عبر دورة الفجوة المنقبضة (Diastole/Systole) وباستعمال الطاقة (ATP)."    }
+    },
+    {
+      "type": "resume",
+      "content": {
+        "title_fr": "📝 Résumé Final",
+        "explanation": "L'osmorégulation permet aux protozoaires d'eau douce de ne pas éclater. L'eau entre par **Osmose** (milieu hypotonique). La **Vacuole Pulsatile** pompe cette eau vers l'extérieur. Le cycle : **Diastole** (remplissage via **Spongiome**) -> **Systole** (expulsion active consommatrice d'**ATP** fournis par les **Mitochondries**).",
+        "keywords": [
+          "Hypertonique/Hypotonique",
+          "Diastole",
+          "Systole",
+          "Spongiome",
+          "ATP",
+          "Mitochondries"
+        ]
+      }
+    },
+    {
+        "type": "title",
+        "content": {
+            "number": "🎯",
+            "title_fr": "Évaluation Finale : Testez vos connaissances",
+            "title_ar": "واش ضبطتي المسائل؟ أجي نتيستيو"
+        }
+    },
+    {
+        "type": "quiz",
+        "content": {
+            "question": " Un protozoaire dulçaquicole (eau douce) est hypertonique par rapport à son milieu. Quelle est la conséquence immédiate",
+            "options": [
+                "Sortie d'eau par osmose (Plasmolyse)",
+                "Entrée d'eau par osmose (Risque de lyse)",
+                "Aucun échange d'eau (Isotonie)",
+                "L'eau se transforme en glace"
+            ],
+            "correctIndex": 1,
+            "explanation": "بما أن الخلية Hypertonique (عامرة)، الما غادي يدخل ليها بزز (Osmose) باش يحاول يخفف التركيز، وهادشي كيهددها بالانفجار (Lyse)."
+        }
+    },
+    {
+        "type": "quiz",
+        "content": {
+            "question": "Quelle structure est responsable de la collecte de l'eau excédentaire dans le cytoplasme durant la Diastole",
+            "options": [
+                "La membrane plasmique",
+                "Le Spongiome (Canaux collecteurs)",
+                "L'appareil de Golgi",
+                "Le pore excréteur"
+            ],
+            "correctIndex": 1,
+            "explanation": "Le Spongiome هو داك السيستيم ديال 'التييوات' (Canaux) اللي كيجمع الما من كاع القنات ديال الخلية وكيكبو فالفجوة."
+        }
+    },
+    {
+        "type": "quiz",
+        "content": {
+            "question": "Pourquoi trouve-t-on une grande densité de mitochondries autour de la vacuole pulsatile",
+            "options": [
+                "Pour stocker l'eau",
+                "Pour fournir l'ATP nécessaire au transport actif (Systole)",
+                "Pour synthétiser des protéines",
+                "C'est un hasard"
+            ],
+            "correctIndex": 1,
+            "explanation": "عملية طرد الما (Systole) هي عملية نشيطة (Transport Actif) كطلب مجهود عضلي، إذن خاصها 'الوقود' اللي هو ATP اللي كتنتجو الميتوكوندري."
+        }
+    },
+    {
+        "type": "advice",
+        "content": {
+            "title": "🎉 Bravo Champion !",
+            "text": "إلا جاوبتي على هاد 3 دالأسئلة صحاح، كنضمن ليك أي سؤال يتحط فهاد الفقرة نهار الامتحان غاتجيبو فالشبكة"
+        }
+    },
+    {
+      "type": "checklist",
+      "content": {
+        "title": "✅ واش نتا واجد؟",
+        "items": [
+          "فهمتي علاش الما كيدخل (L'osmose).",
+          "فرقتي بين Diastole (تعمار) و Systole (خويان).",
+          "عرفتي بلي العملية كتحتاج ATP.",
+          "عقلتي على كلمة Spongiome."
+        ]
+      }
+    }
+  ]
+};
 export const Lesson_1_1_3 = {
 "id": "svi-s2-protozoa-holozoic-amine",
 "title": "1.1.3. La Nutrition Holozoïque (Phagotrophie)",

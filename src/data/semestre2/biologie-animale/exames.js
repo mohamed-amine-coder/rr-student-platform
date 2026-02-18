@@ -1,4 +1,4 @@
-export const Lesson_1_1_2E = {
+export const Lesson_1_1_1E = {
   "id": "global-exam-biology-s2",
   "title": "Examen Global de Biologie Animale",
   "blocks": [
@@ -112,6 +112,127 @@ export const Lesson_1_1_2E = {
               "Hit mayet (حيت ميت)"
             ],
             "correctIndex": 0
+          }
+        ]
+      }
+    }
+  ]
+};
+
+export const Lesson_1_1_2E = {
+  "id": "global-exam-osmoregulation-s2",
+  "title": "Examen Global : Osmorégulation",
+  "blocks": [
+    {
+      "type": "introduction",
+      "content": {
+        "text": "مرحبا بيك يا أحسن ستودنت! 🎓 هادو 10 أسئلة ديال بصح (Vrai Exam) فهاد الفقرة ديال Osmorégulation. الهدف هو نحيدو الشك باليقين ونشوفو واش بصح ناضي ولا غير كتشير. خود وقتك، وجاوب بذكاء! 😉"
+      }
+    },
+    {
+      "type": "exam",
+      "content": {
+        "title": "Examen de Validation : Vacuole Pulsatile",
+        "questions": [
+          {
+            "text": "بالنسبة لبروتوزوا كيعيش فالماء العذب (Eau douce)، كيفاش داير السيتوبلازم ديالو مقارنة بالوسط الخارجي؟",
+            "options": [
+              "Isotonique (قد قد فالتركيز)",
+              "Hypotonique (أقل تركيز)",
+              "Hypertonique (أكثر تركيز بالأملاح)",
+              "Atonique (بدون أملاح)"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "شنو هي الظاهرة الفيزيائية اللي كتخلي الما يدخل للخلية بزز منها؟",
+            "options": [
+              "La Phagocytose",
+              "L'Osmose",
+              "La Diffusion facilitée",
+              "L'Exocytose"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "شنو هو الدور الرئيسي ديال La Vacuole Pulsatile؟",
+            "options": [
+              "Stockage des nutriments (تخزين الماكلة)",
+              "Respiration cellulaire (التنفس)",
+              "Osmorégulation (توازن الماء)",
+              "Synthèse des protéines (صناعة البروتين)"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "شنو كنسميو المرحلة فاش الفجوة كتعمر بالما (Remplissage)؟",
+            "options": [
+              "La Systole",
+              "La Diastole",
+              "La Métaphase",
+              "L'Anaphase"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "وشنو كنسميو المرحلة فاش الفجوة كتعصر وكطرطق الما لبرا (Expulsion)؟",
+            "options": [
+              "La Systole",
+              "La Diastole",
+              "La plasmolyse",
+              "L'Endocytose"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "شكون هو اللي مكلف بجمع الما من السيتوبلازم وكبو فالفجوة المركزية؟",
+            "options": [
+              "Le Noyau",
+              "Les Ribosomes",
+              "Le Spongiome (Canaux collecteurs)",
+              "La Membrane plasmique"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "text": "واش عملية طرد الماء (Systole) كتحتاج طاقة؟",
+            "options": [
+              "لا، هي عملية Passive (فابور)",
+              "نعم، هي Transport Actif (كيستهلك ATP)",
+              "على حساب المزاج ديال الخلية",
+              "فقط فالليل"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "علاش كنلقاو بزاف ديال Mitochondries دايرين بـ Vacuole Pulsatile؟",
+            "options": [
+              "Pour fournir l'énergie (ATP) nécessaire à la contraction",
+              "Pour digérer la vacuole",
+              "Pour donner une couleur rouge",
+              "C'est un hasard"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "text": "واش لي بروتوزوا ديال البحر (Marins) عندهم Vacuole Pulsatile؟",
+            "options": [
+              "نعم، عندهم وكبار بزاف",
+              "لا، أو نادرة جداً (حيت الوسط Isotonique)",
+              "عندهم ولكن كتخدم بالعكس (كدخل الما)",
+              "عندهم جوج ديال الفجوات"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "text": "يمكن اعتبار الفجوة المنقبضة بمثابة عضو بشري مصغر، شكون هو؟",
+            "options": [
+              "Le Cœur (القلب) فقط",
+              "Le Poumon (الرئة)",
+              "Le Rein primitif (كلية بدائية)",
+              "L'Estomac (المعدة)"
+            ],
+            "correctIndex": 2
           }
         ]
       }
