@@ -1,513 +1,179 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FSSM RÉSULTATS - Espace Étudiant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>فهرس دروس البيولوجيا</title>
     <style>
-        :root {
-            --fssm-green: #008a40;
-            --fssm-dark-green: #006830;
-            --bg-gray: #f4f6f9;
-            --text-color: #333;
-            --border-color: #e2e8f0;
-            --danger: #dc3545;
-            --success: #28a745;
-            --blue-info: #cfe2ff;
-            --blue-text: #084298;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: var(--bg-gray);
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* Sidebar Styling */
-        .sidebar {
-            width: 260px;
-            background-color: var(--fssm-green);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            height: 100%;
-            left: 0;
-            top: 0;
-        }
-
-        .logo-area {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f9f4; /* لون أخضر خفيف كيوالم البيولوجيا */
+            color: #333;
+            line-height: 1.6;
             padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            max-width: 900px;
+            margin: auto;
         }
-
-        .logo-circle {
-            background: white;
-            color: var(--fssm-green);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-        }
-
-        .nav-label {
-            padding: 15px 20px 5px;
-            font-size: 0.85rem;
-            opacity: 0.8;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            list-style: none;
-            margin-top: 10px;
-        }
-
-        .nav-links li a {
-            display: flex;
-            align-items: center;
-            padding: 12px 20px;
-            color: white;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .nav-links li a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        .nav-links li a.active {
-            background-color: rgba(255,255,255,0.2);
-            border-left: 4px solid #bceac8;
-        }
-
-        .nav-links li a i {
-            margin-right: 12px;
-            width: 20px;
+        h1 {
             text-align: center;
+            color: #2c7a2c;
+            border-bottom: 2px solid #2c7a2c;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
-
-        /* Main Content Styling */
-        .main-content {
-            margin-left: 260px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .top-navbar {
+        .chapter {
             background: white;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 0 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .user-profile-btn {
-            background: #6f42c1;
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .container {
-            padding: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        /* Cards */
-        .card {
-            background: white;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            margin: 20px 0;
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+        .chapter:hover {
+            transform: translateY(-5px); /* تأثير خفيف فاش كتدوز السوري على الفصل */
         }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #2d3748;
+        .chapter h2 {
+            color: #1e5c1e;
+            font-size: 1.3em;
+            margin-top: 0;
+            border-right: 5px solid #1e5c1e;
+            padding-right: 10px;
         }
-
-        .profile-link {
-            color: var(--fssm-green);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        /* Form Controls */
-        .form-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            flex: 1;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.85rem;
+        .chapter p {
             color: #666;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            background: white;
-            font-size: 0.95rem;
-        }
-
-        .btn-search {
-            background-color: var(--fssm-green);
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* Alert Box */
-        .alert-info {
-            background-color: var(--blue-info);
-            color: var(--blue-text);
-            padding: 15px;
-            border-radius: 4px;
-            border: 1px solid #b6d4fe;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
-        }
-
-        .alert-info h4 {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .alert-info a {
-            color: var(--blue-text);
-            font-weight: 600;
-        }
-
-        /* Results Table */
-        .results-header-area {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-weight: bold;
             margin-bottom: 15px;
         }
-
-        .btn-new-search {
-            background: #e2e8f0;
-            border: none;
-            padding: 6px 12px;
+        ul {
+            list-style-type: none;
+            padding-right: 0;
+        }
+        li {
+            background: #eef7ee;
+            margin: 8px 0;
+            padding: 10px 15px;
             border-radius: 4px;
-            color: #555;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        .table-container {
-            background: white;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            background: #f8f9fa;
-            text-align: left;
-            padding: 12px 20px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #6c757d;
-            font-weight: 600;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        td {
-            padding: 12px 20px;
-            border-bottom: 1px solid var(--border-color);
-            color: #495057;
-            font-size: 0.9rem;
-        }
-
-        .text-right {
-            text-align: right;
-        }
-
-        /* Dynamic Classes for Colors */
-        .text-danger { color: var(--danger); font-weight: 700; }
-        .text-success { color: var(--success); font-weight: 700; }
-        .row-submodule { background-color: white; }
-        .row-module { background-color: #fafafa; font-weight: 500; }
-        .row-result { background-color: white; border-bottom: 2px solid var(--border-color); }
-        
-        .footer-logout {
-            margin-top: auto;
-            padding: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .footer-logout a {
-            color: white;
-            text-decoration: none;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            flex-wrap: wrap;
         }
-
+        .fr-text {
+            color: #555;
+            font-family: Arial, sans-serif;
+            direction: ltr;
+            display: inline-block;
+            background: #e0eee0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
 
-    <div class="sidebar">
-        <div class="logo-area">
-            <div class="logo-circle">FSSM</div>
-            <span>FSSM RÉSULTATS</span>
-        </div>
-        
-        <div class="nav-label">Espace Étudiant</div>
-        <ul class="nav-links">
-            <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-user"></i> Mon Profil</a></li>
-            <li><a href="#"><i class="fas fa-book"></i> Documentation</a></li>
-            <li><a href="#" class="active"><i class="fas fa-file-alt"></i> Visualiser Mes Résultats</a></li>
+    <h1>فهرس دروس البيولوجيا الحيوانية</h1>
+
+    <div class="chapter">
+        <h2>1. ملف: Chap.I - Généralités.pdf (الفصل الأول: عموميات)</h2>
+        <p>هاد الجزء كيعطيك الأساسيات لي غتحتاجها فالموديل كامل:</p>
+        <ul>
+            <li>I.1- تعريف الكائن الحي <span class="fr-text">Un être vivant ?</span></li>
+            <li>I.2- تعريف الحيوان <span class="fr-text">Un animal ?</span></li>
+            <li>I.3- الوظائف الحيوية عند الحيوانات <span class="fr-text">Fonctions vitales chez un animal</span></li>
+            <li>I.4- أهمية الحيوانات مقارنة بالكائنات الحية الأخرى</li>
+            <li>I.5- تاريخ التصنيفات <span class="fr-text">Histoire des classifications</span></li>
+            <li>I.6- قواعد علم التصنيف <span class="fr-text">Règles de la taxonomie</span></li>
         </ul>
-
-        <div class="footer-logout">
-            <a href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
-        </div>
     </div>
 
-    <div class="main-content">
-        <div class="top-navbar">
-            <div class="user-profile-btn">
-                <span>M</span> Confirmer votre identité
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Rechercher mes Résultats</div>
-                    <a href="#" class="profile-link"><i class="fas fa-user"></i> Mon Profil</a>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Année Universitaire</label>
-                        <select class="form-control">
-                            <option>2025/2026</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Semestre / Année</label>
-                        <select class="form-control">
-                            <option>Année 1</option>
-                        </select>
-                    </div>
-                </div>
-                <button class="btn-search">Rechercher</button>
-            </div>
-
-            <div class="alert-info">
-                <h4><i class="fas fa-info-circle"></i> Besoin d'aide pour comprendre vos résultats ?</h4>
-                <p style="margin-top: 5px; opacity: 0.9;">Consultez notre page de documentation pour comprendre les abréviations et codes utilisés dans vos Synthèses de notes (ABI, ABJ, AC, AR, ADM, etc.).</p>
-                <div style="margin-top: 8px;">
-                    <a href="#"><i class="fas fa-book-open"></i> Voir la documentation</a>
-                </div>
-            </div>
-
-            <div class="results-header-area">
-                <h3 class="card-title">Résultats pour 2025/2026 - Année 1</h3>
-                <button class="btn-new-search">Nouvelle Recherche</button>
-            </div>
-            <p style="color: #6c757d; font-size: 0.8rem; margin-bottom: 10px;">Dernière mise à jour : 2026-01-14</p>
-
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>MODULE</th>
-                            <th class="text-right">NOTE</th>
-                        </tr>
-                    </thead>
-                    <tbody id="results-body">
-                        </tbody>
-                </table>
-            </div>
-
-        </div>
+    <div class="chapter">
+        <h2>2. ملف: Chap. II- Protozoaires.pdf (الفصل الثاني: الأوليات الحيوانية)</h2>
+        <p>هنا غتقرا على الكائنات وحيدة الخلية:</p>
+        <ul>
+            <li>1- تعريف <span class="fr-text">Définition</span></li>
+            <li>2- الخصائص البنيوية <span class="fr-text">Caractères structuraux</span></li>
+            <li>3- التنوع <span class="fr-text">Diversité</span></li>
+            <li>4- التكاثر <span class="fr-text">Reproduction</span></li>
+            <li>5- التغذية <span class="fr-text">Nutrition</span></li>
+            <li>6- التوزيع والأهمية البيئية <span class="fr-text">Distribution et importance écologique</span></li>
+            <li>7- التصنيف المنهجي <span class="fr-text">Systématique</span></li>
+        </ul>
     </div>
 
-    <script>
-        // ============================================
-        // هدا هو الـ JSON لي كتحكم فيه فالمعطيات
-        // ============================================
+    <div class="chapter">
+        <h2>3. ملف: Chap. III- Les métazoaires et III.1 - Principaux plans d’organisation.pdf (الفصل الثالث: البعديات / الحيوانات متعددة الخلايا - خطط التنظيم الأساسية)</h2>
+        <p>هذا تقديم للكائنات متعددة الخلايا والتنظيم الداخلي ديالها:</p>
+        <ul>
+            <li>III.1.1- التماثل الجسدي <span class="fr-text">La symétrie corporelle</span></li>
+            <li>III.1.2- الأنسجة <span class="fr-text">Le tissu</span></li>
+            <li>III.1.3- عدد الطبقات الجنينية <span class="fr-text">Le nombre de feuillets embryonnaires</span></li>
+            <li>III.1.4- مصير الثقب الجنيني <span class="fr-text">Le devenir du blastopore embryonnaire</span></li>
+            <li>III.1.5- موقع الجهاز العصبي <span class="fr-text">La position du système nerveux</span></li>
+            <li>III.1.6- التجويف العام <span class="fr-text">La cavité générale</span></li>
+            <li>III.1.7- تقديم البعديات <span class="fr-text">Présentation des métazoaires</span></li>
+        </ul>
+    </div>
 
-        const modulesData = [
-    {
-        moduleCode: "BG11105",
-        moduleName: "Biologie cellulaire",
-        average: 6.000,
-        parts: [
-            { code: "BG11105CF", name: "CF_BioCell", note: 6.250 },
-            { code: "BG11105CR", name: "CR_BioCell", note: 0.000 },
-            { code: "BG11105TP", name: "TP_BioCell", note: 5.000 }
-        ]
-    },
-    {
-        moduleCode: "BG11205",
-        moduleName: "Histologie et notions Emb",
-        average: 3.950,
-        parts: [
-            { code: "BG11205CF", name: "CF_HistEmb", note: 3.750 },
-            { code: "BG11205CR", name: "CR_HistEmb", note: 0.000 },
-            { code: "BG11205TP", name: "TP_HistEmb", note: 4.750 }
-        ]
-    },
-    {
-        moduleCode: "BG11305",
-        moduleName: "Géologie générale",
-        average: 6.050,
-        parts: [
-            { code: "BG11305CF", name: "CF_GéolGén", note: 3.500 },
-            { code: "BG11305CR", name: "CR_GéolGén", note: 0.000 },
-            { code: "BG11305TP", name: "TP_GéolGén", note: 12.000 }
-        ]
-    },
-    {
-        moduleCode: "BG11405",
-        moduleName: "Mathématiques",
-        average: 10.000, /* تم التعديل: Validé */
-        parts: [
-            { code: "BG11405CF", name: "CF_Mathéma", note: 10.000 },
-            { code: "BG11405CR", name: "CR_Mathéma", note: 0.000 }
-        ]
-    },
-    {
-        moduleCode: "BG11505",
-        moduleName: "Thermodynamique / mécaniq",
-        average: 10.000, /* تم التعديل: Validé */
-        parts: [
-            { code: "BG11505CF", name: "CF_TherMéc", note: 10.000 },
-            { code: "BG11505CR", name: "CR_TherMéc", note: 0.000 }
-        ]
-    },
-    {
-        moduleCode: "BG11605",
-        moduleName: "Atomistique & liaison chi",
-        average: 8.000,
-        parts: [
-            { code: "BG11605CF", name: "CF_AtomChi", note: 8.000 },
-            { code: "BG11605CR", name: "CR_AtomChi", note: 0.000 }
-        ]
-    },
-    {
-        moduleCode: "BG11705",
-        moduleName: "MTU",
-        average: 11.000, /* تم التعديل: Validé */
-        parts: [
-            { code: "BG11705CF", name: "CF_MTU", note: 11.000 },
-            { code: "BG11705CR", name: "CR_MTU", note: 0.000 },
-            { code: "BG11705CC", name: "CC_MTU", note: 11.000 }
-        ]
-    }
-];
-        // Function to format numbers to 3 decimal places
-        function formatNote(num) {
-            return num.toFixed(3);
-        }
+    <div class="chapter">
+        <h2>4. ملف: III.2- Spongiaires.pdf (الإسفنجيات)</h2>
+        <ul>
+            <li>III.2.1- التنظيم العام <span class="fr-text">Organisation générale</span></li>
+            <li>III.2.2- الخصائص العامة (بما فيها الشكل وأنواع الخلايا والبنية الداخلية)</li>
+            <li>III.2.3- التكاثر الجنسي واللاجنسي <span class="fr-text">Reproduction sexuée et asexuée</span></li>
+            <li>III.2.4- التصنيف <span class="fr-text">Classification</span></li>
+            <li>III.2.5- البيئة والأهمية <span class="fr-text">Ecologie et importance</span></li>
+        </ul>
+    </div>
 
-        // Function to determine color class
-        function getColorClass(note) {
-            return note >= 10 ? 'text-success' : 'text-danger';
-        }
+    <div class="chapter">
+        <h2>5. ملف: III.4- Plathelminthes.pdf (الديدان المسطحة)</h2>
+        <ul>
+            <li>III.4.1- الخصائص العامة <span class="fr-text">Caractères généraux</span></li>
+            <li>III.4.2- التنظيم العام (مثل التوربيلاريا، المثقوبات، والديدان الشريطية)</li>
+            <li>III.4.3- التصنيف <span class="fr-text">Classification</span></li>
+        </ul>
+    </div>
 
-        // Render Function
-        const tbody = document.getElementById('results-body');
+    <div class="chapter">
+        <h2>6. ملف: III.5- Némathelminthes.pdf (الديدان الأسطوانية)</h2>
+        <ul>
+            <li>III.5.1- الخصائص العامة <span class="fr-text">Caractères généraux</span></li>
+            <li>III.5.2- الإسكارس <span class="fr-text">Ascaris lumbricoides</span></li>
+            <li>III.5.3- الديدان الدبوسية <span class="fr-text">Oxyures</span></li>
+            <li>III.5.4- الفيلاريا <span class="fr-text">La filaire de Bancroft</span></li>
+            <li>III.5.5- التصنيف <span class="fr-text">Classification</span></li>
+        </ul>
+    </div>
 
-        modulesData.forEach(mod => {
-            // 1. Render Sub-modules (Parts)
-            mod.parts.forEach(part => {
-                const tr = document.createElement('tr');
-                tr.className = 'row-submodule';
-                tr.innerHTML = `
-                    <td>${part.code} - ${part.name}</td>
-                    <td class="text-right ${getColorClass(part.note)}">${formatNote(part.note)}</td>
-                `;
-                tbody.appendChild(tr);
-            });
+    <div class="chapter">
+        <h2>7. ملف: III.6- Annéldes.pdf (الديدان الحلقية)</h2>
+        <ul>
+            <li>III.6.1- الخصائص العامة <span class="fr-text">Caractères généraux</span></li>
+            <li>III.6.2- الشكل والتشريح (الغلاف الخارجي والجهاز العصبي)</li>
+            <li>III.6.3- التصنيف <span class="fr-text">Polychètes, Oligochètes, Achètes</span></li>
+        </ul>
+    </div>
 
-            // 2. Render Main Module Name & Average
-            const trModule = document.createElement('tr');
-            trModule.className = 'row-module';
-            trModule.innerHTML = `
-                <td>${mod.moduleCode} - ${mod.moduleName}</td>
-                <td class="text-right ${getColorClass(mod.average)}">${formatNote(mod.average)}</td>
-            `;
-            tbody.appendChild(trModule);
+    <div class="chapter">
+        <h2>8. ملف: Arthropodes 8.pdf (مفصليات الأرجل)</h2>
+        <ul>
+            <li>III.8.1- الخصائص العامة <span class="fr-text">Caractères généraux</span></li>
+            <li>III.8.2- بنية القطعة الجسمية <span class="fr-text">Structure d’un métamère</span></li>
+            <li>III.8.3- الغلاف الخارجي والنمو والزوائد <span class="fr-text">Tégument</span></li>
+            <li>III.8.4- التصنيف <span class="fr-text">Classification</span></li>
+        </ul>
+    </div>
 
-            // 3. Render Result Status (V or NV)
-            const isValidated = mod.average >= 10;
-            const trResult = document.createElement('tr');
-            trResult.className = 'row-result';
-            
-            // Logic: if average >= 10 then "V", else "NV"
-            const statusText = isValidated ? "V" : "NV";
-            const statusClass = isValidated ? "text-success" : "text-danger";
+    <div class="chapter">
+        <h2>9. ملف: Echinodermes 9.pdf (شوكيات الجلد)</h2>
+        <ul>
+            <li>III.9.1- الخصائص العامة <span class="fr-text">Caractères généraux</span></li>
+            <li>III.9.2- الشكل الخارجي <span class="fr-text">Morphologie</span></li>
+            <li>III.9.3- التشريح <span class="fr-text">Anatomie</span></li>
+            <li>III.9.4- التصنيف <span class="fr-text">Classification</span></li>
+        </ul>
+    </div>
 
-            trResult.innerHTML = `
-                <td>Résultat</td>
-                <td class="text-right ${statusClass}">${statusText}</td>
-            `;
-            tbody.appendChild(trResult);
-        });
-
-    </script>
 </body>
 </html>
