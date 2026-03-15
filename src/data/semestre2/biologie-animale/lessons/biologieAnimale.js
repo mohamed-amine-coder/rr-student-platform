@@ -3,7 +3,7 @@ export const BIO_ANIMALE_CHAPTERS = [
     // 🦠 CHAPITRE 0 : Introduction
     // =======================================================
     { id: "M8-0-0-0", title: "0 - Introduction generale", isFree: true, type: 'lesson', quickInfo: "شوية لباسخينات قبل مانبداو"},
-    // { id: "M8-0-0-1", title: "001 - Introduction generale", isFree: true, type: 'lesson', quickInfo: "شوية لباسخينات قبل مانبداو"},
+    { id: "M8-0-0-1", title: "001 - Introduction generale", isFree: true, type: 'lesson', quickInfo: "شوية لباسخينات قبل مانبداو"},
     // { id: "M8-0-1", title: "0.1 - Objetifs du module", isFree: true, type: 'lesson', quickInfo: "أشنو غادي تستفذ من هاد الموديل"},
     // { id: "M8-0-2", title: "0.1 - مقدمة عامة 3 دروس", isFree: true, type: 'lesson', quickInfo: "تجربة"},
     // { id: "M8-0-3", title: "0.1 - مقدمة عامة 4 دروس", isFree: true, type: 'lesson', quickInfo: "تجربة"},

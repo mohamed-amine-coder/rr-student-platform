@@ -12,6 +12,8 @@ import ScrollToTop from './components/ScrollToTop';
 import Login from './pages/Login';
 import AdminDashboard from './components/Admin/AdminDashboard';
 import LessonImageGenerator from './components/ui/LessonImageGenerator';
+import InstaPostMaker from './pages/InstaPostMaker';
+import TestFirebase from './components/ui/TestFirebase'
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
             <Route path="/lesson/:id" element={<LessonViewer />} />
             <Route path="/module/:moduleId" element={<ModulePage />} />
             <Route path="/LessonImageGenerator" element={<LessonImageGenerator />} />
+            <Route path='/InstaPostMaker' element={<InstaPostMaker/>} />
+            <Route path='/TestFirebase' element={<TestFirebase/>} />
           </Routes>
         </main>
         <Footer />
