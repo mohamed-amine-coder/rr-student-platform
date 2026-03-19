@@ -1,8 +1,8 @@
 // المسار: src/components/layout/landingData.js
 
 // 🟢 استيراد البيانات من الملف الجديد
-import { BIO_CELL_CHAPTERS } from '../../data/semestre1/biologie-cellulaire/lessons/biologieCellulaire';
-import { BIO_ANIMALE_CHAPTERS } from '../../data/semestre2/biologie-animale/lessons/biologieAnimale'
+import { BIO_CELL_CHAPTERS } from './semestre1/biologie-cellulaire/lessons/biologieCellulaire';
+import { BIO_ANIMALE_CHAPTERS } from './semestre2/biologie-animale/lessons/biologieAnimale'
 
 export const PROBLEMS = [
   "فرنسية أكاديمية معقدة فـ كاع الموديلات",

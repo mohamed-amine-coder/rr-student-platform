@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertCircle, Sparkles } from 'lucide-react';
-import { PROBLEMS, SOLUTIONS } from './landingData';
+import { PROBLEMS, SOLUTIONS } from '../../data/landingData';
 import ComparisonItem from '../ui/ComparisonItem';
 
 const ComparisonSection = () => {

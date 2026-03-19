@@ -3,7 +3,7 @@ import { db, auth } from '../../../firebase'; // تأكد زدنا auth
 import { onAuthStateChanged } from 'firebase/auth'; // زدنا هادي للتحقق
 import { useNavigate } from 'react-router-dom'; // زدنا هادي للطرد
 import { collection, query, where, getDocs, doc, updateDoc, deleteField } from 'firebase/firestore';
-import { COURSES } from '../layout/landingData'; 
+import { COURSES } from '../../data/landingData'; 
 import { Search, User, ShieldCheck, Zap, AlertCircle, CheckCircle2, Lock, Unlock, Calendar, Clock, Loader2 } from 'lucide-react';
 
 const AdminDashboard = () => {

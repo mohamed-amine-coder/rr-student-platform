@@ -1,5 +1,5 @@
 import React from 'react';
-import { COURSES } from './landingData';
+import { COURSES } from '../../data/landingData';
 import CourseCard from '../ui/CourseCard';
 import { Sparkles } from 'lucide-react';
 

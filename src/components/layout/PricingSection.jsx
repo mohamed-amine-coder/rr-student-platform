@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Sparkles, Users, Zap, ArrowRight } from 'lucide-react';
-import { PRICING_DATA } from './landingData';
+import { PRICING_DATA } from '../../data/landingData';
 
 const PricingSection = () => {
   return (

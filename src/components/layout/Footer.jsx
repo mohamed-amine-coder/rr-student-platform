@@ -1,6 +1,6 @@
 import React from 'react';
 import { Zap, Heart, Github, Linkedin, Instagram, ExternalLink, ShieldCheck, ArrowUpRight, CalendarClock, Users, Info } from 'lucide-react';
-import { FOOTER_DATA } from './landingData';
+import { FOOTER_DATA } from '../../data/landingData';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

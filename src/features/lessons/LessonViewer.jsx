@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ALL_LESSONS } from '../../data/lessonsIndex'; // تأكد من المسار
-import { COURSES } from '../../components/layout/landingData'; // تأكد من المسار
+import { COURSES } from '../../data/landingData'; // تأكد من المسار
 import { X, ChevronRight, ChevronLeft } from 'lucide-react';
 
 // --- استيراد البلوكات (تأكد أنك أنشأت الملفات) ---
