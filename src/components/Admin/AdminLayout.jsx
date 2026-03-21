@@ -1,25 +1,70 @@
-import React from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, BookOpen, PenTool, LogOut, Settings, Users } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { NavLink, Outlet, useNavigate, Navigate } from 'react-router-dom';
+import { LayoutDashboard, BookOpen, PenTool, LogOut, Settings, Users, Loader2 } from 'lucide-react';
+// 👇 استيراد أدوات فايربيز لي غنحتاجو
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 const AdminLayout = () => {
   const navigate = useNavigate();
+  
+  // 👇 حالات الحماية (Security States)
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+  
+  // حط الـ UID ديالك هنا لي اتفقنا عليه بلي هو ديال المدير
+  const ADMIN_UID = "HtR42ySkZGPkUa2WVVxI6cVFLYk2";
 
   // هادي ليستة ديال الصفحات لي غتكون فالـ Sidebar
   const menuItems = [
     { name: 'الإحصائيات', path: '/admin/dashboard', icon: <LayoutDashboard size={20} /> },
-    { name: 'إدارة الطلبة', path: '/admin/users', icon: <Users size={20} /> }, // هادي لي زدنا
+    { name: 'إدارة الطلبة', path: '/admin/users', icon: <Users size={20} /> },
     { name: 'إدارة الموديلات', path: '/admin/modules', icon: <BookOpen size={20} /> },
     { name: 'ستوديو الدروس', path: '/admin/lesson-studio', icon: <PenTool size={20} /> },
     { name: 'ستوديو المنشورات', path: '/admin/instaBioDevGenerator', icon: <PenTool size={20} /> },
   ];
 
-  const handleLogout = () => {
-    // من بعد نربطوها مع Firebase Auth
-    alert("تسجيل الخروج...");
-    navigate('/'); 
+  // 👇 التحقق من الهوية أول ما كتحل الصفحة
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user && user.uid === ADMIN_UID) {
+        setIsAdmin(true); // السيد هو أمين، حل ليه الباب
+      } else {
+        setIsAdmin(false); // ماشي أمين، سد الباب
+      }
+      setIsCheckingAuth(false); // سالينا التفتيش
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // دالة تسجيل الخروج ديال بصح
+  const handleLogout = async () => {
+    const auth = getAuth();
+    try {
+      await signOut(auth);
+      navigate('/'); 
+    } catch (error) {
+      console.error("خطأ فـ تسجيل الخروج:", error);
+    }
   };
 
+  // ⏳ يلا كان الحارس عاد كيفتش، طلع ليه اللودينغ باش ما يبانش الديكور
+  if (isCheckingAuth) {
+    return (
+      <div className="h-screen w-full flex flex-col items-center justify-center bg-slate-50 font-tajawal">
+        <Loader2 className="animate-spin text-yellow-500 mb-4" size={40} />
+        <p className="text-slate-500 font-bold">جاري التحقق من الصلاحيات...</p>
+      </div>
+    );
+  }
+
+  // 🚫 يلا سالا التفتيش والسيد ماشي هو نتا، جرو ورميه للصفحة الرئيسية
+  if (!isAdmin) {
+    return <Navigate to="/" replace />;
+  }
+
+  // ✅ يلا كان كلشي هو هاداك (نتا لي داخل)، عاد بين لوحة التحكم
   return (
     <div className="flex h-screen bg-slate-50 font-tajawal dir-rtl overflow-hidden">
       
@@ -70,7 +115,7 @@ const AdminLayout = () => {
 
       {/* --- Main Content (المحتوى لي كيتبدل) --- */}
       <main className="flex-1 flex flex-col h-screen overflow-hidden">
-        {/* Navbar علوية صغيرة (اختيارية) */}
+        {/* Navbar علوية صغيرة */}
         <header className="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-8 shrink-0">
           <h1 className="text-xl font-black text-slate-800">لوحة التحكم</h1>
           <div className="flex items-center gap-3">
