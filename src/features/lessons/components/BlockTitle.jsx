@@ -2,8 +2,7 @@ import React from 'react';
 
 const BlockTitle = ({ block }) => {
   // كنجبدو المعلومات من الـ props
-  const { number, title_fr, title_ar } = block.content;
-
+  const { number, title_fr, title_ar } = block;
   return (
     <div className="bg-white border-2 border-yellow-400 border-b-[6px] rounded-3xl p-5 md:p-6 mb-8 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 transform hover:-translate-y-1 transition-transform duration-300">
       

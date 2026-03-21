@@ -1,9 +1,93 @@
-import React from 'react';
-import { COURSES } from '../../data/landingData';
+// import React from 'react';
+// import { COURSES } from '../../data/landingData';
+// import CourseCard from '../ui/CourseCard';
+// import { Sparkles } from 'lucide-react';
+
+// const CoursesSection = () => {
+//   return (
+//     <section id="courses" className="py-16 px-6 bg-white font-tajawal">
+//       <div className="max-w-5xl mx-auto">
+        
+//         {/* Header: بسيط ومجموع */}
+//         <div className="flex flex-col md:flex-row items-baseline justify-between mb-10 gap-4">
+//           <div>
+//             <div className="flex items-center gap-2 text-yellow-600 text-[10px] font-black uppercase tracking-widest mb-2">
+//               <Sparkles size={14} /> اختر الموديل
+//             </div>
+//             <h2 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
+//               الموديلات المفتوحة حاليا
+//             </h2>
+//           </div>
+          
+//           <div className="bg-slate-50 p-1 rounded-xl flex border border-slate-100 shrink-0">
+//              <button className="bg-white text-slate-900 px-4 py-1.5 rounded-lg shadow-sm text-[11px] font-black border border-slate-100">
+//                S1 - S2 SVTU
+//              </button>
+//              <button className="text-slate-400 px-4 py-1.5 text-[11px] font-bold cursor-not-allowed">
+//                قريباً S3 - S4
+//              </button>
+//           </div>
+//         </div>
+
+//         {/* الـ Grid: 2 فـ السطر فـ الشاشات الكبيرة والمتوسطة */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//           {COURSES.map((course) => (
+//             <CourseCard key={course.id} {...course} />
+//           ))}
+//         </div>
+
+//         {/* Footer صغير */}
+//         <div className="mt-12 text-center">
+//            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">
+//              جميع الدروس مراجعة من طرف مختصين بـ SVTU
+//            </p>
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default CoursesSection;
+
+import React, { useState, useEffect } from 'react';
+// استيراد أدوات فايرستور
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../../firebase'; // تأكد من المسار ديال ملف firebase.js على حساب فين حاطو
 import CourseCard from '../ui/CourseCard';
-import { Sparkles } from 'lucide-react';
+// زدنا أيقونة Loader باش تبان زوينة فاش كتكون الداتا كتحمل
+import { Sparkles, Loader } from 'lucide-react';
 
 const CoursesSection = () => {
+  // state باش نخبيو فيها الموديلات لي غيجيو من فايرستور
+  const [courses, setCourses] = useState([]);
+  // state باش نتحكمو فواش الداتا كتحمل ولا سالات
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        // كنجيبو الداتا من الكوليكشن 'modules'
+        const querySnapshot = await getDocs(collection(db, 'modules'));
+        
+        // كنقادو الداتا فمصفوفة
+        const coursesData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        
+        setCourses(coursesData);
+      } catch (error) {
+        console.error("كاين مشكل فجلب الموديلات:", error);
+      } finally {
+        // ملي كيسالي الرفع (سواء نجح ولا فشل) كنحيدو اللودينغ
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
   return (
     <section id="courses" className="py-16 px-6 bg-white font-tajawal">
       <div className="max-w-5xl mx-auto">
@@ -29,12 +113,20 @@ const CoursesSection = () => {
           </div>
         </div>
 
-        {/* الـ Grid: 2 فـ السطر فـ الشاشات الكبيرة والمتوسطة */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {COURSES.map((course) => (
-            <CourseCard key={course.id} {...course} />
-          ))}
-        </div>
+        {/* هنا فين كيبان السحر ديال فايرستور */}
+        {loading ? (
+          // يلا كانت الداتا كتحمل، كنبينو هاد اللودينغ كيدور
+          <div className="flex justify-center items-center py-20">
+            <Loader className="animate-spin text-yellow-500" size={40} />
+          </div>
+        ) : (
+          // ملي كتوصل الداتا، كنعرضو الكارطات
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {courses.map((course) => (
+              <CourseCard key={course.id} {...course} />
+            ))}
+          </div>
+        )}
 
         {/* Footer صغير */}
         <div className="mt-12 text-center">

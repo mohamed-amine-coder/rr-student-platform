@@ -1,7 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { COURSES } from '../data/landingData';
 import { PlayCircle, Lock, CheckCircle2, Sparkles, ArrowLeft, Layout, BookOpen, Trophy, Loader2, Clock, CalendarDays } from 'lucide-react';
 
 // استيراد أدوات Firebase
@@ -11,13 +9,38 @@ import { doc, getDoc } from 'firebase/firestore';
 
 const ModulePage = () => {
   const { moduleId } = useParams();
-  const course = COURSES.find(c => c.id === moduleId);
 
   // حالات الصفحة (States)
+  const [course, setCourse] = useState(null);
   const [userSubs, setUserSubs] = useState(null);
-  const [loading, setLoading] = useState(true);
+  
+  // عزلنا التحميل لـ جوج: واحد ديال اليوزر وواحد ديال الموديل
+  const [loadingAuth, setLoadingAuth] = useState(true);
+  const [loadingCourse, setLoadingCourse] = useState(true);
 
-  // 1. مراقبة حالة الطالب وجلب اشتراكاته
+  // 1. جلب بيانات الموديل من فايرستور
+  useEffect(() => {
+    const fetchCourseData = async () => {
+      try {
+        const docRef = doc(db, 'modules', moduleId);
+        const docSnap = await getDoc(docRef);
+        
+        if (docSnap.exists()) {
+          setCourse({ id: docSnap.id, ...docSnap.data() });
+        } else {
+          setCourse(null); // الموديل ماكاينش
+        }
+      } catch (error) {
+        console.error("خطأ في جلب بيانات الموديل:", error);
+      } finally {
+        setLoadingCourse(false);
+      }
+    };
+
+    fetchCourseData();
+  }, [moduleId]);
+
+  // 2. مراقبة حالة الطالب وجلب اشتراكاته
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
@@ -32,13 +55,13 @@ const ModulePage = () => {
       } else {
         setUserSubs(null);
       }
-      setLoading(false);
+      setLoadingAuth(false);
     });
 
     return () => unsubscribe();
   }, []);
 
-  // 2. دالة التحقق من الوقت (Drip Content Logic)
+  // 3. دالة التحقق من الوقت (Drip Content Logic)
   const checkTimeLock = (releaseDateString) => {
     if (!releaseDateString) return false; // إلا ماكانش تاريخ، راه محلول
     const today = new Date();
@@ -54,20 +77,21 @@ const ModulePage = () => {
     });
   };
 
-  // حالة الموديل غير موجود
-  if (!course) return (
-    <div className="min-h-screen flex items-center justify-center font-tajawal">
-      <div className="text-center">
-        <h1 className="text-2xl font-black text-slate-900">  ERROR 404 🛑</h1>
-        <Link to="/" className="text-yellow-600 font-bold mt-4 inline-block">الرجوع للرئيسية</Link>
-      </div>
+  // حالة التحميل (كنتسناو اليوزر والموديل بجوج يوجدو)
+  if (loadingAuth || loadingCourse) return (
+    <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <Loader2 className="animate-spin text-yellow-500" size={40} />
     </div>
   );
 
-  // حالة التحميل
-  if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50">
-      <Loader2 className="animate-spin text-yellow-500" size={40} />
+  // حالة الموديل غير موجود (404)
+  if (!course) return (
+    <div className="min-h-screen flex items-center justify-center font-tajawal">
+      <div className="text-center">
+        <h1 className="text-2xl font-black text-slate-900"> ERROR 404 🛑</h1>
+        <p className="text-slate-500 mt-2">هاد الموديل ماكاينش أو تم الحذف ديالو</p>
+        <Link to="/" className="text-yellow-600 font-bold mt-4 inline-block">الرجوع للرئيسية</Link>
+      </div>
     </div>
   );
 
@@ -108,7 +132,7 @@ const ModulePage = () => {
                     <CheckCircle2 size={12} /> الاشتراك مفعل
                  </span>
                  <span className="block text-lg font-black text-white mb-1">
-                   {userSubs[moduleId].expiryDate ? formatDate(userSubs[moduleId].expiryDate) : 'مفعل دائماً'}
+                   {userSubs[moduleId]?.expiryDate ? formatDate(userSubs[moduleId].expiryDate) : 'مفعل دائماً'}
                  </span>
                </div>
             ) : (
@@ -127,7 +151,7 @@ const ModulePage = () => {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 flex flex-wrap items-center justify-around gap-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><BookOpen size={20}/></div>
-            <span className="text-sm font-black text-slate-700">{course.chapters.length} محتوى تعليمي</span>
+            <span className="text-sm font-black text-slate-700">{course.chapters?.length || 0} محتوى تعليمي</span>
           </div>
           <div className="w-px h-8 bg-slate-100 hidden md:block"></div>
           <div className="flex items-center gap-3">
@@ -144,7 +168,7 @@ const ModulePage = () => {
         </h2>
 
         <div className="grid gap-4">
-          {course.chapters.map((chapter) => {
+          {(course.chapters || []).map((chapter) => {
             const isExam = chapter.type === 'exam' || chapter.id.includes('exam') || chapter.id.includes('qcm');
             
             // 1. واش الدرس مجاني؟
@@ -231,7 +255,6 @@ const ModulePage = () => {
                     {isExam ? 'ابدأ التحدي' : 'بدا الدرس'}
                   </Link>
                 ) : (
-                  // هنا فين طبقنا الشرط ديالك
                   showClock ? (
                      <div className="w-full md:w-auto flex items-center justify-center gap-2 py-3 px-8 rounded-2xl bg-blue-50 border border-blue-200 text-blue-500 font-bold text-sm cursor-not-allowed">
                        <Clock size={16} /> قريباً

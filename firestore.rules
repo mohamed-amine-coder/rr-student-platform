@@ -1,22 +1,49 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // 1. دالة كتعرف بلي نتا هو "المدير" بهاد الـ UID
+
+    // 1. الدالة ديالك (استعمال الـ UID) - حماية 100%
     function isAdmin() {
-      return request.auth.uid == "HtR42ySkZGPkUa2WVVxI6cVFLYk2";
+      return request.auth != null && request.auth.uid == "HtR42ySkZGPkUa2WVVxI6cVFLYk2";
     }
 
-    match /users/{userId} {
-      // 2. القراءة (Read):
-      // - الطالب: عندو الحق يشوف غير المعلومات ديالو بوحدو.
-      // - المدير (نتا): عندك الحق تشوف كاع الطلبة (باش يبانو فالداشبورد).
-      allow read: if (request.auth != null && request.auth.uid == userId) || isAdmin();
+    // 2. دالة كتعرف واش الشخص مسجل (طالب)
+    function isAuth() {
+      return request.auth != null;
+    }
 
-      // 3. الكتابة (Write):
-      // - الطالب: عندو الحق يصاوب كونت أو يبدل تصويرتو (Create/Update).
-      // - المدير (نتا): عندك الحق تعدل أي ملف (باش تزيد الاشتراكات فالداشبورد).
-      allow write: if (request.auth != null && request.auth.uid == userId) || isAdmin();
+    // ==========================================
+    // 🛡️ حماية جدول الطلبة
+    // ==========================================
+    match /users/{userId} {
+      // الطالب يقرا غير معلوماتو، الأدمين يقرا كلشي
+      allow read: if (isAuth() && request.auth.uid == userId) || isAdmin();
+      
+      // الطالب يقدر "ينشئ" حسابو فقط (Create)
+      allow create: if isAuth() && request.auth.uid == userId;
+      
+      // الأدمين "بوحدو" لي عندو الحق يعدل (Update) باش يفعل الاشتراكات! (سدينا الثغرة)
+      allow update, delete: if isAdmin();
+    }
+
+    // ==========================================
+    // 🛡️ حماية الموديلات والدروس
+    // ==========================================
+    match /modules/{moduleId} {
+      // كلشي يقدر يشوف الموديلات (الفهرس)
+      allow read: if true;
+      allow write: if isAdmin();
+
+      // حماية الدروس (لداخل ديال الموديلات)
+      match /lessons/{lessonId} {
+        allow write: if isAdmin();
+
+        // شكون يقرا الدرس؟ 
+        // الأدمين، أو الدرس فابور، أو الطالب مخلص الموديل
+        allow read: if isAdmin() 
+                    || resource.data.isFree == true 
+                    || (isAuth() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.subscriptions[moduleId].status == 'active');
+      }
     }
   }
 }
