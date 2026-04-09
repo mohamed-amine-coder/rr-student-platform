@@ -13,19 +13,15 @@ const BlockAnalogy = ({ content }) => {
         <div className="flex items-center gap-2 mb-4 bg-green-50 px-4 py-1.5 rounded-full border border-green-100">
           <Sparkles size={14} className="text-green-500" />
           <span className="font-black text-[10px] text-green-600 uppercase tracking-widest">
-            تبسيط للفهم
+            مثال باش تبان الفكرة
           </span>
         </div>
 
         {/* Content - دابا ولا بنفس الخط ديال المقدمة تماماً */}
         <p className="font-bold text-lg md:text-xl text-slate-700 leading-relaxed px-2">
-          "{content}"
+          {content}
         </p>
         
-        {/* Emoji Reaction */}
-        <div className="mt-4 text-3xl hover:scale-125 transition-transform cursor-pointer grayscale hover:grayscale-0" title="فهمتي؟">
-          😉
-        </div>
       </div>
     </div>
   );

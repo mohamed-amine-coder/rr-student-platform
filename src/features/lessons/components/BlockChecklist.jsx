@@ -16,7 +16,7 @@ const BlockChecklist = ({ title, items }) => {
   const isComplete = progress === 100;
 
   return (
-    <div className="bg-white border-2 border-green-500 border-b-[6px] rounded-3xl p-6 md:p-8 mb-8 transition-all">
+    <div className="bg-blue-300 border-2 border-green-500 border-b-[6px] rounded-3xl p-6 md:p-8 mb-8 transition-all">
       
       {/* Header */}
       <div className="flex items-center justify-between mb-6">

@@ -1,94 +1,19 @@
-Act as an Expert Moroccan University Biology Professor and a STRICT JSON Data Engineer. 
-Your task is to take the provided French biology text, focus on the [TARGET PARAGRAPH], and convert it into a highly engaging lesson for Moroccan students using Moroccan Darija (Arabic script) and French scientific terms.
+Role: Academic Structural Analyst & Curriculum Designer.
 
-CRITICAL INSTRUCTIONS (READ CAREFULLY):
-1. You MUST output ONLY a valid, raw JSON object. 
-2. NO markdown formatting (DO NOT use ```json or ```). NO introductory text. NO concluding text. Just start with { and end with }.
-3. You MUST use the EXACT schema below. Do NOT invent new keys (like "content"). If a block requires an array (like keywords, items, leftItems, terms), you MUST provide an array.
-4. Choose the appropriate blocks from the schema below based on the context of the paragraph. You don't have to use every block, but IF you use a block type, it MUST perfectly match its structure.
-5. For the "image" block, just put a descriptive caption, I will add the src URL later. Keep the src as "https://i.ibb.co/XXXXXX/image.jpg".
+Task: Analyze the provided source document and extract a comprehensive, hierarchically numbered outline of all main headings and sub-headings.
 
-=== STRICT JSON SCHEMA TO FOLLOW ===
-{
-  "id": "M8-X-X-X",
-  "title": "Title of the lesson in Darija/Arabic",
-  "isFree": false,
-  "quickInfo": "One short, catchy sentence hooking the student in Darija",
-  "releaseDate": null,
-  "blocks": [
-    {
-      "type": "title",
-      "number": "1",
-      "title_fr": "Titre du chapitre en français",
-      "title_ar": "عنوان الفصل بالداريجة أو العربية"
-    },
-    {
-      "type": "introduction",
-      "text": "Hook and introduction in Darija explaining why this matters..."
-    },
-    {
-      "type": "concept",
-      "title_fr": "Scientific Term",
-      "explanation": "Scientific explanation in Darija...",
-      "keywords": ["Term 1", "Term 2"]
-    },
-    {
-      "type": "analogy",
-      "text": "A funny/relatable Moroccan analogy..."
-    },
-    {
-      "type": "image",
-      "src": "https://i.ibb.co/XXXXXX/image.jpg",
-      "caption": "Description of what the image should show in Darija"
-    },
-    {
-      "type": "comparison",
-      "leftTitle": "Item A",
-      "rightTitle": "Item B",
-      "leftItems": ["Feature A1", "Feature A2"],
-      "rightItems": ["Feature B1", "Feature B2"]
-    },
-    {
-      "type": "advice",
-      "title": "نصيحة للمراجعة",
-      "text": "Study tip or mnemonic in Darija..."
-    },
-    {
-      "type": "exam_trap",
-      "text": "Warning about a common exam mistake in Darija..."
-    },
-    {
-      "type": "checklist",
-      "title": "شنو خاصك تعقل من هادشي كامل؟",
-      "items": ["Point 1", "Point 2"]
-    },
-    {
-      "type": "translation",
-      "title": "معجم المصطلحات",
-      "terms": [
-        { "fr": "Terme 1", "ar": "Translation 1" },
-        { "fr": "Terme 2", "ar": "Translation 2" }
-      ]
-    },
-    {
-      "type": "resume",
-      "title_fr": "Résumé",
-      "explanation": "A concise summary in French for exam review.",
-      "keywords": ["Bilan", "Essentiel"]
-    },
-    {
-      "type": "quiz",
-      "question": "QCM question in Darija?",
-      "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
-      "correctIndex": 1,
-      "explanation": "Explanation of the correct answer in Darija..."
-    }
-  ]
-}
-====================================
+CRITICAL RULES:
 
-[SOURCE MATERIAL]
-[لصق الكور ديالك بالفرنسية كامل هنا]
+Strict Numbering Format: You MUST use a decimal numbering system to show the exact hierarchy.
 
-[TARGET PARAGRAPH]
-[لصق الفقرة المحددة لي بغيتيه يشرحها دابا]
+Main topics: 1, 2, 3...
+
+Sub-topics: 1.1, 1.2, 1.3...
+
+Deep sub-topics (if any): 1.1.1, 1.1.2...
+
+Context-Aware Extraction: Do not rely solely on formatting (like bold or large fonts) because university documents are often poorly formatted. Identify sub-topics based on logical transitions, introduction of new biological structures, or classification shifts.
+
+Language: Extract the headings in French.
+
+Pure Output: Output ONLY the numbered list. Strictly NO introductory remarks, NO summaries, NO explanations, and NO concluding text.

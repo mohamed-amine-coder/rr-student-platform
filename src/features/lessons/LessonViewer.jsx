@@ -243,8 +243,7 @@ const LessonViewer = () => {
                     switch (currentBlock.type) {
                         case 'title': return <BlockTitle block={currentBlock} />;
                         case 'introduction': return <BlockIntro text={currentBlock.text} />;
-                        case 'concept': return <BlockConcept title_fr={currentBlock.title_fr} explanation={currentBlock.explanation} keywords={currentBlock.keywords} />;
-                        case 'analogy': return <BlockAnalogy content={currentBlock.text} />;
+                        case 'concept': return <BlockConcept title_fr={currentBlock.title_fr} title_ar={currentBlock.title_ar} explanation={currentBlock.explanation} keywords={currentBlock.keywords} lang={currentBlock.lang} />;                        case 'analogy': return <BlockAnalogy content={currentBlock.text} />;
                         case 'resume': return <BlockResume content={currentBlock} />;
                         case 'exam_trap': return <BlockTrap text={currentBlock.text} />;
                         case 'advice': return <BlockAdvice text={currentBlock.text} title={currentBlock.title} />;

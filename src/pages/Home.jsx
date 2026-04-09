@@ -9,12 +9,12 @@ import SummarizerTool from '../components/ui/SummarizerTool'
 const Home = () => (
   <div className="w-full">
     <HeroSection />
+    <PricingSection />
+    <CoursesSection />
     <WhyRocket />
     <PremiumOffer />
-    <CoursesSection />
     {/* <ComparisonSection /> */}
-    <SummarizerTool />
-    {/* <PricingSection /> */}
+    {/* <SummarizerTool /> */}
   </div>
 );
 export default Home;

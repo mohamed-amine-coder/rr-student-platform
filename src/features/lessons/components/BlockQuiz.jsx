@@ -21,7 +21,7 @@ const BlockQuiz = ({ question, options, correctIndex, explanation }) => {
   };
 
   return (
-    <div className="bg-white border-2 border-indigo-100 border-b-[6px] rounded-3xl p-6 md:p-8 mb-6 relative overflow-hidden transition-all duration-500 ease-in-out">
+    <div className="bg-yellow-200 border-2 border-indigo-100 border-b-[6px] rounded-3xl p-6 md:p-8 mb-6 relative overflow-hidden transition-all duration-500 ease-in-out">
       
       {/* ديكور الخلفية */}
       <div className="absolute top-0 right-0 p-4 opacity-5">
@@ -38,7 +38,7 @@ const BlockQuiz = ({ question, options, correctIndex, explanation }) => {
           if (!shouldShowOption(index)) return null;
 
           // 2. تحديد الستايل حسب الحالة
-          let style = "border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 cursor-pointer";
+          let style = "border-slate-200 hover:border-indigo-300 bg-blue-500 hover:bg-indigo-50 cursor-pointer";
           let icon = null;
 
           if (status !== 'idle') {
