@@ -3,769 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بطاقات علم الأحياء</title>
-
-    <!-- React 18 -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <!-- Babel for JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Tailwind CSS -->
+    <title>منصتك التعليمية الخاصة</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Amiri (Arabic serif) + Outfit (UI) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        arabic: ['Amiri', 'serif'],
-                        ui: ['Outfit', 'sans-serif'],
-                    },
                     colors: {
-                        bio: {
-                            50: '#f0f7f0',
-                            100: '#dceedd',
-                            200: '#b8ddb9',
-                            300: '#86c488',
-                            400: '#53a856',
-                            500: '#328a35',
-                            600: '#256e28',
-                            700: '#1e5821',
-                            800: '#1a461c',
-                            900: '#163a18',
-                            950: '#0a200c',
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA8C2C',
                         },
-                        parchment: {
-                            50: '#fefdf8',
-                            100: '#fdf9ed',
-                            200: '#faf0d5',
-                            300: '#f5e2b0',
-                            400: '#eecf82',
-                            500: '#e5b95a',
-                            600: '#d49a3a',
-                            700: '#b07a2d',
-                            800: '#8f6229',
-                            900: '#755125',
-                        }
+                        dark: '#0A0A0A',
+                        darker: '#050505'
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
-    <style>
-        /* === CSS Custom Properties === */
-        :root {
-            --bg: #0c1a0e;
-            --bg-secondary: #122116;
-            --fg: #e8f0e9;
-            --fg-muted: #8fa892;
-            --accent: #53a856;
-            --accent-glow: rgba(83, 168, 86, 0.25);
-            --gold: #e5b95a;
-            --gold-muted: rgba(229, 185, 90, 0.15);
-            --card-front: linear-gradient(145deg, #1a3a1e, #0f2612);
-            --card-back: linear-gradient(145deg, #1e2a14, #14200e);
-            --border: rgba(83, 168, 86, 0.2);
-            --shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg);
-            color: var(--fg);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* === خلفية متحركة - أشكال بيولوجية === */
-        .bio-bg {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .bio-shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0;
-            animation: floatShape 20s ease-in-out infinite;
-        }
-
-        .bio-shape:nth-child(1) {
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(83,168,86,0.08), transparent 70%);
-            top: -50px; right: -80px;
-            animation-delay: 0s;
-            animation-duration: 22s;
-        }
-        .bio-shape:nth-child(2) {
-            width: 200px; height: 200px;
-            background: radial-gradient(circle, rgba(229,185,90,0.06), transparent 70%);
-            bottom: 10%; left: -40px;
-            animation-delay: -5s;
-            animation-duration: 18s;
-        }
-        .bio-shape:nth-child(3) {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(83,168,86,0.05), transparent 70%);
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -10s;
-            animation-duration: 25s;
-        }
-        .bio-shape:nth-child(4) {
-            width: 150px; height: 150px;
-            background: radial-gradient(circle, rgba(229,185,90,0.07), transparent 70%);
-            top: 20%; left: 15%;
-            animation-delay: -3s;
-            animation-duration: 16s;
-        }
-        .bio-shape:nth-child(5) {
-            width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(83,168,86,0.06), transparent 70%);
-            bottom: -60px; right: 20%;
-            animation-delay: -8s;
-            animation-duration: 20s;
-        }
-
-        @keyframes floatShape {
-            0%, 100% { opacity: 0.3; transform: translate(0, 0) scale(1); }
-            25% { opacity: 0.7; transform: translate(30px, -20px) scale(1.1); }
-            50% { opacity: 0.5; transform: translate(-20px, 30px) scale(0.95); }
-            75% { opacity: 0.8; transform: translate(15px, 15px) scale(1.05); }
-        }
-
-        /* === شبكة خلفية دقيقة === */
-        .grid-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(83,168,86,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(83,168,86,0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-
-        /* === حاوية البطاقة ثلاثية الأبعاد === */
-        .perspective-container {
-            perspective: 1200px;
-        }
-
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 340px;
-            transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .card-inner.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .card-face {
-            position: absolute;
-            inset: 0;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2.5rem;
-            overflow: hidden;
-        }
-
-        /* === وجه البطاقة الأمامي (المصطلح) === */
-        .card-front {
-            background: var(--card-front);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow), inset 0 1px 0 rgba(83,168,86,0.1);
-        }
-
-        .card-front::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 20%;
-            right: 20%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            border-radius: 2px;
-        }
-
-        .card-front::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 30%;
-            right: 30%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            border-radius: 2px;
-            opacity: 0.5;
-        }
-
-        /* === وجه البطاقة الخلفي (التعريف) === */
-        .card-back {
-            background: var(--card-back);
-            border: 1px solid rgba(229,185,90,0.2);
-            box-shadow: var(--shadow), inset 0 1px 0 rgba(229,185,90,0.08);
-            transform: rotateY(180deg);
-        }
-
-        .card-back::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 20%;
-            right: 20%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            border-radius: 2px;
-        }
-
-        /* === زخرفة الخلية في الخلفية === */
-        .cell-deco {
-            position: absolute;
-            border: 1px solid rgba(83,168,86,0.08);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .cell-deco-1 {
-            width: 120px; height: 120px;
-            top: 15px; left: 20px;
-            animation: pulse-cell 6s ease-in-out infinite;
-        }
-        .cell-deco-2 {
-            width: 80px; height: 80px;
-            bottom: 30px; right: 25px;
-            animation: pulse-cell 8s ease-in-out infinite 2s;
-        }
-        .cell-deco-3 {
-            width: 50px; height: 50px;
-            top: 50%; right: 60px;
-            animation: pulse-cell 5s ease-in-out infinite 1s;
-        }
-
-        @keyframes pulse-cell {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.15); opacity: 0.6; }
-        }
-
-        /* === DNA زخرفة في الخلف === */
-        .dna-helix {
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 30px;
-            pointer-events: none;
-            opacity: 0.06;
-        }
-
-        /* === شريط التقدم === */
-        .progress-bar-track {
-            height: 4px;
-            background: rgba(83,168,86,0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), var(--gold));
-            border-radius: 4px;
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* === أزرار التنقل === */
-        .nav-btn {
-            position: relative;
-            padding: 0.75rem 2rem;
-            border-radius: 14px;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.02em;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            border: 1px solid transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-btn-primary {
-            background: linear-gradient(135deg, #256e28, #1e5821);
-            color: #e8f0e9;
-            border-color: rgba(83,168,86,0.3);
-            box-shadow: 0 4px 15px rgba(37,110,40,0.3);
-        }
-        .nav-btn-primary:hover {
-            background: linear-gradient(135deg, #2d7d31, #256e28);
-            border-color: rgba(83,168,86,0.5);
-            box-shadow: 0 6px 25px rgba(37,110,40,0.4);
-            transform: translateY(-2px);
-        }
-        .nav-btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .nav-btn-secondary {
-            background: rgba(83,168,86,0.08);
-            color: var(--fg-muted);
-            border-color: rgba(83,168,86,0.15);
-        }
-        .nav-btn-secondary:hover {
-            background: rgba(83,168,86,0.15);
-            color: var(--fg);
-            border-color: rgba(83,168,86,0.3);
-            transform: translateY(-2px);
-        }
-        .nav-btn-secondary:active {
-            transform: translateY(0);
-        }
-
-        .nav-btn:disabled {
-            opacity: 0.35;
-            cursor: not-allowed;
-            transform: none !important;
-        }
-
-        /* === نقاط المؤشر === */
-        .indicator-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(83,168,86,0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-        .indicator-dot.active {
-            background: var(--accent);
-            box-shadow: 0 0 10px var(--accent-glow);
-            transform: scale(1.3);
-        }
-        .indicator-dot:hover:not(.active) {
-            background: rgba(83,168,86,0.4);
-            transform: scale(1.15);
-        }
-
-        /* === تأثير ظهور البطاقة === */
-        .card-enter {
-            animation: cardEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @keyframes cardEnter {
-            0% { opacity: 0; transform: translateY(20px) scale(0.96); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        /* === شارة "انقر للقلب" === */
-        .click-hint {
-            animation: hintPulse 2.5s ease-in-out infinite;
-        }
-
-        @keyframes hintPulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        /* === تأثير التمرير المخصص === */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(83,168,86,0.2); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(83,168,86,0.4); }
-
-        /* === دعم الحركة المنخفضة === */
-        @media (prefers-reduced-motion: reduce) {
-            .bio-shape,
-            .cell-deco,
-            .click-hint {
-                animation: none !important;
-                opacity: 0.4;
-            }
-            .card-inner {
-                transition-duration: 0.01s;
-            }
-            .card-enter {
-                animation: none;
-                opacity: 1;
-            }
-        }
-
-        /* === استجابة الشاشات الصغيرة === */
-        @media (max-width: 640px) {
-            .card-inner {
-                height: 280px;
-            }
-            .card-face {
-                padding: 1.75rem;
-            }
-        }
-    </style>
 </head>
-<body>
-    <!-- الخلفية المتحركة -->
-    <div class="bio-bg" aria-hidden="true">
-        <div class="bio-shape"></div>
-        <div class="bio-shape"></div>
-        <div class="bio-shape"></div>
-        <div class="bio-shape"></div>
-        <div class="bio-shape"></div>
+<body class="bg-dark text-white selection:bg-gold selection:text-black font-sans">
+
+    <div class="bg-gold text-black text-center py-2 text-sm font-bold tracking-wide">
+        🚀 ابدأ الآن واستفد من أسبوع تجربة مجانية بالكامل - بدون أي التزام!
     </div>
-    <div class="grid-overlay" aria-hidden="true"></div>
 
-    <div id="root"></div>
+    <nav class="flex justify-between items-center py-5 px-8 border-b border-gray-800 bg-darker sticky top-0 z-50">
+        <div class="text-2xl font-black text-gold tracking-tight">EDU<span class="text-white">SHIELD</span></div>
+        <a href="#contact" class="px-5 py-2 bg-gold text-black rounded-md hover:bg-gold-light transition font-bold">جرب 7 أيام مجاناً</a>
+    </nav>
 
-    <script type="text/babel">
-        const { useState, useEffect, useCallback, useRef } = React;
+    <header class="max-w-5xl mx-auto px-6 py-24 text-center">
+        <h1 class="text-5xl md:text-6xl font-black leading-tight mb-6">
+            استرجع السيطرة على <span class="text-gold">محتواك وأرباحك</span>
+        </h1>
+        <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+            منصة مستقلة باسمك، كتمنع مشاركة الحسابات، كتسير الاشتراكات أوتوماتيكياً، وكتخليك تركز على التدريس عوض حضية الجروبات.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contact" class="bg-gold text-black px-8 py-4 rounded-md font-bold text-lg hover:bg-gold-light transition duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)]">ابدأ تجربتك المجانية الآن</a>
+            <a href="#faq" class="px-8 py-4 border border-gray-600 text-gray-300 rounded-md hover:border-gold hover:text-gold transition font-bold">عندك أسئلة؟</a>
+        </div>
+    </header>
 
-        /* ============================================
-           بيانات المصطلحات البيولوجية
-        ============================================ */
-        const biologyTerms = [
-            {
-                id: 1,
-                term: "الخلية",
-                definition: "الوحدة الأساسية التركيبية والوظيفية لجميع الكائنات الحية."
-            },
-            {
-                id: 2,
-                term: "الدي أن إيه (DNA)",
-                definition: "الحمض النووي الريبوزي منقوص الأكسجين، يحمل المعلومات الوراثية."
-            },
-            {
-                id: 3,
-                term: "الميتوكوندريا",
-                definition: "عضية خلية مسؤولة عن إنتاج الطاقة (ATP)."
-            },
-            {
-                id: 4,
-                term: "الانقسام الميتوزي",
-                definition: "عملية انقسام الخلية التي تنتج خليتين ابنتين متطابقتين وراثياً."
-            },
-            {
-                id: 5,
-                term: "الأنزيم",
-                definition: "محفز بيولوجي (بروتين غالباً) يسرع التفاعلات الكيميائية داخل الجسم."
-            }
-        ];
+    <section class="border-y border-gold/20 bg-darker py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+            <div class="text-gold text-5xl mb-4">👑</div>
+            <h2 class="text-2xl font-bold mb-2">محتواك ملكك 100%</h2>
+            <p class="text-gray-400">
+                نحن نوفر لك البنية التحتية فقط (التكنولوجيا). فيديوهاتك، دروسك، وقاعدة بيانات طلابك تبقى في ملكيتك الخاصة ولا يحق للمنصة استخدامها أو الوصول إليها.
+            </p>
+        </div>
+    </section>
 
-        /* ============================================
-           مكون البطاقة الرئيسية
-        ============================================ */
-        function FlashcardDeck() {
-            const [currentIndex, setCurrentIndex] = useState(0);
-            const [isFlipped, setIsFlipped] = useState(false);
-            const [animKey, setAnimKey] = useState(0);
-            const cardRef = useRef(null);
-
-            const currentCard = biologyTerms[currentIndex];
-            const totalCards = biologyTerms.length;
-            const progressPercent = ((currentIndex + 1) / totalCards) * 100;
-
-            /* قلب البطاقة */
-            const handleFlip = useCallback(() => {
-                setIsFlipped(prev => !prev);
-            }, []);
-
-            /* الانتقال للبطاقة التالية */
-            const handleNext = useCallback(() => {
-                if (currentIndex < totalCards - 1) {
-                    setIsFlipped(false);
-                    setAnimKey(prev => prev + 1);
-                    setTimeout(() => {
-                        setCurrentIndex(prev => prev + 1);
-                    }, 150);
-                }
-            }, [currentIndex, totalCards]);
-
-            /* الانتقال للبطاقة السابقة */
-            const handlePrev = useCallback(() => {
-                if (currentIndex > 0) {
-                    setIsFlipped(false);
-                    setAnimKey(prev => prev + 1);
-                    setTimeout(() => {
-                        setCurrentIndex(prev => prev - 1);
-                    }, 150);
-                }
-            }, [currentIndex]);
-
-            /* الانتقال مباشرة لبطاقة محددة بالنقاط */
-            const handleDotClick = useCallback((index) => {
-                if (index !== currentIndex) {
-                    setIsFlipped(false);
-                    setAnimKey(prev => prev + 1);
-                    setTimeout(() => {
-                        setCurrentIndex(index);
-                    }, 150);
-                }
-            }, [currentIndex]);
-
-            /* دعم لوحة المفاتيح */
-            useEffect(() => {
-                const handleKeyDown = (e) => {
-                    if (e.key === 'ArrowLeft') handleNext();
-                    else if (e.key === 'ArrowRight') handlePrev();
-                    else if (e.key === ' ' || e.key === 'Enter') {
-                        e.preventDefault();
-                        handleFlip();
-                    }
-                };
-                window.addEventListener('keydown', handleKeyDown);
-                return () => window.removeEventListener('keydown', handleKeyDown);
-            }, [handleNext, handlePrev, handleFlip]);
-
-            return (
-                <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-8 font-ui">
-
-                    {/* === العنوان الرئيسي === */}
-                    <header className="text-center mb-10">
-                        <div className="inline-flex items-center gap-2.5 mb-4 px-4 py-1.5 rounded-full border border-bio-700/30 bg-bio-950/50 backdrop-blur-sm">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#53a856" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0-4h18"/>
-                            </svg>
-                            <span className="text-sm font-medium text-bio-300 tracking-wide">بطاقات تعليمية تفاعلية</span>
-                        </div>
-                        <h1 className="text-4xl sm:text-5xl font-bold mb-3" style={{ fontFamily: 'Amiri, serif', color: '#e8f0e9' }}>
-                            علم الأحياء
-                        </h1>
-                        <p className="text-base" style={{ color: 'var(--fg-muted)' }}>
-                            اطّلع على المصطلحات العلمية واحفظها بسهولة
-                        </p>
-                    </header>
-
-                    {/* === شريط التقدم === */}
-                    <div className="w-full max-w-md mb-6 px-2">
-                        <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium" style={{ color: 'var(--fg-muted)' }}>
-                                التقدم
-                            </span>
-                            <span className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>
-                                بطاقة {currentIndex + 1} من {totalCards}
-                            </span>
-                        </div>
-                        <div className="progress-bar-track">
-                            <div
-                                className="progress-bar-fill"
-                                style={{ width: `${progressPercent}%` }}
-                                role="progressbar"
-                                aria-valuenow={currentIndex + 1}
-                                aria-valuemin={1}
-                                aria-valuemax={totalCards}
-                            />
-                        </div>
+    <section class="py-20 bg-[#111]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-black text-center mb-16">علاش فيسبوك وتيليغرام كيضيعو ليك مجهودك؟</h2>
+            <div class="space-y-8">
+                
+                <div class="grid md:grid-cols-2 gap-0 border border-gray-800 rounded-xl overflow-hidden">
+                    <div class="p-8 bg-dark/50 border-b md:border-b-0 md:border-l border-gray-800">
+                        <h3 class="text-xl font-bold text-red-500 mb-3 flex items-center gap-2"><span>❌</span> المشكل: مشاركة الحسابات</h3>
+                        <p class="text-gray-400 leading-relaxed">الطالب كيعطي المودباس لصحابو، وهكا كتلقى 10 كيتفرجو باشتراك واحد.</p>
                     </div>
-
-                    {/* === البطاقة === */}
-                    <div className="perspective-container w-full max-w-md mb-8 px-2" key={animKey}>
-                        <div
-                            className={`card-inner card-enter ${isFlipped ? 'flipped' : ''}`}
-                            onClick={handleFlip}
-                            role="button"
-                            tabIndex="0"
-                            aria-label={isFlipped ? `تعريف: ${currentCard.definition}. انقر للعودة للمصطلح` : `مصطلح: ${currentCard.term}. انقر لعرض التعريف`}
-                            onKeyDown={(e) => {
-                                if (e.key === ' ' || e.key === 'Enter') {
-                                    e.preventDefault();
-                                    handleFlip();
-                                }
-                            }}
-                            ref={cardRef}
-                        >
-                            {/* الوجه الأمامي - المصطلح */}
-                            <div className="card-face card-front">
-                                {/* زخارف الخلية */}
-                                <div className="cell-deco cell-deco-1" aria-hidden="true"></div>
-                                <div className="cell-deco cell-deco-2" aria-hidden="true"></div>
-                                <div className="cell-deco cell-deco-3" aria-hidden="true"></div>
-
-                                {/* شارة النوع */}
-                                <div className="relative z-10 flex flex-col items-center text-center">
-                                    <span
-                                        className="inline-block text-xs font-semibold tracking-widest uppercase mb-5 px-3 py-1 rounded-full"
-                                        style={{
-                                            background: 'rgba(83,168,86,0.12)',
-                                            color: '#53a856',
-                                            border: '1px solid rgba(83,168,86,0.2)'
-                                        }}
-                                    >
-                                        مصطلح
-                                    </span>
-
-                                    <h2
-                                        className="text-3xl sm:text-4xl font-bold leading-relaxed mb-6"
-                                        style={{
-                                            fontFamily: 'Amiri, serif',
-                                            color: '#e8f0e9',
-                                            textShadow: '0 2px 20px rgba(83,168,86,0.15)'
-                                        }}
-                                    >
-                                        {currentCard.term}
-                                    </h2>
-
-                                    <div className="click-hint flex items-center gap-1.5" style={{ color: 'var(--fg-muted)' }}>
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/>
-                                        </svg>
-                                        <span className="text-xs">انقر لعرض التعريف</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* الوجه الخلفي - التعريف */}
-                            <div className="card-face card-back">
-                                {/* زخرفة */}
-                                <div className="cell-deco cell-deco-1" aria-hidden="true" style={{ borderColor: 'rgba(229,185,90,0.06)' }}></div>
-                                <div className="cell-deco cell-deco-2" aria-hidden="true" style={{ borderColor: 'rgba(229,185,90,0.06)' }}></div>
-
-                                <div className="relative z-10 flex flex-col items-center text-center">
-                                    <span
-                                        className="inline-block text-xs font-semibold tracking-widest uppercase mb-5 px-3 py-1 rounded-full"
-                                        style={{
-                                            background: 'var(--gold-muted)',
-                                            color: 'var(--gold)',
-                                            border: '1px solid rgba(229,185,90,0.2)'
-                                        }}
-                                    >
-                                        تعريف
-                                    </span>
-
-                                    <p
-                                        className="text-xl sm:text-2xl leading-loose mb-4"
-                                        style={{
-                                            fontFamily: 'Amiri, serif',
-                                            color: '#e8f0e9',
-                                            textShadow: '0 2px 15px rgba(229,185,90,0.08)',
-                                            maxWidth: '90%'
-                                        }}
-                                    >
-                                        {currentCard.definition}
-                                    </p>
-
-                                    <div
-                                        className="mt-3 pt-4"
-                                        style={{ borderTop: '1px solid rgba(229,185,90,0.12)', width: '60%' }}
-                                    >
-                                        <span
-                                            className="text-sm font-semibold"
-                                            style={{ fontFamily: 'Amiri, serif', color: 'var(--gold)', opacity: 0.7 }}
-                                        >
-                                            {currentCard.term}
-                                        </span>
-                                    </div>
-
-                                    <div className="click-hint flex items-center gap-1.5 mt-5" style={{ color: 'var(--fg-muted)' }}>
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/>
-                                        </svg>
-                                        <span className="text-xs">انقر للعودة</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="p-8 bg-gradient-to-l from-gray-900 to-black">
+                        <h3 class="text-xl font-bold text-gold mb-3 flex items-center gap-2"><span>✅</span> الحل: قفل الجهاز (Device Lock)</h3>
+                        <p class="text-gray-300 leading-relaxed">السيستيم كيربط حساب الطالب بجهاز واحد. يلا دخل من تليفون آخر، المنصة كتسد عليه وما كتخليهش يتفرج.</p>
                     </div>
-
-                    {/* === أزرار التنقل === */}
-                    <nav className="flex items-center gap-4 mb-6" aria-label="التنقل بين البطاقات">
-                        <button
-                            className="nav-btn nav-btn-secondary"
-                            onClick={handlePrev}
-                            disabled={currentIndex === 0}
-                            aria-label="البطاقة السابقة"
-                        >
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M9 18l6-6-6-6"/>
-                            </svg>
-                            السابقة
-                        </button>
-
-                        <button
-                            className="nav-btn nav-btn-primary"
-                            onClick={handleNext}
-                            disabled={currentIndex === totalCards - 1}
-                            aria-label="البطاقة التالية"
-                        >
-                            التالية
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M15 18l-6-6 6-6"/>
-                            </svg>
-                        </button>
-                    </nav>
-
-                    {/* === نقاط المؤشر === */}
-                    <div className="flex items-center gap-3 mb-8" role="tablist" aria-label="مؤشر البطاقات">
-                        {biologyTerms.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`indicator-dot ${index === currentIndex ? 'active' : ''}`}
-                                onClick={() => handleDotClick(index)}
-                                role="tab"
-                                aria-selected={index === currentIndex}
-                                aria-label={`الانتقال للبطاقة ${index + 1}`}
-                            />
-                        ))}
-                    </div>
-
-                    {/* === اختصارات لوحة المفاتيح === */}
-                    <footer className="text-center">
-                        <div className="inline-flex items-center gap-4 px-4 py-2.5 rounded-xl" style={{ background: 'rgba(83,168,86,0.05)', border: '1px solid rgba(83,168,86,0.08)' }}>
-                            <div className="flex items-center gap-1.5">
-                                <kbd className="inline-flex items-center justify-center w-6 h-6 rounded-md text-xs font-mono" style={{ background: 'rgba(83,168,86,0.1)', color: 'var(--fg-muted)', border: '1px solid rgba(83,168,86,0.15)' }}>
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-                                </kbd>
-                                <kbd className="inline-flex items-center justify-center w-6 h-6 rounded-md text-xs font-mono" style={{ background: 'rgba(83,168,86,0.1)', color: 'var(--fg-muted)', border: '1px solid rgba(83,168,86,0.15)' }}>
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18l6-6-6-6"/></svg>
-                                </kbd>
-                                <span className="text-xs" style={{ color: 'var(--fg-muted)' }}>تنقل</span>
-                            </div>
-                            <div style={{ width: '1px', height: '16px', background: 'rgba(83,168,86,0.1)' }}></div>
-                            <div className="flex items-center gap-1.5">
-                                <kbd className="inline-flex items-center justify-center h-6 px-1.5 rounded-md text-xs font-mono" style={{ background: 'rgba(83,168,86,0.1)', color: 'var(--fg-muted)', border: '1px solid rgba(83,168,86,0.15)' }}>Space</kbd>
-                                <span className="text-xs" style={{ color: 'var(--fg-muted)' }}>قلب</span>
-                            </div>
-                        </div>
-                    </footer>
                 </div>
-            );
-        }
 
-        /* ============================================
-           تصيير التطبيق
-        ============================================ */
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<FlashcardDeck />);
-    </script>
+                <div class="grid md:grid-cols-2 gap-0 border border-gray-800 rounded-xl overflow-hidden">
+                    <div class="p-8 bg-dark/50 border-b md:border-b-0 md:border-l border-gray-800">
+                        <h3 class="text-xl font-bold text-red-500 mb-3 flex items-center gap-2"><span>❌</span> المشكل: صداع التسيير اليدوي</h3>
+                        <p class="text-gray-400 leading-relaxed">كتضيع وقتك في مراجعة تواصيل الدفع (الروشيوات) وإدخال الطلبة للجروب واحد بواحد.</p>
+                    </div>
+                    <div class="p-8 bg-gradient-to-l from-gray-900 to-black">
+                        <h3 class="text-xl font-bold text-gold mb-3 flex items-center gap-2"><span>✅</span> الحل: تسيير أوتوماتيكي</h3>
+                        <p class="text-gray-300 leading-relaxed">لوحة تحكم كتدخل فيها مدة الاشتراك. نهار كيسالي الشهر ديال الطالب، السيستيم كيقطع عليه بوحدو بلا ما تدخل.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-black text-center mb-12">كل ما يدور في ذهنك، عندنا ليه جواب</h2>
+        <div class="space-y-4">
+            
+            <div class="bg-dark border border-gray-800 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-gold mb-2">واش المنصة كتاخد نسبة (Commission) من الأرباح ديالي؟</h3>
+                <p class="text-gray-400 text-sm">نهائياً. أنت كتخلص اشتراك شهري أو سنوي رمزي مقابل استخدام المنصة، والأرباح ديالك من الطلبة كتدخل لحسابك البنكي مباشرة 100%.</p>
+            </div>
+
+            <div class="bg-dark border border-gray-800 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-gold mb-2">كيفاش كيخدم أسبوع التجربة المجانية؟</h3>
+                <p class="text-gray-400 text-sm">كنجهزو ليك المنصة، كتحط فيها دروسك، وكتجربها مع الطلبة ديالك لمدة 7 أيام بلا ما تخلص والو. يلا ما عجباتكش النتيجة، تقدر تلغي بلا حتى سؤال.</p>
+            </div>
+
+            <div class="bg-dark border border-gray-800 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-gold mb-2">واش غنحتاج خبرة في البرمجة باش نسير المنصة؟</h3>
+                <p class="text-gray-400 text-sm">لا. لوحة التحكم ديال الأستاذ صممناها باش تكون ساهلة بحال استعمال فيسبوك أو واتساب. بضغطة زر كتزيد طالب، وبضغطة زر كتحط فيديو.</p>
+            </div>
+
+            <div class="bg-dark border border-gray-800 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-gold mb-2">فين كيتحطو الفيديوهات واللايفات؟</h3>
+                <p class="text-gray-400 text-sm">باش نضمنو ليك الجودة بلا ما يتقال السيرفر، كتستعمل يوتيوب (غير مدرج) أو Vimeo، والمنصة ديالنا كدير ليهم (Embed) بطريقة محمية ما كتسمحش بالتحميل.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="bg-gold text-black py-20 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-black mb-6">جاهز باش تحمي خدمتك؟</h2>
+            <p class="text-lg mb-10 font-medium">ما تضيعش المزيد من الأرباح بسبب مشاركة الحسابات. جرب المنصة الآن.</p>
+            <a href="#" class="bg-black text-gold px-12 py-4 rounded-md font-black text-xl hover:bg-gray-900 transition duration-300 shadow-xl inline-block">طلب التجربة المجانية (7 أيام)</a>
+        </div>
+    </section>
+
 </body>
 </html>
